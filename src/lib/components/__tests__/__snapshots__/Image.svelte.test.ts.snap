@@ -1,0 +1,927 @@
+// Vitest Snapshot v1
+
+exports[`Image > layout=fill > data=completeData > when the component doesn't intersect the viewport > only renders the placeholder elements  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: absolute; width: 100%; height: 100%;"
+    >
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=fill > data=completeData > when the component intersects the viewport > shows the image  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: absolute; width: 100%; height: 100%;"
+    >
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+      <picture
+        data-testid="picture"
+      >
+         
+        <source
+          sizes="(max-width: 750px) 100vw, 750px"
+          srcset="https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=0.25&fit=crop&w=750 187w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=0.5&fit=crop&w=750 375w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=0.75&fit=crop&w=750 562w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=1&fit=crop&w=750 750w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=1.5&fit=crop&w=750 1125w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=2&fit=crop&w=750 1500w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=3&fit=crop&w=750 2250w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=4&fit=crop&w=750 3000w"
+        />
+        <!--&lt;Source&gt;-->
+         
+        <img
+          alt="DatoCMS swag"
+          data-testid="img"
+          src="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750"
+          style="opacity: 0; transition: opacity 500ms; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"
+          title="These are awesome, we know that."
+        />
+      </picture>
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=fill > data=minimalData > when the component doesn't intersect the viewport > only renders the placeholder elements  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: absolute; width: 100%; height: 100%;"
+    >
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=fill > data=minimalData > when the component intersects the viewport > shows the image  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: absolute; width: 100%; height: 100%;"
+    >
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+      <picture
+        data-testid="picture"
+      >
+         
+        <source
+          srcset="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.25 187w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.5 375w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.75 562w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750 750w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=1.5 1125w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=2 1500w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=3 2250w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=4 3000w"
+        />
+        <!--&lt;Source&gt;-->
+         
+        <img
+          alt=""
+          data-testid="img"
+          src="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750"
+          style="opacity: 0; transition: opacity 500ms; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"
+        />
+      </picture>
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=fill > data=minimalDataWithRelativeUrl > when the component doesn't intersect the viewport > only renders the placeholder elements  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: absolute; width: 100%; height: 100%;"
+    >
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=fill > data=minimalDataWithRelativeUrl > when the component intersects the viewport > shows the image  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: absolute; width: 100%; height: 100%;"
+    >
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+      <picture
+        data-testid="picture"
+      >
+         
+        <source
+          srcset="/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.25 187w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.5 375w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.75 562w,/205/image.png?ar=16%3A9&fit=crop&w=750 750w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=1.5 1125w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=2 1500w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=3 2250w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=4 3000w"
+        />
+        <!--&lt;Source&gt;-->
+         
+        <img
+          alt=""
+          data-testid="img"
+          src="/205/image.png?ar=16%3A9&fit=crop&w=750"
+          style="opacity: 0; transition: opacity 500ms; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"
+        />
+      </picture>
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=fixed > data=completeData > when the component doesn't intersect the viewport > only renders the placeholder elements  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=fixed > data=completeData > when the component intersects the viewport > shows the image  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+      <picture
+        data-testid="picture"
+      >
+         
+        <source
+          sizes="(max-width: 750px) 100vw, 750px"
+          srcset="https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=0.25&fit=crop&w=750 187w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=0.5&fit=crop&w=750 375w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=0.75&fit=crop&w=750 562w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=1&fit=crop&w=750 750w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=1.5&fit=crop&w=750 1125w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=2&fit=crop&w=750 1500w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=3&fit=crop&w=750 2250w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=4&fit=crop&w=750 3000w"
+        />
+        <!--&lt;Source&gt;-->
+         
+        <img
+          alt="DatoCMS swag"
+          data-testid="img"
+          src="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750"
+          style="opacity: 0; transition: opacity 500ms; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"
+          title="These are awesome, we know that."
+        />
+      </picture>
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=fixed > data=minimalData > when the component doesn't intersect the viewport > only renders the placeholder elements  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=fixed > data=minimalData > when the component intersects the viewport > shows the image  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+      <picture
+        data-testid="picture"
+      >
+         
+        <source
+          srcset="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.25 187w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.5 375w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.75 562w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750 750w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=1.5 1125w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=2 1500w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=3 2250w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=4 3000w"
+        />
+        <!--&lt;Source&gt;-->
+         
+        <img
+          alt=""
+          data-testid="img"
+          src="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750"
+          style="opacity: 0; transition: opacity 500ms; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"
+        />
+      </picture>
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=fixed > data=minimalDataWithRelativeUrl > when the component doesn't intersect the viewport > only renders the placeholder elements  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=fixed > data=minimalDataWithRelativeUrl > when the component intersects the viewport > shows the image  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+      <picture
+        data-testid="picture"
+      >
+         
+        <source
+          srcset="/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.25 187w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.5 375w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.75 562w,/205/image.png?ar=16%3A9&fit=crop&w=750 750w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=1.5 1125w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=2 1500w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=3 2250w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=4 3000w"
+        />
+        <!--&lt;Source&gt;-->
+         
+        <img
+          alt=""
+          data-testid="img"
+          src="/205/image.png?ar=16%3A9&fit=crop&w=750"
+          style="opacity: 0; transition: opacity 500ms; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"
+        />
+      </picture>
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=intrinsic > data=completeData > when the component doesn't intersect the viewport > only renders the placeholder elements  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative; width: 100%;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=intrinsic > data=completeData > when the component intersects the viewport > shows the image  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative; width: 100%;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+      <picture
+        data-testid="picture"
+      >
+         
+        <source
+          sizes="(max-width: 750px) 100vw, 750px"
+          srcset="https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=0.25&fit=crop&w=750 187w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=0.5&fit=crop&w=750 375w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=0.75&fit=crop&w=750 562w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=1&fit=crop&w=750 750w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=1.5&fit=crop&w=750 1125w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=2&fit=crop&w=750 1500w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=3&fit=crop&w=750 2250w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=4&fit=crop&w=750 3000w"
+        />
+        <!--&lt;Source&gt;-->
+         
+        <img
+          alt="DatoCMS swag"
+          data-testid="img"
+          src="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750"
+          style="opacity: 0; transition: opacity 500ms; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"
+          title="These are awesome, we know that."
+        />
+      </picture>
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=intrinsic > data=minimalData > when the component doesn't intersect the viewport > only renders the placeholder elements  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative; width: 100%;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=intrinsic > data=minimalData > when the component intersects the viewport > shows the image  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative; width: 100%;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+      <picture
+        data-testid="picture"
+      >
+         
+        <source
+          srcset="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.25 187w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.5 375w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.75 562w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750 750w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=1.5 1125w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=2 1500w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=3 2250w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=4 3000w"
+        />
+        <!--&lt;Source&gt;-->
+         
+        <img
+          alt=""
+          data-testid="img"
+          src="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750"
+          style="opacity: 0; transition: opacity 500ms; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"
+        />
+      </picture>
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=intrinsic > data=minimalDataWithRelativeUrl > when the component doesn't intersect the viewport > only renders the placeholder elements  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative; width: 100%;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=intrinsic > data=minimalDataWithRelativeUrl > when the component intersects the viewport > shows the image  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative; width: 100%;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+      <picture
+        data-testid="picture"
+      >
+         
+        <source
+          srcset="/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.25 187w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.5 375w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.75 562w,/205/image.png?ar=16%3A9&fit=crop&w=750 750w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=1.5 1125w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=2 1500w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=3 2250w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=4 3000w"
+        />
+        <!--&lt;Source&gt;-->
+         
+        <img
+          alt=""
+          data-testid="img"
+          src="/205/image.png?ar=16%3A9&fit=crop&w=750"
+          style="opacity: 0; transition: opacity 500ms; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"
+        />
+      </picture>
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=responsive > data=completeData > when the component doesn't intersect the viewport > only renders the placeholder elements  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative; width: 100%;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=responsive > data=completeData > when the component intersects the viewport > shows the image  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative; width: 100%;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+      <picture
+        data-testid="picture"
+      >
+         
+        <source
+          sizes="(max-width: 750px) 100vw, 750px"
+          srcset="https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=0.25&fit=crop&w=750 187w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=0.5&fit=crop&w=750 375w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=0.75&fit=crop&w=750 562w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=1&fit=crop&w=750 750w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=1.5&fit=crop&w=750 1125w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=2&fit=crop&w=750 1500w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=3&fit=crop&w=750 2250w,↵https://www.datocms-assets.com/205/image.png?ar=16%3A9&dpr=4&fit=crop&w=750 3000w"
+        />
+        <!--&lt;Source&gt;-->
+         
+        <img
+          alt="DatoCMS swag"
+          data-testid="img"
+          src="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750"
+          style="opacity: 0; transition: opacity 500ms; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"
+          title="These are awesome, we know that."
+        />
+      </picture>
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=responsive > data=minimalData > when the component doesn't intersect the viewport > only renders the placeholder elements  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative; width: 100%;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=responsive > data=minimalData > when the component intersects the viewport > shows the image  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative; width: 100%;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+      <picture
+        data-testid="picture"
+      >
+         
+        <source
+          srcset="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.25 187w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.5 375w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.75 562w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750 750w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=1.5 1125w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=2 1500w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=3 2250w,https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=4 3000w"
+        />
+        <!--&lt;Source&gt;-->
+         
+        <img
+          alt=""
+          data-testid="img"
+          src="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750"
+          style="opacity: 0; transition: opacity 500ms; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"
+        />
+      </picture>
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=responsive > data=minimalDataWithRelativeUrl > when the component doesn't intersect the viewport > only renders the placeholder elements  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative; width: 100%;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Image > layout=responsive > data=minimalDataWithRelativeUrl > when the component intersects the viewport > shows the image  1`] = `
+<body>
+  <div>
+    <div
+      data-testid="image"
+      style="overflow: hidden; position: relative; width: 100%;"
+    >
+      <img
+        alt=""
+        aria-hidden="true"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NTAiIGhlaWdodD0iNDIxIj48L3N2Zz4="
+        style="display: block; width: 100%;"
+      />
+      <!--&lt;Sizer&gt;-->
+       
+      <img
+        alt=""
+        aria-hidden="true"
+        class="placeholder s-XxIbSx2Y04XN"
+        role="presentation"
+        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z"
+        style="transition: opacity 500ms; opacity: 1;"
+      />
+      <!--&lt;Placeholder&gt;-->
+       
+      <picture
+        data-testid="picture"
+      >
+         
+        <source
+          srcset="/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.25 187w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.5 375w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=0.75 562w,/205/image.png?ar=16%3A9&fit=crop&w=750 750w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=1.5 1125w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=2 1500w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=3 2250w,/205/image.png?ar=16%3A9&fit=crop&w=750&dpr=4 3000w"
+        />
+        <!--&lt;Source&gt;-->
+         
+        <img
+          alt=""
+          data-testid="img"
+          src="/205/image.png?ar=16%3A9&fit=crop&w=750"
+          style="opacity: 0; transition: opacity 500ms; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"
+        />
+      </picture>
+    </div>
+    <!--&lt;IntersectionObserver&gt;-->
+    <!--&lt;Image&gt;-->
+  </div>
+</body>
+`;

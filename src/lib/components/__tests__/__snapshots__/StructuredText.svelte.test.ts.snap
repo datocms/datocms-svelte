@@ -1,0 +1,338 @@
+// Vitest Snapshot v1
+
+exports[`StructuredText > simple dast /2 > with custom mark rules > renders the document 1`] = `
+<body>
+  <div>
+    <h1>
+      This
+       
+      <br />
+       
+      is a 
+       
+      
+      <!--&lt;Lines&gt;-->
+      
+      <!--&lt;Lines&gt;-->
+      
+      <!--&lt;CustomSpan&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      <b>
+        title
+         
+        
+        <!--&lt;Lines&gt;-->
+        
+        <!--&lt;CustomSpan&gt;-->
+      </b>
+      
+      
+      <!--&lt;CustomSpan&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      
+      
+    </h1>
+    
+    <!--&lt;Heading&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    
+    <!--&lt;Root&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    <!--&lt;StructuredText&gt;-->
+  </div>
+</body>
+`;
+
+exports[`StructuredText > simple dast /2 > with default rules > renders the document 1`] = `
+<body>
+  <div>
+    <h1>
+      This
+       
+      <br />
+       
+      is a 
+       
+      
+      <!--&lt;Lines&gt;-->
+      
+      <!--&lt;Lines&gt;-->
+      
+      <!--&lt;Span&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      <strong>
+        title
+         
+        
+        <!--&lt;Lines&gt;-->
+        
+        <!--&lt;Span&gt;-->
+      </strong>
+      
+      
+      <!--&lt;Span&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      
+      
+    </h1>
+    
+    <!--&lt;Heading&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    
+    <!--&lt;Root&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    <!--&lt;StructuredText&gt;-->
+  </div>
+</body>
+`;
+
+exports[`StructuredText > simple dast with no links/blocks > with custom rules > renders the document 1`] = `
+<body>
+  <div>
+    <h2>
+      This
+       
+      <br />
+       
+      is a 
+       
+      
+      <!--&lt;Lines&gt;-->
+      
+      <!--&lt;Lines&gt;-->
+      
+      <!--&lt;Span&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      <strong>
+        title
+         
+        
+        <!--&lt;Lines&gt;-->
+        
+        <!--&lt;Span&gt;-->
+      </strong>
+      
+      
+      <!--&lt;Span&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      
+      
+    </h2>
+    
+    <!--&lt;IncreasedLevelHeading&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    
+    <!--&lt;Root&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    <!--&lt;StructuredText&gt;-->
+  </div>
+</body>
+`;
+
+exports[`StructuredText > simple dast with no links/blocks > with default rules > renders the document 1`] = `
+<body>
+  <div>
+    <h1>
+      This
+       
+      <br />
+       
+      is a 
+       
+      
+      <!--&lt;Lines&gt;-->
+      
+      <!--&lt;Lines&gt;-->
+      
+      <!--&lt;Span&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      <strong>
+        title
+         
+        
+        <!--&lt;Lines&gt;-->
+        
+        <!--&lt;Span&gt;-->
+      </strong>
+      
+      
+      <!--&lt;Span&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      
+      
+    </h1>
+    
+    <!--&lt;Heading&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    
+    <!--&lt;Root&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    <!--&lt;StructuredText&gt;-->
+  </div>
+</body>
+`;
+
+exports[`StructuredText > with links/blocks > with default rules > renders the document 1`] = `
+<body>
+  <div>
+    <h1>
+      This is a
+       
+      
+      <!--&lt;Lines&gt;-->
+      
+      <!--&lt;Span&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      <mark>
+        title
+         
+        
+        <!--&lt;Lines&gt;-->
+        
+        <!--&lt;Span&gt;-->
+      </mark>
+      
+      
+      <!--&lt;Span&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      <a
+        href="/docs/how-to-code"
+      >
+        How to code
+      </a>
+      ;
+      
+      <!--&lt;InlineItem&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      <a
+        href="/docs/how-to-code"
+      >
+        here!
+         
+        
+        <!--&lt;Lines&gt;-->
+        
+        <!--&lt;Span&gt;-->
+        
+        
+        
+        <!--&lt;Node&gt;-->
+        
+        
+      </a>
+      
+      <!--&lt;ItemLink&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      
+      
+    </h1>
+    
+    <!--&lt;Heading&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    <figure>
+      <blockquote>
+        Foo bar.
+      </blockquote>
+       
+      <figcaption>
+        Mark Smith
+      </figcaption>
+    </figure>
+    
+    <!--&lt;Block&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    
+    <!--&lt;Root&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    <!--&lt;StructuredText&gt;-->
+  </div>
+</body>
+`;
+
+exports[`StructuredText > with no value > renders null 1`] = `
+<body>
+  <div>
+    
+    <!--&lt;StructuredText&gt;-->
+  </div>
+</body>
+`;
