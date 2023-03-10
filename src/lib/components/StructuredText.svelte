@@ -1,19 +1,18 @@
 <script lang="ts">
-	import type { StructuredText } from 'datocms-structured-text-utils';
+	import { type StructuredText, type Document, isStructuredText } from 'datocms-structured-text-utils';
 
 	import type { PredicateComponentTuple } from '$lib';
 	
 	import Node from './_StructuredText/Node.svelte';
 
 	/** The actual field value you get from DatoCMS **/
-	// FIXME: add support for documents (from CMA) and node (for rendering branches)
-	export let data: StructuredText | null = null;
+	export let data: StructuredText | Document | null = null;
 
 	export let components: PredicateComponentTuple[] = [];
 
-	$: node = data?.value.document;
-	$: blocks = data?.blocks;
-	$: links = data?.links;
+	$: node = data != null && (isStructuredText(data) ? data.value : data).document;
+	$: blocks = isStructuredText(data) ? data?.blocks : undefined;
+	$: links =  isStructuredText(data) ? data?.links : undefined;
 </script>
 
 {#if node}

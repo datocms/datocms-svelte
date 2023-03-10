@@ -29,12 +29,6 @@
 	import ThematicBreak from './nodes/ThematicBreak.svelte';
 	import Code from './nodes/Code.svelte';
 
-	// FIXME: remove duplication with StructuredText.svelte
-	type PredicateComponentTuple = [
-		(node: Node) => boolean,
-		new (...any: any[]) => SvelteComponentTyped
-	];
-
 	export const DEFAULT_COMPONENTS: PredicateComponentTuple[] = [
 		[isParagraph, Paragraph],
 		[isRoot, Root],
@@ -73,7 +67,6 @@
 
 	const throwRenderErrorForMissingBlocks = (node: STU.Block) => {
 		throw new RenderError(
-			// FIXME
 			`The Structured Text document contains a 'block' node, but cannot find a record with ID ${node.item} inside data.blocks!`,
 			node
 		);
@@ -81,7 +74,6 @@
 
 	const throwRenderErrorForMissingLinks = (node: STU.ItemLink | STU.InlineItem) => {
 		throw new RenderError(
-			// FIXME
 			`The Structured Text document contains an 'itemLink' node, but cannot find a record with ID ${node.item} inside data.links!`,
 			node
 		);
@@ -97,6 +89,7 @@
 	import type { SvelteComponentTyped } from 'svelte';
 
 	import { hasChildren, type Node, type StructuredText } from 'datocms-structured-text-utils';
+	import type { PredicateComponentTuple } from '$lib';
 
 	export let node: Node;
 	export let blocks: StructuredText['blocks'];

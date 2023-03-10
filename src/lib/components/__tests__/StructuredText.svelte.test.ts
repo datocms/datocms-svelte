@@ -30,6 +30,26 @@ describe('StructuredText', () => {
 		});
 	});
 
+	describe('with a very simple pure dast (only the `value` of a structured text)', () => {
+		describe('with default rules', () => {
+			it('renders the document', () => {
+				const { container } = render(StructuredText, { props: { data: heading.value } });
+
+				expect(container).toMatchSnapshot();
+			});
+		});
+
+		describe('with custom mark rules', () => {
+			it('renders the document', () => {
+				const { container } = render(StructuredText, {
+					props: { data: heading, components: [[isSpan, CustomSpan]] }
+				});
+
+				expect(container).toMatchSnapshot();
+			});
+		});
+	});
+
 	describe('with a very simple dast', () => {
 		describe('with default rules', () => {
 			it('renders the document', () => {
