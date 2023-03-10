@@ -43,6 +43,7 @@ exports[`StructuredText > with a dast including links and blocks > with default 
       <!--&lt;Node&gt;-->
       <a
         href="/docs/how-to-code"
+        target="_blank"
       >
         here!
          
