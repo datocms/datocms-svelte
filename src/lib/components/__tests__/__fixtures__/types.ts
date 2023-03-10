@@ -11,3 +11,20 @@ export type DocPageRecord = {
   slug: string;
   title: string;
 };
+
+export type ImageRecord = {
+  id: string;
+  __typename: 'ImageRecord';
+  image: {
+    url: string;
+  };
+};
+
+export type BlogPostRecord = {
+  id: string;
+  __typename: 'BlogPostRecord';
+  title: string;
+  author: {
+    name: string;
+  };
+};
