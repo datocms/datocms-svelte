@@ -6,5 +6,6 @@ export { default as Image } from './components/Image.svelte';
 
 export type PredicateComponentTuple = [
 	(n: Node) => boolean,
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	new (...any: any) => SvelteComponentTyped
 ];

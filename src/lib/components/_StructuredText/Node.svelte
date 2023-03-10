@@ -65,14 +65,14 @@
 		}
 	};
 
-	const throwRenderErrorForMissingBlocks = (node: STU.Block) => {
+	const throwRenderErrorForMissingBlock = (node: STU.Block) => {
 		throw new RenderError(
 			`The Structured Text document contains a 'block' node, but cannot find a record with ID ${node.item} inside data.blocks!`,
 			node
 		);
 	};
 
-	const throwRenderErrorForMissingLinks = (node: STU.ItemLink | STU.InlineItem) => {
+	const throwRenderErrorForMissingLink = (node: STU.ItemLink | STU.InlineItem) => {
 		throw new RenderError(
 			`The Structured Text document contains an 'itemLink' node, but cannot find a record with ID ${node.item} inside data.links!`,
 			node
@@ -86,9 +86,8 @@
 </script>
 
 <script lang="ts">
-	import type { SvelteComponentTyped } from 'svelte';
-
 	import { hasChildren, type Node, type StructuredText } from 'datocms-structured-text-utils';
+
 	import type { PredicateComponentTuple } from '$lib';
 
 	export let node: Node;
@@ -97,16 +96,16 @@
 
 	export let components: PredicateComponentTuple[] = [];
 
+	$: block = isBlock(node) && (findBlock(node, blocks) || throwRenderErrorForMissingBlock(node));
+	$: link =
+		(isItemLink(node) && (findLink(node, links) || throwRenderErrorForMissingLink(node))) ||
+		(isInlineItem(node) && (findLink(node, links) || throwRenderErrorForMissingLink(node)));
+
 	$: predicateComponentTuple =
 		[...components, ...DEFAULT_COMPONENTS].find(([predicate, component]) => predicate(node)) ||
 		throwRenderErrorForMissingComponent(node);
 
 	$: component = (predicateComponentTuple ?? [])[1];
-
-	$: block = isBlock(node) && (findBlock(node, blocks) || throwRenderErrorForMissingBlocks(node));
-	$: link =
-		(isItemLink(node) && (findLink(node, links) || throwRenderErrorForMissingLinks(node))) ||
-		(isInlineItem(node) && (findLink(node, links) || throwRenderErrorForMissingLinks(node)));
 </script>
 
 {#if component}

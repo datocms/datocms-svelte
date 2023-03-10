@@ -101,6 +101,16 @@ exports[`StructuredText > with a dast including links and blocks > with default 
 </body>
 `;
 
+exports[`StructuredText > with a dast including links and blocks > with missing blocks > raises an error 1`] = `"The Structured Text document contains a 'block' node, but cannot find a record with ID 456 inside data.blocks!"`;
+
+exports[`StructuredText > with a dast including links and blocks > with missing component for blocks > raises an error 1`] = `"The Structured Text document contains a 'block' node, but no component for rendering is specified!"`;
+
+exports[`StructuredText > with a dast including links and blocks > with missing component for inline items > raises an error 1`] = `"The Structured Text document contains an 'inlineItem' node, but no component for rendering is specified!"`;
+
+exports[`StructuredText > with a dast including links and blocks > with missing component for item links > raises an error 1`] = `"The Structured Text document contains an 'itemLink' node, but no component for rendering is specified!"`;
+
+exports[`StructuredText > with a dast including links and blocks > with missing links > raises an error 1`] = `"The Structured Text document contains an 'itemLink' node, but cannot find a record with ID 123 inside data.links!"`;
+
 exports[`StructuredText > with a dast with no links nor blocks > with custom rules > renders the document 1`] = `
 <body>
   <div>
@@ -273,6 +283,120 @@ exports[`StructuredText > with a very simple dast > with custom mark rules > ren
 `;
 
 exports[`StructuredText > with a very simple dast > with default rules > renders the document 1`] = `
+<body>
+  <div>
+    <h1>
+      This
+       
+      <br />
+       
+      is a 
+       
+      
+      <!--&lt;Lines&gt;-->
+      
+      <!--&lt;Lines&gt;-->
+      
+      <!--&lt;Span&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      <strong>
+        title
+         
+        
+        <!--&lt;Lines&gt;-->
+        
+        <!--&lt;Span&gt;-->
+      </strong>
+      
+      
+      <!--&lt;Span&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      
+      
+    </h1>
+    
+    <!--&lt;Heading&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    
+    <!--&lt;Root&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    <!--&lt;StructuredText&gt;-->
+  </div>
+</body>
+`;
+
+exports[`StructuredText > with a very simple pure dast (only the \`value\` of a structured text) > with custom mark rules > renders the document 1`] = `
+<body>
+  <div>
+    <h1>
+      This
+       
+      <br />
+       
+      is a 
+       
+      
+      <!--&lt;Lines&gt;-->
+      
+      <!--&lt;Lines&gt;-->
+      
+      <!--&lt;CustomSpan&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      <b>
+        title
+         
+        
+        <!--&lt;Lines&gt;-->
+        
+        <!--&lt;CustomSpan&gt;-->
+      </b>
+      
+      
+      <!--&lt;CustomSpan&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      
+      
+    </h1>
+    
+    <!--&lt;Heading&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    
+    <!--&lt;Root&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    <!--&lt;StructuredText&gt;-->
+  </div>
+</body>
+`;
+
+exports[`StructuredText > with a very simple pure dast (only the \`value\` of a structured text) > with default rules > renders the document 1`] = `
 <body>
   <div>
     <h1>

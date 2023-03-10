@@ -3,12 +3,11 @@ import '@testing-library/jest-dom';
 import { render } from '@testing-library/svelte';
 
 import {
-	RenderError,
 	isBlock,
 	isHeading,
 	isInlineItem,
 	isItemLink,
-	isSpan,
+	isSpan
 } from 'datocms-structured-text-utils';
 
 import { StructuredText } from '../..';
@@ -110,26 +109,85 @@ describe('StructuredText', () => {
 			});
 		});
 
-		describe('with missing component for inline records', () => {
+		describe('with missing component for item links', () => {
 			it('raises an error', () => {
 				expect(() => {
 					render(StructuredText, {
-						props: { data: structuredTextWithBlocksAndLinks }
+						props: {
+							data: structuredTextWithBlocksAndLinks,
+							components: [
+								[isBlock, Block],
+								[isInlineItem, InlineItem]
+							]
+						}
 					});
-				}).toThrow(RenderError);
+				}).toThrowErrorMatchingSnapshot();
 			});
 		});
 
-		describe('with missing record', () => {
+		describe('with missing component for inline items', () => {
+			it('raises an error', () => {
+				expect(() => {
+					render(StructuredText, {
+						props: {
+							data: structuredTextWithBlocksAndLinks,
+							components: [
+								[isBlock, Block],
+								[isItemLink, ItemLink]
+							]
+						}
+					});
+				}).toThrowErrorMatchingSnapshot();
+			});
+		});
+
+		describe('with missing links', () => {
 			it('raises an error', () => {
 				expect(() => {
 					render(StructuredText, {
 						props: {
 							data: { ...structuredTextWithBlocksAndLinks, links: [] },
-							components: [[isInlineItem, InlineItem]]
-						},
+							components: [
+								[isBlock, Block],
+								[isInlineItem, InlineItem],
+								[isItemLink, ItemLink]
+							]
+						}
 					});
-				}).toThrow(RenderError);
+				}).toThrowErrorMatchingSnapshot();
+			});
+		});
+
+		describe('with missing component for blocks', () => {
+			it('raises an error', () => {
+				expect(() => {
+					render(StructuredText, {
+						props: {
+							data: structuredTextWithBlocksAndLinks,
+							components: [
+								[isInlineItem, InlineItem],
+								[isItemLink, ItemLink]
+							]
+						}
+					});
+				}).toThrowErrorMatchingSnapshot();
+			});
+		});
+
+		describe('with missing blocks', () => {
+			it('raises an error', () => {
+				expect(() => {
+					render(StructuredText, {
+						props: {
+							data: { ...structuredTextWithBlocksAndLinks, blocks: [] },
+							components: [
+								[isBlock, Block],
+								[isInlineItem, InlineItem],
+								[isItemLink, ItemLink]
+							]
+						}
+					});
+				}).toThrowErrorMatchingSnapshot();
 			});
 		});
 	});
