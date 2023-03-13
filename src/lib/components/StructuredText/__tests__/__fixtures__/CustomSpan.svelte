@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Span } from 'datocms-structured-text-utils';
 	
-  import Lines from '../../_StructuredText/utils/Lines.svelte';
+  import Lines from '../../utils/Lines.svelte';
 
 	export let node: Span;
 

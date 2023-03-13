@@ -1,9 +1,10 @@
 <script>
-	import StructuredText from '$lib/components/StructuredText.svelte';
 	import { isSpan } from 'datocms-structured-text-utils';
-	import CustomSpan from '$lib/components/__tests__/__fixtures__/CustomSpan.svelte';
 
-	import { heading, paragraph } from '$lib/components/__tests__/__fixtures__/structuredText';
+	import { heading, paragraph } from '$lib/components/StructuredText/__tests__/__fixtures__/structuredText';
+
+	import { StructuredText } from '$lib';
+	import CustomSpan from '$lib/components/StructuredText/__tests__/__fixtures__/CustomSpan.svelte';
 </script>
 
 <h1>DatoCMS Svelte Library</h1>

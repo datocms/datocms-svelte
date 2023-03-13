@@ -5,7 +5,7 @@ import { mockIntersectionObserver } from 'jsdom-testing-mocks';
 
 import { completeData, minimalData, minimalDataWithRelativeUrl } from './__fixtures__/image';
 
-import { Image } from '../..';
+import { Image } from '../../..';
 
 const io = mockIntersectionObserver();
 

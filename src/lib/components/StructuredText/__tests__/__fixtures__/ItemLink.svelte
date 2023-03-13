@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { defaultMetaTransformer } from 'datocms-structured-text-generic-html-renderer';
 	import { isItemLink, type ItemLink } from 'datocms-structured-text-utils';
+	
 	import type { DocPageRecord } from './types';
 
 	export let node: ItemLink;

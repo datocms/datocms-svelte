@@ -3,7 +3,7 @@
 
 	import type { PredicateComponentTuple } from '$lib';
 	
-	import Node from './_StructuredText/Node.svelte';
+	import Node from './Node.svelte';
 
 	/** The actual field value you get from DatoCMS **/
 	export let data: StructuredText | Document | null = null;

@@ -124,9 +124,9 @@
 
 	import { createEventDispatcher } from 'svelte';
 
-	import Sizer from './_Image/Sizer.svelte';
-	import Placeholder from './_Image/Placeholder.svelte';
-	import Source from './_Image/Source.svelte';
+	import Sizer from './Sizer.svelte';
+	import Placeholder from './Placeholder.svelte';
+	import Source from './Source.svelte';
 
 	const dispatch = createEventDispatcher();
 

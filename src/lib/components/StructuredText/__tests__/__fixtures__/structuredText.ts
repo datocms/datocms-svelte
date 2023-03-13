@@ -1,4 +1,5 @@
 import type { StructuredText } from 'datocms-structured-text-utils';
+
 import type { BlogPostRecord, DocPageRecord, ImageRecord, QuoteRecord } from './types';
 
 export const paragraph: StructuredText = {

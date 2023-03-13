@@ -10,7 +10,7 @@ import {
 	isSpan
 } from 'datocms-structured-text-utils';
 
-import { StructuredText } from '../..';
+import { StructuredText } from '../../..';
 
 import { heading, structuredTextWithBlocksAndLinks } from './__fixtures__/structuredText';
 
