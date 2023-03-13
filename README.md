@@ -1,38 +1,51 @@
-# create-svelte
+# @datocms/svelte
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+![MIT](https://img.shields.io/npm/l/@datocms/svelte?style=for-the-badge) ![NPM](https://img.shields.io/npm/v/@datocms/svelte?style=for-the-badge) [![Build Status](https://img.shields.io/github/workflow/status/datocms/datocms-svelte/Node.js%20CI?style=for-the-badge)](https://github.com/datocms/datocms-svelte/actions/workflows/node.js.yml)
 
-## Creating a project
+A set of components to work faster with [DatoCMS](https://www.datocms.com/) in Svelte projects.
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Works with Svelte and SvelteKit;
+- Written in TypeScript;
+- Usable both client and server side;
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+<br /><br />
+<a href="https://www.datocms.com/">
+<img src="https://www.datocms.com/images/full_logo.svg" height="60">
+</a>
+<br /><br />
 
-# create a new project in my-app
-npm create svelte@latest my-app
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Development](#development)
+
+## Features
+
+`@datocms/svelte` contains Svelte ready to use components and usage examples.
+
+Components:
+
+- [`<Image />`](src/components/Image)
+- [`<StructuredText />`](src/components/StructuredText)
+- [`<Head />`](src/components/Head)
+
+## Installation
+
 ```
+npm install @datocms/svelte
+```
+## Development
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+This repository contains some examples in the `app/routes` folder. You can use them to locally test your changes to the package:
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
-
 ## Building
 
-To create a production version of your app:
+To create a production version of this library:
 
 ```bash
 npm run build
 ```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
