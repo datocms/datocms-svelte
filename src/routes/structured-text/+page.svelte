@@ -7,12 +7,12 @@
 	import CustomSpan from '$lib/components/StructuredText/__tests__/__fixtures__/CustomSpan.svelte';
 </script>
 
-<h1>DatoCMS Svelte Library</h1>
+<h1>StructuredText</h1>
 
-<h2>Examples</h2>
+<hr />
 
-<ul>
-	<li><a href="/structured-text">StructuredText</a></li>
-	<li><a href="/image">Image</a></li>
-	<li><a href="/head">Head</a></li>
-</ul>
+<StructuredText data={heading} />
+
+<hr />
+
+<StructuredText data={paragraph} components={[[isSpan, CustomSpan]]} />

@@ -26,9 +26,9 @@ A set of components to work faster with [DatoCMS](https://www.datocms.com/) in S
 
 Components:
 
-- [`<Image />`](src/components/Image)
-- [`<StructuredText />`](src/components/StructuredText)
-- [`<Head />`](src/components/Head)
+- [`<Image />`](src/lib/components/Image)
+- [`<StructuredText />`](src/lib/components/StructuredText)
+- [`<Head />`](src/lib/components/Head)
 
 ## Installation
 

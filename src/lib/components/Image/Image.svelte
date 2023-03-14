@@ -3,9 +3,9 @@
 
 	const isWindowDefined = typeof window !== 'undefined';
 
-	type Maybe<T> = T | null;
+	export type Maybe<T> = T | null;
 
-	type ResponsiveImageType = {
+	export type ResponsiveImageType = {
 		/** A base64-encoded thumbnail to offer during image loading */
 		base64?: Maybe<string>;
 		/** The height of the image */
