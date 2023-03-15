@@ -22,7 +22,7 @@ A set of components to work faster with [DatoCMS](https://www.datocms.com/) in S
 
 ## Features
 
-`@datocms/svelte` contains Svelte ready to use components and usage examples.
+`@datocms/svelte` contains ready-to-use Svelte components and usage examples.
 
 Components:
 
