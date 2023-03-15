@@ -1,6 +1,18 @@
 {
 	"name": "@datocms/svelte",
-	"version": "0.0.1",
+	"version": "0.0.2",
+	"description": "A set of components and utilities to work faster with DatoCMS in Svelte",
+	"license": "MIT",
+	"repository": {
+    "type": "git",
+    "url": "git://github.com/datocms/datocms-svelte.git"
+  },
+  "author": "Silvano Stralla <silvano@datocms.com>",
+  "homepage": "https://github.com/datocms/datocms-svelte",
+	"keywords": [
+		"svelte",
+		"datocms"
+  ],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "svelte-kit sync && svelte-package",
