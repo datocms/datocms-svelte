@@ -75,7 +75,7 @@ You need to use custom components in the following cases:
 
 ### Custom components for blocks
 
-Here is an example using custom compoments for blocks, inline and item links. Take a look at the [test fixtures](https://github.com/datocms/datocms-svelte/tree/main/src/lib/components/StructuredText/__tests__/__fixtures__) to see examples on how to implement these components.
+Here is an example using custom components for blocks, inline and item links. Take a look at the [test fixtures](https://github.com/datocms/datocms-svelte/tree/main/src/lib/components/StructuredText/__tests__/__fixtures__) to see examples on how to implement these components.
 
 ```svelte
 <script>
