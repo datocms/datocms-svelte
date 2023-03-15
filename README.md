@@ -1,6 +1,6 @@
 # @datocms/svelte
 
-![MIT](https://img.shields.io/npm/l/@datocms/svelte?style=for-the-badge) ![NPM](https://img.shields.io/npm/v/@datocms/svelte?style=for-the-badge) [![Build Status](https://img.shields.io/github/workflow/status/datocms/datocms-svelte/Node.js%20CI?style=for-the-badge)](https://github.com/datocms/datocms-svelte/actions/workflows/node.js.yml)
+![MIT](https://img.shields.io/npm/l/@datocms/svelte?style=for-the-badge) ![NPM](https://img.shields.io/npm/v/@datocms/svelte?style=for-the-badge) [![Build Status](https://img.shields.io/github/actions/workflow/status/datocms/datocms-svelte/node.js.yml?branch=main&style=for-the-badge)](https://github.com/datocms/datocms-svelte/actions/workflows/node.js.yml)
 
 A set of components to work faster with [DatoCMS](https://www.datocms.com/) in Svelte projects.
 
