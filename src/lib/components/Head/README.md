@@ -26,7 +26,7 @@ Here is an example:
 
   import { Head } from '@datocms/svelte';
 
-  const query = gql`
+  const query = `
     query {
       page: homepage {
         title

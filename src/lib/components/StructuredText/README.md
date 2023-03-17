@@ -26,7 +26,7 @@ import { onMount } from 'svelte';
 
 import { StructuredText } from '@datocms/svelte';
 
-const query = gql`
+const query = `
   query {
     blogPost {
       title
@@ -90,7 +90,7 @@ import Block from './Block.svelte';
 import InlineItem from './InlineItem.svelte';
 import ItemLink from './ItemLink.svelte';
 
-const query = gql`
+const query = `
   query {
     blogPost {
       title
@@ -176,26 +176,26 @@ In this case, you can easily override default rendering rules with the `componen
 
 ```svelte
 <script>
-  import { isHeading, isCode } from 'datocms-structured-text-utils';
+	import { isHeading, isCode } from 'datocms-structured-text-utils';
 
-  import Heading from './Heading.svelte';
-  import Code from './Code.svelte';
+	import Heading from './Heading.svelte';
+	import Code from './Code.svelte';
 
-  export let data;
+	export let data;
 </script>
 
 <StructuredText
-  data={data.blogPost.content}
-  components={[
-    [isHeading, Heading],
-    [isCode, Code],
-  ]}
+	data={data.blogPost.content}
+	components={[
+		[isHeading, Heading],
+		[isCode, Code]
+	]}
 />
 ```
 
 ## Props
 
-| prop               | type                                                       | required                                                                  | description                                                                                      | default |
-| ------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------- |
-| data               | `StructuredText \| DastNode`                               | :white_check_mark:                                                        | The actual [field value](https://www.datocms.com/docs/structured-text/dast) you get from DatoCMS |         |
-| components         | [`PredicateComponentTuple[] \| null`](https://github.com/datocms/datocms-svelte/blob/main/src/lib/index.ts)                        | Only required if data contain `block`, `inline_item` or `item_link` nodes | Array of tuples formed by a predicate function and custom component                              | `[]`    |
+| prop       | type                                                                                                        | required                                                                  | description                                                                                      | default |
+| ---------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------- |
+| data       | `StructuredText \| DastNode`                                                                                | :white_check_mark:                                                        | The actual [field value](https://www.datocms.com/docs/structured-text/dast) you get from DatoCMS |         |
+| components | [`PredicateComponentTuple[] \| null`](https://github.com/datocms/datocms-svelte/blob/main/src/lib/index.ts) | Only required if data contain `block`, `inline_item` or `item_link` nodes | Array of tuples formed by a predicate function and custom component                              | `[]`    |
