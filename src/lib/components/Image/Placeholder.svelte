@@ -14,7 +14,6 @@
 
 <img
 	class="placeholder"
-	role="presentation"
 	aria-hidden="true"
 	alt=""
 	src={base64}
