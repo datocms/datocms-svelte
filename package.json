@@ -51,7 +51,6 @@
 	"type": "module",
 	"dependencies": {
 		"datocms-structured-text-utils": "^2.0.4",
-		"np": "^7.6.3",
 		"svelte-intersection-observer": "^0.10.0",
 		"universal-base64": "^2.1.0"
 	}
