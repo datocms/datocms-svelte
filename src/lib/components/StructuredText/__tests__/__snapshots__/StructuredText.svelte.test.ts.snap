@@ -111,6 +111,74 @@ exports[`StructuredText > with a dast including links and blocks > with missing 
 
 exports[`StructuredText > with a dast including links and blocks > with missing links > raises an error 1`] = `"The Structured Text document contains an 'itemLink' node, but cannot find a record with ID 123 inside data.links!"`;
 
+exports[`StructuredText > with a dast which has a link inside > with default rules > renders the document 1`] = `
+<body>
+  <div>
+    <p>
+      This is a paragraph with a 
+       
+      
+      <!--&lt;Lines&gt;-->
+      
+      <!--&lt;Span&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      <a
+        href="https://random.link"
+        rel="nofollow"
+        target="_blank"
+      >
+        very cool link
+         
+        
+        <!--&lt;Lines&gt;-->
+        
+        <!--&lt;Span&gt;-->
+        
+        
+        
+        <!--&lt;Node&gt;-->
+        
+        
+      </a>
+      <!--&lt;Link&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      . And the link has the target and the rel attributes set.
+       
+      
+      <!--&lt;Lines&gt;-->
+      
+      <!--&lt;Span&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
+      
+      
+    </p>
+    <!--&lt;Paragraph&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    
+    <!--&lt;Root&gt;-->
+    
+    
+    
+    <!--&lt;Node&gt;-->
+    
+    <!--&lt;StructuredText&gt;-->
+  </div>
+</body>
+`;
+
 exports[`StructuredText > with a dast with no links nor blocks > with custom rules > renders the document 1`] = `
 <body>
   <div>
