@@ -12,7 +12,11 @@ import {
 
 import { StructuredText } from '../../..';
 
-import { heading, structuredTextWithBlocksAndLinks } from './__fixtures__/structuredText';
+import {
+	heading,
+	paragraphWithLink,
+	structuredTextWithBlocksAndLinks
+} from './__fixtures__/structuredText';
 
 import CustomSpan from './__fixtures__/CustomSpan.svelte';
 import IncreasedLevelHeading from './__fixtures__/IncreasedLevelHeading.svelte';
@@ -63,6 +67,16 @@ describe('StructuredText', () => {
 				const { container } = render(StructuredText, {
 					props: { data: heading, components: [[isSpan, CustomSpan]] }
 				});
+
+				expect(container).toMatchSnapshot();
+			});
+		});
+	});
+
+	describe('with a dast which has a link inside', () => {
+		describe('with default rules', () => {
+			it('renders the document', () => {
+				const { container } = render(StructuredText, { props: { data: paragraphWithLink } });
 
 				expect(container).toMatchSnapshot();
 			});

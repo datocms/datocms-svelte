@@ -53,6 +53,45 @@ export const heading: StructuredText = {
 	}
 };
 
+export const paragraphWithLink: StructuredText = {
+	value: {
+		schema: 'dast',
+		document: {
+			type: 'root',
+			children: [
+				{
+					type: 'paragraph',
+					children: [
+						{
+							type: 'span',
+							value: 'This is a paragraph with a '
+						},
+						{
+							url: 'https://random.link',
+							type: 'link',
+							meta: [
+								{ id: 'rel', value: 'nofollow' },
+								{ id: 'foo', value: '123' },
+								{ id: 'target', value: '_blank' }
+							],
+							children: [
+								{
+									type: 'span',
+									value: 'very cool link'
+								}
+							]
+						},
+						{
+							type: 'span',
+							value: '. And the link has the target and the rel attributes set.'
+						}
+					]
+				}
+			]
+		}
+	}
+};
+
 export const structuredTextWithBlocksAndLinks: StructuredText<QuoteRecord, DocPageRecord> = {
 	value: {
 		schema: 'dast',
