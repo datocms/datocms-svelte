@@ -9,16 +9,6 @@ const config = {
 
 	kit: {
 		adapter: adapter()
-	},
-
-	package: {
-		exports: (filepath) => {
-			// See: https://github.com/sveltejs/kit/issues/3283
-			if (filepath.endsWith('.DS_Store')) return false;
-
-			// Replicate the default behaviour of `exports` configuration.
-			return !/^_|\/_|\.d\.ts$/.test(filepath);
-		}
 	}
 };
 

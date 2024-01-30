@@ -15,7 +15,7 @@
 	],
 	"scripts": {
 		"dev": "vite dev",
-		"build": "svelte-kit sync && svelte-package",
+		"build": "svelte-kit sync && svelte-package -o package",
 		"prepublishOnly": "echo 'Did you mean to publish `./package/`, instead of `./`?' && exit 1",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -27,7 +27,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^1.0.3",
 		"@sveltejs/kit": "^1.30.3",
-		"@sveltejs/package": "^1.0.2",
+		"@sveltejs/package": "^2.0.0",
 		"@testing-library/jest-dom": "^5.17.0",
 		"@testing-library/svelte": "^3.2.2",
 		"@typescript-eslint/eslint-plugin": "^5.62.0",
@@ -48,10 +48,176 @@
 		"vite": "^4.5.1",
 		"vitest": "^0.25.8"
 	},
+	"peerDependencies": {
+		"svelte": "^3.59.2"
+	},
 	"type": "module",
 	"dependencies": {
 		"datocms-structured-text-utils": "^2.0.4",
-		"svelte-intersection-observer": "^0.10.1",
+		"svelte-intersection-observer": "^1.0.0",
 		"universal-base64": "^2.1.0"
+	},
+	"exports": {
+		"./package.json": "./package.json",
+		"./components/Head/Head.svelte": {
+			"types": "./package/components/Head/Head.svelte.d.ts",
+			"svelte": "./package/components/Head/Head.svelte",
+			"default": "./package/components/Head/Head.svelte"
+		},
+		"./components/Image/Image.svelte": {
+			"types": "./package/components/Image/Image.svelte.d.ts",
+			"svelte": "./package/components/Image/Image.svelte",
+			"default": "./package/components/Image/Image.svelte"
+		},
+		"./components/Image/Placeholder.svelte": {
+			"types": "./package/components/Image/Placeholder.svelte.d.ts",
+			"svelte": "./package/components/Image/Placeholder.svelte",
+			"default": "./package/components/Image/Placeholder.svelte"
+		},
+		"./components/Image/Sizer.svelte": {
+			"types": "./package/components/Image/Sizer.svelte.d.ts",
+			"svelte": "./package/components/Image/Sizer.svelte",
+			"default": "./package/components/Image/Sizer.svelte"
+		},
+		"./components/Image/Source.svelte": {
+			"types": "./package/components/Image/Source.svelte.d.ts",
+			"svelte": "./package/components/Image/Source.svelte",
+			"default": "./package/components/Image/Source.svelte"
+		},
+		"./components/StructuredText/Node.svelte": {
+			"types": "./package/components/StructuredText/Node.svelte.d.ts",
+			"svelte": "./package/components/StructuredText/Node.svelte",
+			"default": "./package/components/StructuredText/Node.svelte"
+		},
+		"./components/StructuredText/StructuredText.svelte": {
+			"types": "./package/components/StructuredText/StructuredText.svelte.d.ts",
+			"svelte": "./package/components/StructuredText/StructuredText.svelte",
+			"default": "./package/components/StructuredText/StructuredText.svelte"
+		},
+		"./components/StructuredText/nodes/Blockquote.svelte": {
+			"types": "./package/components/StructuredText/nodes/Blockquote.svelte.d.ts",
+			"svelte": "./package/components/StructuredText/nodes/Blockquote.svelte",
+			"default": "./package/components/StructuredText/nodes/Blockquote.svelte"
+		},
+		"./components/StructuredText/nodes/Code.svelte": {
+			"types": "./package/components/StructuredText/nodes/Code.svelte.d.ts",
+			"svelte": "./package/components/StructuredText/nodes/Code.svelte",
+			"default": "./package/components/StructuredText/nodes/Code.svelte"
+		},
+		"./components/StructuredText/nodes/Heading.svelte": {
+			"types": "./package/components/StructuredText/nodes/Heading.svelte.d.ts",
+			"svelte": "./package/components/StructuredText/nodes/Heading.svelte",
+			"default": "./package/components/StructuredText/nodes/Heading.svelte"
+		},
+		"./components/StructuredText/nodes/Link.svelte": {
+			"types": "./package/components/StructuredText/nodes/Link.svelte.d.ts",
+			"svelte": "./package/components/StructuredText/nodes/Link.svelte",
+			"default": "./package/components/StructuredText/nodes/Link.svelte"
+		},
+		"./components/StructuredText/nodes/List.svelte": {
+			"types": "./package/components/StructuredText/nodes/List.svelte.d.ts",
+			"svelte": "./package/components/StructuredText/nodes/List.svelte",
+			"default": "./package/components/StructuredText/nodes/List.svelte"
+		},
+		"./components/StructuredText/nodes/ListItem.svelte": {
+			"types": "./package/components/StructuredText/nodes/ListItem.svelte.d.ts",
+			"svelte": "./package/components/StructuredText/nodes/ListItem.svelte",
+			"default": "./package/components/StructuredText/nodes/ListItem.svelte"
+		},
+		"./components/StructuredText/nodes/Paragraph.svelte": {
+			"types": "./package/components/StructuredText/nodes/Paragraph.svelte.d.ts",
+			"svelte": "./package/components/StructuredText/nodes/Paragraph.svelte",
+			"default": "./package/components/StructuredText/nodes/Paragraph.svelte"
+		},
+		"./components/StructuredText/nodes/Root.svelte": {
+			"types": "./package/components/StructuredText/nodes/Root.svelte.d.ts",
+			"svelte": "./package/components/StructuredText/nodes/Root.svelte",
+			"default": "./package/components/StructuredText/nodes/Root.svelte"
+		},
+		"./components/StructuredText/nodes/Span.svelte": {
+			"types": "./package/components/StructuredText/nodes/Span.svelte.d.ts",
+			"svelte": "./package/components/StructuredText/nodes/Span.svelte",
+			"default": "./package/components/StructuredText/nodes/Span.svelte"
+		},
+		"./components/StructuredText/nodes/ThematicBreak.svelte": {
+			"types": "./package/components/StructuredText/nodes/ThematicBreak.svelte.d.ts",
+			"svelte": "./package/components/StructuredText/nodes/ThematicBreak.svelte",
+			"default": "./package/components/StructuredText/nodes/ThematicBreak.svelte"
+		},
+		"./components/StructuredText/utils/Lines.svelte": {
+			"types": "./package/components/StructuredText/utils/Lines.svelte.d.ts",
+			"svelte": "./package/components/StructuredText/utils/Lines.svelte",
+			"default": "./package/components/StructuredText/utils/Lines.svelte"
+		},
+		".": {
+			"types": "./package/index.d.ts",
+			"svelte": "./package/index.js",
+			"default": "./package/index.js"
+		}
+	},
+	"files": [
+		"package"
+	],
+	"svelte": "./package/index.js",
+	"typesVersions": {
+		">4.0": {
+			"components/Head/Head.svelte": [
+				"./package/components/Head/Head.svelte.d.ts"
+			],
+			"components/Image/Image.svelte": [
+				"./package/components/Image/Image.svelte.d.ts"
+			],
+			"components/Image/Placeholder.svelte": [
+				"./package/components/Image/Placeholder.svelte.d.ts"
+			],
+			"components/Image/Sizer.svelte": [
+				"./package/components/Image/Sizer.svelte.d.ts"
+			],
+			"components/Image/Source.svelte": [
+				"./package/components/Image/Source.svelte.d.ts"
+			],
+			"components/StructuredText/Node.svelte": [
+				"./package/components/StructuredText/Node.svelte.d.ts"
+			],
+			"components/StructuredText/StructuredText.svelte": [
+				"./package/components/StructuredText/StructuredText.svelte.d.ts"
+			],
+			"components/StructuredText/nodes/Blockquote.svelte": [
+				"./package/components/StructuredText/nodes/Blockquote.svelte.d.ts"
+			],
+			"components/StructuredText/nodes/Code.svelte": [
+				"./package/components/StructuredText/nodes/Code.svelte.d.ts"
+			],
+			"components/StructuredText/nodes/Heading.svelte": [
+				"./package/components/StructuredText/nodes/Heading.svelte.d.ts"
+			],
+			"components/StructuredText/nodes/Link.svelte": [
+				"./package/components/StructuredText/nodes/Link.svelte.d.ts"
+			],
+			"components/StructuredText/nodes/List.svelte": [
+				"./package/components/StructuredText/nodes/List.svelte.d.ts"
+			],
+			"components/StructuredText/nodes/ListItem.svelte": [
+				"./package/components/StructuredText/nodes/ListItem.svelte.d.ts"
+			],
+			"components/StructuredText/nodes/Paragraph.svelte": [
+				"./package/components/StructuredText/nodes/Paragraph.svelte.d.ts"
+			],
+			"components/StructuredText/nodes/Root.svelte": [
+				"./package/components/StructuredText/nodes/Root.svelte.d.ts"
+			],
+			"components/StructuredText/nodes/Span.svelte": [
+				"./package/components/StructuredText/nodes/Span.svelte.d.ts"
+			],
+			"components/StructuredText/nodes/ThematicBreak.svelte": [
+				"./package/components/StructuredText/nodes/ThematicBreak.svelte.d.ts"
+			],
+			"components/StructuredText/utils/Lines.svelte": [
+				"./package/components/StructuredText/utils/Lines.svelte.d.ts"
+			],
+			"index.d.ts": [
+				"./package/index.d.ts"
+			]
+		}
 	}
 }
