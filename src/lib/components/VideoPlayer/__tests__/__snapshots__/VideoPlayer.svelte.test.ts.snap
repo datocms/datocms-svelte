@@ -4,6 +4,7 @@ exports[`VideoPlayer > when data object > contains \`muxPlaybackId\` > uses it f
 <body>
   <div>
     <mux-player
+      disable-cookies="true"
       playback-id="ip028MAXF026dU900bKiyNDttjonw7A1dFY"
       stream-type="on-demand"
     />
@@ -16,8 +17,42 @@ exports[`VideoPlayer > when data object > contains \`playbackId\` > uses it for 
 <body>
   <div>
     <mux-player
+      disable-cookies="true"
       playback-id="ip028MAXF026dU900bKiyNDttjonw7A1dFY"
       stream-type="on-demand"
+    />
+    <!--&lt;VideoPlayer&gt;-->
+  </div>
+</body>
+`;
+
+exports[`VideoPlayer > when data object > is complete > and \`autoplay\` is passed > uses it for the <mux-player /> element 1`] = `
+<body>
+  <div>
+    <mux-player
+      autoplay="true"
+      disable-cookies="true"
+      placeholder="data:image/bmp;base64,Qk0eAAAAAAAAABoAAAAMAAAAAQABAAEAGAAAAP8A"
+      playback-id="ip028MAXF026dU900bKiyNDttjonw7A1dFY"
+      stream-type="on-demand"
+      style="aspect-ratio: 1080 / 1920;"
+      title="Title"
+    />
+    <!--&lt;VideoPlayer&gt;-->
+  </div>
+</body>
+`;
+
+exports[`VideoPlayer > when data object > is complete > and \`autoplay\` is passed > with value \`false\` > doesn't use it for the <mux-player /> element 1`] = `
+<body>
+  <div>
+    <mux-player
+      disable-cookies="true"
+      placeholder="data:image/bmp;base64,Qk0eAAAAAAAAABoAAAAMAAAAAQABAAEAGAAAAP8A"
+      playback-id="ip028MAXF026dU900bKiyNDttjonw7A1dFY"
+      stream-type="on-demand"
+      style="aspect-ratio: 1080 / 1920;"
+      title="Title"
     />
     <!--&lt;VideoPlayer&gt;-->
   </div>
@@ -29,6 +64,38 @@ exports[`VideoPlayer > when data object > is complete > and \`class\` is passed 
   <div>
     <mux-player
       class="main-player"
+      disable-cookies="true"
+      placeholder="data:image/bmp;base64,Qk0eAAAAAAAAABoAAAAMAAAAAQABAAEAGAAAAP8A"
+      playback-id="ip028MAXF026dU900bKiyNDttjonw7A1dFY"
+      stream-type="on-demand"
+      style="aspect-ratio: 1080 / 1920;"
+      title="Title"
+    />
+    <!--&lt;VideoPlayer&gt;-->
+  </div>
+</body>
+`;
+
+exports[`VideoPlayer > when data object > is complete > and \`disableCookies\` is passed > uses it for the <mux-player /> element 1`] = `
+<body>
+  <div>
+    <mux-player
+      disable-cookies="true"
+      placeholder="data:image/bmp;base64,Qk0eAAAAAAAAABoAAAAMAAAAAQABAAEAGAAAAP8A"
+      playback-id="ip028MAXF026dU900bKiyNDttjonw7A1dFY"
+      stream-type="on-demand"
+      style="aspect-ratio: 1080 / 1920;"
+      title="Title"
+    />
+    <!--&lt;VideoPlayer&gt;-->
+  </div>
+</body>
+`;
+
+exports[`VideoPlayer > when data object > is complete > and \`disableCookies\` is passed > with value \`false\` > doesn't use it for the <mux-player /> element 1`] = `
+<body>
+  <div>
+    <mux-player
       placeholder="data:image/bmp;base64,Qk0eAAAAAAAAABoAAAAMAAAAAQABAAEAGAAAAP8A"
       playback-id="ip028MAXF026dU900bKiyNDttjonw7A1dFY"
       stream-type="on-demand"
@@ -44,6 +111,7 @@ exports[`VideoPlayer > when data object > is complete > and a style string is pa
 <body>
   <div>
     <mux-player
+      disable-cookies="true"
       placeholder="data:image/bmp;base64,Qk0eAAAAAAAAABoAAAAMAAAAAQABAAEAGAAAAP8A"
       playback-id="ip028MAXF026dU900bKiyNDttjonw7A1dFY"
       stream-type="on-demand"
@@ -59,6 +127,7 @@ exports[`VideoPlayer > when data object > is complete > and a style string is pa
 <body>
   <div>
     <mux-player
+      disable-cookies="true"
       placeholder="data:image/bmp;base64,Qk0eAAAAAAAAABoAAAAMAAAAAQABAAEAGAAAAP8A"
       playback-id="ip028MAXF026dU900bKiyNDttjonw7A1dFY"
       stream-type="on-demand"
@@ -74,6 +143,7 @@ exports[`VideoPlayer > when data object > is complete > and an explicitly \`unde
 <body>
   <div>
     <mux-player
+      disable-cookies="true"
       placeholder="data:image/bmp;base64,Qk0eAAAAAAAAABoAAAAMAAAAAQABAAEAGAAAAP8A"
       playback-id="ip028MAXF026dU900bKiyNDttjonw7A1dFY"
       stream-type="on-demand"
@@ -88,6 +158,7 @@ exports[`VideoPlayer > when data object > is complete > unwraps data into props 
 <body>
   <div>
     <mux-player
+      disable-cookies="true"
       placeholder="data:image/bmp;base64,Qk0eAAAAAAAAABoAAAAMAAAAAQABAAEAGAAAAP8A"
       playback-id="ip028MAXF026dU900bKiyNDttjonw7A1dFY"
       stream-type="on-demand"
@@ -103,6 +174,7 @@ exports[`VideoPlayer > when data object > lacks of \`title\` value > avoids addi
 <body>
   <div>
     <mux-player
+      disable-cookies="true"
       playback-id="ip028MAXF026dU900bKiyNDttjonw7A1dFY"
       stream-type="on-demand"
       style="aspect-ratio: 1080 / 1920;"
@@ -116,6 +188,7 @@ exports[`VideoPlayer > when data object > lacks of \`width\` and \`height\` valu
 <body>
   <div>
     <mux-player
+      disable-cookies="true"
       playback-id="ip028MAXF026dU900bKiyNDttjonw7A1dFY"
       stream-type="on-demand"
       title="Title"

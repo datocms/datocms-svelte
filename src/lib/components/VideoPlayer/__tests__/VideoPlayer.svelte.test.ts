@@ -33,6 +33,46 @@ describe('VideoPlayer', () => {
 				});
 			});
 
+			describe('and `autoplay` is passed', () => {
+				it('uses it for the <mux-player /> element', () => {
+					const props = { data, autoplay: true };
+
+					const { container } = render(VideoPlayer, { props });
+
+					expect(container).toMatchSnapshot();
+				});
+
+				describe('with value `false`', () => {
+					it("doesn't use it for the <mux-player /> element", () => {
+						const props = { data, autoplay: false };
+
+						const { container } = render(VideoPlayer, { props });
+
+						expect(container).toMatchSnapshot();
+					});
+				});
+			});
+
+			describe('and `disableCookies` is passed', () => {
+				it('uses it for the <mux-player /> element', () => {
+					const props = { data, disableCookies: true };
+
+					const { container } = render(VideoPlayer, { props });
+
+					expect(container).toMatchSnapshot();
+				});
+
+				describe('with value `false`', () => {
+					it("doesn't use it for the <mux-player /> element", () => {
+						const props = { data, disableCookies: false };
+
+						const { container } = render(VideoPlayer, { props });
+
+						expect(container).toMatchSnapshot();
+					});
+				});
+			});
+
 			describe('and an explicitly `undefined` style is passed', () => {
 				it('avoids adding aspect ratio', () => {
 					const props = { data, style: undefined };
