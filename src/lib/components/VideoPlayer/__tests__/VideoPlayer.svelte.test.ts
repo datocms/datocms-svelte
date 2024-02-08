@@ -73,16 +73,6 @@ describe('VideoPlayer', () => {
 				});
 			});
 
-			describe('and an explicitly `undefined` style is passed', () => {
-				it('avoids adding aspect ratio', () => {
-					const props = { data, style: undefined };
-
-					const { container } = render(VideoPlayer, { props });
-
-					expect(container).toMatchSnapshot();
-				});
-			});
-
 			describe('and a style string is passed', () => {
 				describe("that doesn't include aspect ratio", () => {
 					it('adds computed aspect ratio', () => {

@@ -7,10 +7,12 @@
 		RenditionOrderValue,
 		StreamTypes
 	} from '@mux/playback-core/.';
-	import type { MuxPlayerElementEventMap, Tokens } from '@mux/mux-player';
 
-	type Maybe<T> = T | null;
+	import type { Tokens } from '@mux/mux-player';
+
 	type ValueOf<T> = T[keyof T];
+	type Maybe<T> = T | null;
+	type Possibly<T> = Maybe<T> | undefined;
 
 	type VideoApiAttributes = {
 		currentTime: number;
@@ -84,7 +86,7 @@
 	} & Partial<MuxMediaPropTypes> &
 		Partial<VideoApiAttributes>;
 
-	export type VideoType = {
+	export type Video = {
 		/** Title attribute (`title`) for the video */
 		title?: Maybe<string>;
 		/** The height of the video */
@@ -99,59 +101,40 @@
 		blurUpThumb?: Maybe<string>;
 	};
 
-	type VideoPlayerProps = {
-		data?: VideoType;
-	} & Partial<MuxPlayerProps>;
-
-	const computedPlaybackId = (
-		muxPlaybackId: Maybe<string> | undefined,
-		playbackId: Maybe<string> | undefined
-	) => {
-		return muxPlaybackId || playbackId || undefined;
+	type VideoPlayerProps = Partial<MuxPlayerProps> & {
+		data?: Video;
 	};
 
-	const doesNotWantAspectRatio = (props: SvelteAllProps) => {
-		return Object.hasOwn(props, 'style') && props.style === undefined;
+	const computedTitle = (title: Possibly<string>) => {
+		return title ? { title } : undefined;
+	};
+
+	const computedPlaybackId = (muxPlaybackId: Possibly<string>, playbackId: Possibly<string>) => {
+		if (!(muxPlaybackId || playbackId)) return undefined;
+
+		return { playbackId: `${muxPlaybackId || playbackId}` };
+	};
+
+	const computedAspectRatio = (width: Possibly<number>, height: Possibly<number>) => {
+		if (!(width && height)) return undefined;
+
+		return `aspect-ratio: ${width} / ${height}`;
 	};
 
 	const computedStyle = (
-		props: SvelteAllProps,
-		style: Maybe<string> | undefined,
-		width: Maybe<number> | undefined,
-		height: Maybe<number> | undefined
+		style: MuxPlayerProps['style'],
+		width: Possibly<number>,
+		height: Possibly<number>
 	) => {
-		if (doesNotWantAspectRatio(props)) return undefined;
+		const styleRules = [computedAspectRatio(width, height), style].filter(Boolean);
 
-		const aspectRatio = width && height ? `aspect-ratio: ${width} / ${height}` : undefined;
+		if (styleRules.length === 0) return undefined;
 
-		const styleValues = [aspectRatio, style].filter(Boolean);
-
-		return styleValues.length > 0 ? styleValues.join('; ') : undefined;
+		return { style: styleRules.join('; ') };
 	};
 
-	const computedPlaceholder = (blurUpThumb: Maybe<string> | undefined) => {
-		return blurUpThumb || undefined;
-	};
-
-	const computedTitle = (title: Maybe<string> | undefined) => {
-		return title || undefined;
-	};
-
-	const doesNotWantDisableCookies = (props: VideoPlayerProps) => {
-		return Object.hasOwn(props, 'disableCookies') && props.disableCookies === undefined;
-	};
-
-	const computedDisableCookies = (
-		props: VideoPlayerProps,
-		_disableCookies: Maybe<MuxPlayerProps['disableCookies']> | undefined
-	) => {
-		if (doesNotWantDisableCookies(props)) {
-			return undefined;
-		} else if (Object.hasOwn(props, 'disableCookies')) {
-			return props.disableCookies;
-		}
-
-		return true;
+	const computedPlaceholder = (blurUpThumb: Possibly<string>) => {
+		return blurUpThumb ? { placeholder: blurUpThumb } : undefined;
 	};
 
 	type KeyTypes = string | number | symbol;
@@ -215,16 +198,16 @@
 </script>
 
 <script lang="ts">
-	import { afterUpdate, onDestroy, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	import type MuxPlayerElement from '@mux/mux-player';
 	import mux from 'mux-embed';
 
 	// See: https://stackoverflow.com/a/76291677/1338248
 	interface $$Props extends VideoPlayerProps {}
 
-	export let data: VideoType = {};
-	export let style: Maybe<MuxPlayerProps['style']> | undefined = undefined;
-	export let disableCookies: Maybe<MuxPlayerProps['disableCookies']> | undefined = undefined;
+	export let data: Video = {};
+	export let style: MuxPlayerProps['style'] = undefined;
+	export let disableCookies: MuxPlayerProps['disableCookies'] = true;
 
 	let muxPlayerElementImported = false;
 
@@ -238,11 +221,11 @@
 		// Composing props like this and then spreading them on <mux-player />
 		// avoid setting attributes as "undefined".
 		computedProps = {
-			playbackId: computedPlaybackId(muxPlaybackId, playbackId),
-			title: computedTitle(title),
-			style: computedStyle($$props, style, width, height),
-			placeholder: computedPlaceholder(blurUpThumb),
-			disableCookies: computedDisableCookies($$props, disableCookies)
+			...(computedTitle(title) || {}),
+			...(computedPlaybackId(muxPlaybackId, playbackId) || {}),
+			...(computedStyle(style, width, height) || {}),
+			...(computedPlaceholder(blurUpThumb) || {}),
+			disableCookies
 		};
 	}
 
@@ -260,6 +243,7 @@
 
 	onMount(async () => {
 		await import('@mux/mux-player');
+
 		muxPlayerElementImported = true;
 	});
 </script>
