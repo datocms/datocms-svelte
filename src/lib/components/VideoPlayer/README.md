@@ -1,9 +1,3 @@
----
-runme:
-  id: 01HP46D8MDP5Y76HY78F739T26
-  version: v2.2
----
-
 # `<VideoPlayer/>` component for easy video integration.
 
 `<VideoPlayer />` is a Svelte component specially designed to work seamlessly
