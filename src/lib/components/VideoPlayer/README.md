@@ -103,7 +103,7 @@ onMount(async () => {
 
 ## Props
 
-The `<VideoPlayer />` components supports as props all the [attributes](https://github.com/muxinc/elements/blob/main/packages/mux-player/REFERENCE.md)
+The `<VideoPlayer />` component supports as props all the [attributes](https://github.com/muxinc/elements/blob/main/packages/mux-player/REFERENCE.md)
 of the `<mux-player />` web component, plus
 `data`, which is meant to receive data directly in the shape they are provided
 by DatoCMS GraphQL API.
