@@ -6,7 +6,7 @@ query](https://www.datocms.com/docs/content-delivery-api/images-and-videos#video
 that optimizes video streaming for your sites.
 
 To stream videos, DatoCMS partners with MUX, a video CDN that serves optimized
-streams to your users. Our component is a wrapper over [MUX's video
+streams to your users. Our component is a wrapper around [MUX's video
 player](https://github.com/muxinc/elements/blob/main/packages/mux-player/README.md)
 [web
 component](https://developer.mozilla.org/en-US/docs/Web/API/Web_components). It
