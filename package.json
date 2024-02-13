@@ -1,6 +1,6 @@
 {
 	"name": "@datocms/svelte",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"description": "A set of components and utilities to work faster with DatoCMS in Svelte",
 	"license": "MIT",
 	"repository": {
