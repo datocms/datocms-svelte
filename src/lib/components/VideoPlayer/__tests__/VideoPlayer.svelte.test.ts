@@ -73,6 +73,26 @@ describe('VideoPlayer', () => {
 				});
 			});
 
+			describe('and `preload` is passed', () => {
+				it('uses it for the <mux-player /> element', () => {
+					const props = { data, preload: "auto" };
+
+					const { container } = render(VideoPlayer, { props });
+
+					expect(container).toMatchSnapshot();
+				});
+
+				describe('with value `none`', () => {
+					it("doesn't use it for the <mux-player /> element", () => {
+						const props = { data, preload: "none" };
+
+						const { container } = render(VideoPlayer, { props });
+
+						expect(container).toMatchSnapshot();
+					});
+				});
+			});
+
 			describe('and a style string is passed', () => {
 				describe("that doesn't include aspect ratio", () => {
 					it('adds computed aspect ratio', () => {
