@@ -46,6 +46,7 @@
 		"eslint-plugin-svelte": "^2.35.1",
 		"jsdom": "^24.0.0",
 		"jsdom-testing-mocks": "^1.11.0",
+		"np": "^10.0.0",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
 		"svelte": "^4.0.0",
