@@ -1,7 +1,12 @@
 <script>
 	import { isSpan } from 'datocms-structured-text-utils';
 
-	import { heading, paragraph, paragraphWithLink } from '$lib/components/StructuredText/__tests__/__fixtures__/structuredText';
+	import {
+		heading,
+		paragraph,
+		paragraphWithLink,
+		someMoreDast
+	} from '$lib/components/StructuredText/__tests__/__fixtures__/structuredText';
 
 	import { StructuredText } from '$lib';
 	import CustomSpan from '$lib/components/StructuredText/__tests__/__fixtures__/CustomSpan.svelte';
@@ -20,3 +25,7 @@
 <hr />
 
 <StructuredText data={paragraphWithLink} />
+
+<hr />
+
+<StructuredText data={someMoreDast} />

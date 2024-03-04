@@ -594,3 +594,90 @@ export const full: StructuredText<ImageRecord | BlogPostRecord> = {
 		}
 	]
 };
+
+export const someMoreDast: StructuredText = {
+	value: {
+		schema: 'dast',
+		document: {
+			type: 'root',
+			children: [
+				{
+					type: 'paragraph',
+					children: [
+						{
+							type: 'span',
+							value: 'Some programmers can code under any '
+						},
+						{
+							type: 'span',
+							marks: ['strong', 'emphasis'],
+							value: 'conditions'
+						},
+						{
+							type: 'span',
+							value:
+								". Open office? They'll bring headphones. I bond with a quiet room, an editor, and a programming environment far more deeply than that."
+						}
+					]
+				},
+				{
+					type: 'paragraph',
+					children: [
+						{
+							type: 'span',
+							value: "Case in point, I've been using the "
+						},
+						{
+							url: 'https://example.com/',
+							type: 'link',
+							children: [
+								{
+									type: 'span',
+									value: 'AnyCode'
+								}
+							]
+						},
+						{
+							type: 'span',
+							value:
+								" programming editor since it was first created back in 2004. That's twenty years now. Almost as long as my time with it. It's damn near "
+						},
+						{
+							url: 'https://example.com/',
+							type: 'link',
+							children: [
+								{
+									type: 'span',
+									value: 'Finished Software'
+								}
+							]
+						},
+						{
+							type: 'span',
+							value: " as far as I'm concerned, and I love programming with it."
+						}
+					]
+				},
+				{
+					type: 'paragraph',
+					children: [
+						{
+							url: 'https://example.com/',
+							type: 'link',
+							children: [
+								{
+									type: 'span',
+									value: 'Some'
+								}
+							]
+						},
+						{
+							type: 'span',
+							value: ' and all I want.\n'
+						}
+					]
+				}
+			]
+		}
+	}
+};
