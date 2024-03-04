@@ -15,7 +15,8 @@ import { StructuredText } from '../../..';
 import {
 	heading,
 	paragraphWithLink,
-	structuredTextWithBlocksAndLinks
+	structuredTextWithBlocksAndLinks,
+	full
 } from './__fixtures__/structuredText';
 
 import CustomSpan from './__fixtures__/CustomSpan.svelte';
@@ -202,6 +203,25 @@ describe('StructuredText', () => {
 						}
 					});
 				}).toThrowErrorMatchingSnapshot();
+			});
+		});
+	});
+
+	describe('with a dast including a sprinkle of everything', () => {
+		describe('with default rules', () => {
+			it('renders the document', () => {
+				const { container } = render(StructuredText, {
+					props: {
+						data: full,
+						components: [
+							[isInlineItem, InlineItem],
+							[isItemLink, ItemLink],
+							[isBlock, Block]
+						]
+					}
+				});
+
+				expect(container).toMatchSnapshot();
 			});
 		});
 	});
