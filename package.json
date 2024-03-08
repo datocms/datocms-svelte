@@ -28,6 +28,11 @@
 		"@mux/mux-player": "*",
 		"svelte": "^3.59.2 || ^4.0.0"
 	},
+	"peerDependenciesMeta": {
+		"@mux/mux-player": {
+			"optional": true
+		}
+	},
 	"devDependencies": {
 		"@mux/mux-player": "*",
 		"@mux/playback-core": "^0.22.1",
