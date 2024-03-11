@@ -17,9 +17,9 @@
 	aria-hidden="true"
 	alt=""
 	src={base64}
-	style:backgroundColor
-	style:objectFit
-	style:objectPosition
+	style:background-color={backgroundColor}
+	style:object-fit={objectFit}
+	style:object-position={objectPosition}
 	style:transition
 	style:opacity
 />

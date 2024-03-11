@@ -240,8 +240,8 @@
 		class={klass}
 		style:overflow="hidden"
 		style:position={style.position ?? layout === 'fill' ? 'absolute' : 'relative'}
-		style:width={style.width ?? layout === 'fixed' ? data.width : '100%'}
-		style:maxWidth={style.maxWidth ?? layout === 'intrinsic' ? data.width : null}
+		style:width={style.width ?? layout === 'fixed' ? `${data.width}px` : '100%'}
+		style:max-width={style.maxWidth ?? layout === 'intrinsic' ? `${data.width}px` : null}
 		style:height={style.height ?? layout === 'fill' ? '100%' : null}
 		data-testid="image"
 	>
@@ -290,8 +290,8 @@
 						style:top="0"
 						style:width="100%"
 						style:height="100%"
-						style:objectFit
-						style:objectPosition
+						style:object-fit={objectFit}
+						style:object-position={objectPosition}
 						data-testid="img"
 					/>
 				{/if}
