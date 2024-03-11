@@ -199,7 +199,7 @@ exports[`Image > layout=fixed > data=completeData > when the component doesn't i
   <div>
     <div
       data-testid="image"
-      style="overflow: hidden; position: relative;"
+      style="overflow: hidden; position: relative; width: 750px;"
     >
       <img
         alt=""
@@ -230,7 +230,7 @@ exports[`Image > layout=fixed > data=completeData > when the component intersect
   <div>
     <div
       data-testid="image"
-      style="overflow: hidden; position: relative;"
+      style="overflow: hidden; position: relative; width: 750px;"
     >
       <img
         alt=""
@@ -279,7 +279,7 @@ exports[`Image > layout=fixed > data=minimalData > when the component doesn't in
   <div>
     <div
       data-testid="image"
-      style="overflow: hidden; position: relative;"
+      style="overflow: hidden; position: relative; width: 750px;"
     >
       <img
         alt=""
@@ -310,7 +310,7 @@ exports[`Image > layout=fixed > data=minimalData > when the component intersects
   <div>
     <div
       data-testid="image"
-      style="overflow: hidden; position: relative;"
+      style="overflow: hidden; position: relative; width: 750px;"
     >
       <img
         alt=""
@@ -357,7 +357,7 @@ exports[`Image > layout=fixed > data=minimalDataWithRelativeUrl > when the compo
   <div>
     <div
       data-testid="image"
-      style="overflow: hidden; position: relative;"
+      style="overflow: hidden; position: relative; width: 750px;"
     >
       <img
         alt=""
@@ -388,7 +388,7 @@ exports[`Image > layout=fixed > data=minimalDataWithRelativeUrl > when the compo
   <div>
     <div
       data-testid="image"
-      style="overflow: hidden; position: relative;"
+      style="overflow: hidden; position: relative; width: 750px;"
     >
       <img
         alt=""
@@ -435,7 +435,7 @@ exports[`Image > layout=intrinsic > data=completeData > when the component doesn
   <div>
     <div
       data-testid="image"
-      style="overflow: hidden; position: relative; width: 100%;"
+      style="overflow: hidden; position: relative; width: 100%; max-width: 750px;"
     >
       <img
         alt=""
@@ -466,7 +466,7 @@ exports[`Image > layout=intrinsic > data=completeData > when the component inter
   <div>
     <div
       data-testid="image"
-      style="overflow: hidden; position: relative; width: 100%;"
+      style="overflow: hidden; position: relative; width: 100%; max-width: 750px;"
     >
       <img
         alt=""
@@ -515,7 +515,7 @@ exports[`Image > layout=intrinsic > data=minimalData > when the component doesn'
   <div>
     <div
       data-testid="image"
-      style="overflow: hidden; position: relative; width: 100%;"
+      style="overflow: hidden; position: relative; width: 100%; max-width: 750px;"
     >
       <img
         alt=""
@@ -546,7 +546,7 @@ exports[`Image > layout=intrinsic > data=minimalData > when the component inters
   <div>
     <div
       data-testid="image"
-      style="overflow: hidden; position: relative; width: 100%;"
+      style="overflow: hidden; position: relative; width: 100%; max-width: 750px;"
     >
       <img
         alt=""
@@ -593,7 +593,7 @@ exports[`Image > layout=intrinsic > data=minimalDataWithRelativeUrl > when the c
   <div>
     <div
       data-testid="image"
-      style="overflow: hidden; position: relative; width: 100%;"
+      style="overflow: hidden; position: relative; width: 100%; max-width: 750px;"
     >
       <img
         alt=""
@@ -624,7 +624,7 @@ exports[`Image > layout=intrinsic > data=minimalDataWithRelativeUrl > when the c
   <div>
     <div
       data-testid="image"
-      style="overflow: hidden; position: relative; width: 100%;"
+      style="overflow: hidden; position: relative; width: 100%; max-width: 750px;"
     >
       <img
         alt=""
