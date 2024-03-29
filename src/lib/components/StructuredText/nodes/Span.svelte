@@ -21,7 +21,7 @@
 	{:else if mark === 'underline'}
 		<u><svelte:self node={{ type, value, marks: otherMarks }}><slot /></svelte:self></u>
 	{:else if mark === 'code'}
-		<pre><svelte:self node={{ type, value, marks: otherMarks }}><slot /></svelte:self></pre>
+		<code><svelte:self node={{ type, value, marks: otherMarks }}><slot /></svelte:self></code>
 	{/if}
 {:else}
 	<Lines lines={node.value.split(/\n/)} />
