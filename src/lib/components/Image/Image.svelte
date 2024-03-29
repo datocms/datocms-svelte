@@ -11,7 +11,7 @@
 		/** The height of the image */
 		height?: Maybe<number>;
 		/** The width of the image */
-		width?: number;
+		width: number;
 		/** The aspect ratio (width/height) of the image */
 		aspectRatio?: number;
 		/** The HTML5 `sizes` attribute for the image */
@@ -34,6 +34,19 @@
 		lazyLoad: boolean;
 		intersecting: boolean;
 		loaded: boolean;
+	};
+
+	const parseStyleAttributes = (styleString: string): Record<string, string> => {
+		const styleRules: Record<string, string> = {};
+
+		styleString.split(';').forEach((rule) => {
+			const [key, value] = rule.split(':').map((part) => part.trim());
+			if (key && value) {
+				styleRules[key] = value;
+			}
+		});
+
+		return styleRules;
 	};
 
 	// See: https://github.com/sveltejs/language-tools/issues/1026#issuecomment-1002839154
@@ -99,10 +112,10 @@
 					const maxH = url.searchParams.get('max-h');
 					const maxW = url.searchParams.get('max-w');
 					if (maxH) {
-						url.searchParams.set('max-h', `${Math.floor(parseInt(maxH) * multiplier)}`);
+						url.searchParams.set('max-h', `${Math.floor(Number.parseInt(maxH) * multiplier)}`);
 					}
 					if (maxW) {
-						url.searchParams.set('max-w', `${Math.floor(parseInt(maxW) * multiplier)}`);
+						url.searchParams.set('max-w', `${Math.floor(Number.parseInt(maxW) * multiplier)}`);
 					}
 				}
 
@@ -161,7 +174,7 @@
 	export { rawLazyLoad as lazyLoad };
 
 	/** Additional CSS rules to add to the root node */
-	export let style: Record<string, string> = {};
+	export let style: string | null = null;
 
 	/** Additional CSS rules to add to the image inside the `<picture />` tag */
 	export let pictureStyle: string | null = null;
@@ -226,6 +239,28 @@
 		loaded
 	});
 
+	const absolutePositioning = {
+		position: 'absolute',
+		left: 0,
+		top: 0,
+		width: '100%',
+		height: '100%',
+		'max-width': 'none',
+		'max-height': 'none'
+	};
+
+	$: computedStyle = {
+		overflow: 'hidden',
+		...(layout === 'fill'
+			? absolutePositioning
+			: layout === 'intrinsic'
+			? { position: 'relative', width: '100%', 'max-width': `${width}px` }
+			: layout === 'fixed'
+			? { position: 'relative', width: `${width}px` }
+			: { position: 'relative', width: '100%' }),
+		...parseStyleAttributes(style || '')
+	};
+
 	let transition = fadeInDuration > 0 ? `opacity ${fadeInDuration}ms` : undefined;
 </script>
 
@@ -238,11 +273,13 @@
 	<div
 		bind:this={element}
 		class={klass}
-		style:overflow="hidden"
-		style:position={style.position ?? layout === 'fill' ? 'absolute' : 'relative'}
-		style:width={style.width ?? layout === 'fixed' ? `${data.width}px` : '100%'}
-		style:max-width={style.maxWidth ?? layout === 'intrinsic' ? `${data.width}px` : null}
-		style:height={style.height ?? layout === 'fill' ? '100%' : null}
+		{style}
+		style:overflow={computedStyle.overflow}
+		style:position={computedStyle.position}
+		style:width={computedStyle.width}
+		style:height={computedStyle.height}
+		style:max-width={computedStyle['max-width']}
+		style:max-height={computedStyle['max-height']}
 		data-testid="image"
 	>
 		{#if layout !== 'fill' && width}
