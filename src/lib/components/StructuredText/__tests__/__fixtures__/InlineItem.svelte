@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { isInlineItem, type InlineItem } from 'datocms-structured-text-utils';
-	
+
 	import type { DocPageRecord } from './types';
 
 	export let node: InlineItem;

@@ -5,6 +5,7 @@
 <ul>
 	<li><a href="/structured-text">StructuredText</a></li>
 	<li><a href="/image">Image</a></li>
+	<li><a href="/naked-image">NakedImage</a></li>
 	<li><a href="/video-player">VideoPlayer</a></li>
 	<li><a href="/head">Head</a></li>
 </ul>

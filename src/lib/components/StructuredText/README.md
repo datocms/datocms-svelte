@@ -4,10 +4,17 @@
 
 ### Table of contents
 
-- [Setup](#setup)
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+  - [Setup](#setup)
 - [Basic usage](#basic-usage)
-- [Custom renderers](#custom-renderers)
+- [Customization](#customization)
+  - [Custom components for blocks](#custom-components-for-blocks)
+  - [Override default rendering of nodes](#override-default-rendering-of-nodes)
 - [Props](#props)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ### Setup
 

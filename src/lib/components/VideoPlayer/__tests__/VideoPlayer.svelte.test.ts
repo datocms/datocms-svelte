@@ -75,7 +75,7 @@ describe('VideoPlayer', () => {
 
 			describe('and `preload` is passed', () => {
 				it('uses it for the <mux-player /> element', () => {
-					const props = { data, preload: "auto" };
+					const props = { data, preload: 'auto' };
 
 					const { container } = render(VideoPlayer, { props });
 
@@ -84,7 +84,7 @@ describe('VideoPlayer', () => {
 
 				describe('with value `none`', () => {
 					it("doesn't use it for the <mux-player /> element", () => {
-						const props = { data, preload: "none" };
+						const props = { data, preload: 'none' };
 
 						const { container } = render(VideoPlayer, { props });
 

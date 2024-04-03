@@ -1,7 +1,9 @@
 <!--datocms-autoinclude-header start-->
+
 <a href="https://www.datocms.com/"><img src="https://www.datocms.com/images/full_logo.svg" height="60"></a>
 
 👉 [Visit the DatoCMS homepage](https://www.datocms.com) or see [What is DatoCMS?](#what-is-datocms)
+
 <!--datocms-autoinclude-header end-->
 
 # @datocms/svelte
@@ -14,11 +16,18 @@ A set of components to work faster with [DatoCMS](https://www.datocms.com/) in S
 - Written in TypeScript;
 - Usable both client and server side;
 
-## Table of Contents
+### Table of Contents
 
-- [Features](#features)
-- [Installation](#installation)
-- [Development](#development)
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Development](#development)
+  - [Building](#building)
+- [What is DatoCMS?](#what-is-datocms)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Features
 
@@ -36,6 +45,7 @@ Components:
 ```
 npm install @datocms/svelte
 ```
+
 ## Development
 
 This repository contains some examples in the `app/routes` folder. You can use them to locally test your changes to the package:
@@ -43,6 +53,7 @@ This repository contains some examples in the `app/routes` folder. You can use t
 ```bash
 npm run dev
 ```
+
 ## Building
 
 To create a production version of this library:
@@ -52,8 +63,9 @@ npm run build
 ```
 
 <!--datocms-autoinclude-footer start-->
------------------
+
 # What is DatoCMS?
+
 <a href="https://www.datocms.com/"><img src="https://www.datocms.com/images/full_logo.svg" height="60"></a>
 
 [DatoCMS](https://www.datocms.com/) is the REST & GraphQL Headless CMS for the modern web.
@@ -68,6 +80,7 @@ Trusted by over 25,000 enterprise businesses, agency partners, and individuals a
 - 🆕 Stay up to date on new features and fixes on the [changelog](https://www.datocms.com/product-updates)
 
 **Our featured repos:**
+
 - [datocms/react-datocms](https://github.com/datocms/react-datocms): React helper components for images, Structured Text rendering, and more
 - [datocms/js-rest-api-clients](https://github.com/datocms/js-rest-api-clients): Node and browser JavaScript clients for updating and administering your content. For frontend fetches, we recommend using our [GraphQL Content Delivery API](https://www.datocms.com/docs/content-delivery-api) instead.
 - [datocms/cli](https://github.com/datocms/cli): Command-line interface that includes our [Contentful importer](https://github.com/datocms/cli/tree/main/packages/cli-plugin-contentful) and [Wordpress importer](https://github.com/datocms/cli/tree/main/packages/cli-plugin-wordpress)
@@ -76,4 +89,5 @@ Trusted by over 25,000 enterprise businesses, agency partners, and individuals a
 - Frontend examples in different frameworks: [Next.js](https://github.com/datocms/nextjs-demo), [Vue](https://github.com/datocms/vue-datocms) and [Nuxt](https://github.com/datocms/nuxtjs-demo), [Svelte](https://github.com/datocms/datocms-svelte) and [SvelteKit](https://github.com/datocms/sveltekit-demo), [Astro](https://github.com/datocms/datocms-astro-blog-demo), [Remix](https://github.com/datocms/remix-example). See [all our starter templates](https://www.datocms.com/marketplace/starters).
 
 Or see [all our public repos](https://github.com/orgs/datocms/repositories?q=&type=public&language=&sort=stargazers)
+
 <!--datocms-autoinclude-footer end-->

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import '@testing-library/jest-dom';
-import { render,  } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
 
 import { Head } from '../../..';
 

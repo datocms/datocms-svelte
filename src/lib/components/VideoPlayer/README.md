@@ -17,9 +17,21 @@ optimal videos to your users.
 
 - Offers optimized streaming so smartphones and tablets don’t request desktop-sized videos
 - Lazy loads the underlying video player web component and the video to be
-   played to speed initial page load and save bandwidth
+  played to speed initial page load and save bandwidth
 - Holds the video position so your page doesn’t jump while the player loads
 - Uses blur-up technique to show a placeholder of the video while it loads
+
+### Table of contents
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Example](#example)
+- [Props](#props)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Installation
 
@@ -118,10 +130,10 @@ inner `<mux-player />`.
 `<VideoPlayer />` generate some default attributes:
 
 - when not declared, the `disableCookies` prop is true, unless you explicitly
-   set the prop to `false` (therefore it generates a `disable-cookies` attribute)
+  set the prop to `false` (therefore it generates a `disable-cookies` attribute)
 - `preload` defaults to `metadata`, for an optimal UX experience together with saved bandwidth
 - the video height and width, when available in the `data` props, are used to
-   set a default `aspect-ratio: [width] / [height];` for the `<mux-player />`'s
-   `style` attribute
+  set a default `aspect-ratio: [width] / [height];` for the `<mux-player />`'s
+  `style` attribute
 
 All the other props are forwarded to the `<mux-player />` web component that is used internally.

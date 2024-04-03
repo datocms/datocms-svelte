@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Image, type ResponsiveImageType } from '$lib';
+	import { NakedImage, type ResponsiveImageType } from '$lib';
 
 	export const completeData: ResponsiveImageType = {
 		srcSet:
@@ -26,7 +26,6 @@
 	};
 
 	let log: string[] = [];
-	let imageRef: Image;
 
 	const addLog = (message: string) => {
 		log = [...log, message];
@@ -34,41 +33,41 @@
 </script>
 
 <div style="max-width: 800px">
-	<h1>Image</h1>
+	<h1>NakedImage</h1>
 
-	<Image data={completeData} on:load={() => addLog('Triggered onLoad()')} bind:this={imageRef} />
+	<NakedImage data={completeData} on:load={() => addLog('Triggered onLoad()')} />
 	<pre>{log.join('\n')}</pre>
 
 	<hr />
 
-	<Image
-		data={completeData}
-		style="border: 2px solid red;"
-		pictureStyle="box-sizing: border-box; border: 2px solid yellow;"
-		placeholderStyle="filter: invert();"
-		fadeInDuration={10000}
-	/>
-
-	<hr />
-
-	<Image data={completeData} layout="responsive" />
+	<NakedImage data={completeData} style="border: 2px solid red;" />
 
 	<hr />
 
 	<div style="position: relative; max-width: 500px; aspect-ratio: 1 / 1;">
-		<Image data={completeData} layout="fill" objectFit="cover" />
+		<NakedImage
+			data={completeData}
+			style="
+				z-index: -1;
+				position: absolute;
+				inset: 0;
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+			"
+		/>
 		<div
 			style="
-			position: absolute;
-			inset: 0;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: white;
-			background: rgba(0, 0, 0, 0.4);
-			font-size: 2em;
-			font-weight: bold;
-		"
+				position: absolute;
+				inset: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				background: rgba(0, 0, 0, 0.4);
+				font-size: 2em;
+				font-weight: bold;
+			"
 		>
 			This is a title
 		</div>
@@ -76,5 +75,5 @@
 
 	<hr />
 
-	<Image data={minimalDataWithAlpha} />
+	<NakedImage data={minimalDataWithAlpha} />
 </div>

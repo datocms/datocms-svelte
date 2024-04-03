@@ -5,6 +5,9 @@
 
 <h1>Head</h1>
 
-<p>Inspect &lt;head /&gt; tag for this page to see the meta tags injected by the &lt;Head /&gt; component (tag content is purely by way of examples).</p>
+<p>
+	Inspect &lt;head /&gt; tag for this page to see the meta tags injected by the &lt;Head /&gt;
+	component (tag content is purely by way of examples).
+</p>
 
 <Head data={metaTags} />
