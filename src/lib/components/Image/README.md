@@ -1,19 +1,10 @@
-## Progressive responsive image
+# Progressive responsive image
 
-`<Image>` is a Svelte component specially designed to work seamlessly with DatoCMS’s [`responsiveImage` GraphQL query](https://www.datocms.com/docs/content-delivery-api/uploads#responsive-images) that optimizes image loading for your sites.
+`<Image>` and `<NakedImage />` are Svelte component specially designed to work seamlessly with DatoCMS’s [`responsiveImage` GraphQL query](https://www.datocms.com/docs/content-delivery-api/uploads#responsive-images) which optimizes image loading for your websites.
 
-### Table of contents
-
-- [Progressive responsive image](#progressive-responsive-image)
-  - [Table of contents](#table-of-contents)
-  - [Out-of-the-box features](#out-of-the-box-features)
-- [Intersection Observer](#intersection-observer)
-  - [Setup](#setup)
-  - [Usage](#usage)
-  - [Example](#example)
-  - [Props](#props)
-    - [Layout mode](#layout-mode)
-    - [The `ResponsiveImage` object](#the-responsiveimage-object)
+- TypeScript ready;
+- Usable both client and server side;
+- Compatible with vanilla Svelte and Sveltekit;
 
 ### Out-of-the-box features
 
@@ -23,28 +14,50 @@
 - Holds the image position so your page doesn’t jump while images load
 - Uses either blur-up or background color techniques to show a preview of the image while it loads
 
-## Intersection Observer
+### Table of contents
 
-Intersection Observer is the API used to determine if the image is inside the viewport or not. [Browser support is really good](https://caniuse.com/intersectionobserver) - With Safari adding support in 12.1, all major browsers now support Intersection Observers natively.
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-If the IntersectionObserver object is not available, the component treats the image as it's always visible in the viewport. Feel free to add a [polyfill](https://www.npmjs.com/package/intersection-observer) so that it will also 100% work on older versions of iOS and IE11.
+  - [Setup](#setup)
+- [Usage](#usage)
+- [`<Image />` vs `<NakedImage />`](#image--vs-nakedimage-)
+- [Example](#example)
+- [The `ResponsiveImage` object](#the-responsiveimage-object)
+- [`<NakedImage />`](#nakedimage-)
+  - [Props](#props)
+  - [Events](#events)
+- [`<Image />`](#image-)
+  - [Props](#props-1)
+  - [Events](#events-1)
+  - [Layout mode](#layout-mode)
+  - [Intersection Observer](#intersection-observer)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ### Setup
 
 You can import the components like this:
 
 ```js
-import { Image } from '@datocms/svelte';
+import { Image, NakedImage } from '@datocms/svelte';
 ```
 
-### Usage
+## Usage
 
-1. Use `<Image>` it in place of the regular `<img />` tag
+1. Use `<Image>` or `<NakedImage />` in place of the regular `<img />` tag
 2. Write a GraphQL query to your DatoCMS project using the [`responsiveImage` query](https://www.datocms.com/docs/content-delivery-api/images-and-videos#responsive-images)
 
-The GraphQL query returns multiple thumbnails with optimized compression. The `<Image>` component automatically sets up the "blur-up" effect as well as lazy loading of images further down the screen.
+The GraphQL query returns multiple thumbnails with optimized compression. The components automatically set up the "blur-up" effect as well as lazy loading of images further down the screen.
 
-### Example
+## `<Image />` vs `<NakedImage />`
+
+Even though their purpose is the same, there are some significant differences between these two components. Depending on your specific needs, you can choose to use one or the other:
+
+- `<NakedImage />` generates minimum JS footprint, outputs a single `<picture />` element and implements lazy-loading using the native [`loading="lazy"` attribute](https://web.dev/articles/browser-level-image-lazy-loading). The placeholder is set as the background to the image itself.
+- `<Image />` has the ability to set a cross-fade effect between the placeholder and the original image, but at the cost of generating more complex HTML output composed of multiple elements around the main `<picture />` element. It also implements lazy-loading through `IntersectionObserver`, which allows customization of the thresholds at which lazy loading occurs.
+
+## Example
 
 For a fully working example take a look at [`routes` directory](https://github.com/datocms/datocms-svelte/tree/main/src/routes/image/+page.svelte).
 
@@ -55,7 +68,7 @@ Here is a minimal starting point:
 
 import { onMount } from 'svelte';
 
-import { Image } from '@datocms/svelte';
+import { Image, NakedImage } from '@datocms/svelte';
 
 const query = gql`
   query {
@@ -104,9 +117,59 @@ onMount(async () => {
 </script>
 
 {#if data}
-  <Image data={data.blogPost.cover.responsiveImage} />
+	<Image data={data.blogPost.cover.responsiveImage} />
+	<NakedImage data={data.blogPost.cover.responsiveImage} />
 {/if}
 ```
+
+## The `ResponsiveImage` object
+
+The `data` prop of both components expects an object with the same shape as the one returned by `responsiveImage` GraphQL call. It's up to you to make a GraphQL query that will return the properties you need for a specific use of the `<datocms-image>` component.
+
+- The minimum required properties for `data` are: `src`, `width` and `height`;
+- `alt` and `title`, while not mandatory, are all highly suggested, so remember to use them!
+- If you don't request `srcSet`, the component will auto-generate an `srcset` based on `src` + the `srcSetCandidates` prop (it can help reducing the GraphQL response size drammatically when many images are returned);
+- We strongly to suggest to always specify [`{ auto: format }`](https://docs.imgix.com/apis/rendering/auto/auto#format) in your `imgixParams`, instead of requesting `webpSrcSet`, so that you can also take advantage of more performant optimizations (AVIF), without increasing GraphQL response size;
+- If you request both the `bgColor` and `base64` property, the latter will take precedence, so just avoid querying both fields at the same time, as it will only make the GraphQL response bigger :wink:;
+- You can avoid requesting `sizes` and directly pass a `sizes` prop to the component to reduce the GraphQL response size;
+
+Here's a complete recap of what `responsiveImage` offers:
+
+| property    | type    | required           | description                                                                                                                                                                                    |
+| ----------- | ------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| src         | string  | :white_check_mark: | The `src` attribute for the image                                                                                                                                                              |
+| width       | integer | :white_check_mark: | The width of the image                                                                                                                                                                         |
+| height      | integer | :white_check_mark: | The height of the image                                                                                                                                                                        |
+| alt         | string  | :x:                | Alternate text (`alt`) for the image (not required, but strongly suggested!)                                                                                                                   |
+| title       | string  | :x:                | Title attribute (`title`) for the image (not required, but strongly suggested!)                                                                                                                |
+| sizes       | string  | :x:                | The HTML5 `sizes` attribute for the image (omit it if you're already passing a `sizes` prop to the Image component)                                                                            |
+| base64      | string  | :x:                | A base64-encoded thumbnail to offer during image loading                                                                                                                                       |
+| bgColor     | string  | :x:                | The background color for the image placeholder (omit it if you're already requesting `base64`)                                                                                                 |
+| srcSet      | string  | :x:                | The HTML5 `srcSet` attribute for the image (can be omitted, the Image component knows how to build it based on `src`)                                                                          |
+| webpSrcSet  | string  | :x:                | The HTML5 `srcSet` attribute for the image in WebP format (deprecated, it's better to use the [`auto=format`](https://docs.imgix.com/apis/rendering/auto/auto#format) Imgix transform instead) |
+| aspectRatio | float   | :x:                | The aspect ratio (width/height) of the image                                                                                                                                                   |
+
+## `<NakedImage />`
+
+### Props
+
+| prop             | type                     | default                            | required           | description                                                                                                                                          |
+| ---------------- | ------------------------ | ---------------------------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| data             | `ResponsiveImage` object |                                    | :white_check_mark: | The actual response you get from a DatoCMS `responsiveImage` GraphQL query \*\*\*\*                                                                  |
+| class            | string                   | null                               | :x:                | Additional CSS class for image                                                                                                                       |
+| style            | CSS properties           | null                               | :x:                | Additional CSS rules to add to the image                                                                                                             |
+| priority         | Boolean                  | false                              | :x:                | Disables lazy loading, and sets the image [fetchPriority](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/fetchPriority) to "high" |
+| sizes            | string                   | undefined                          | :x:                | The HTML5 [`sizes`](https://web.dev/learn/design/responsive-images/#sizes) attribute for the image (will be used `data.sizes` as a fallback)         |
+| usePlaceholder   | Boolean                  | true                               | :x:                | Whether the image should use a blurred image placeholder                                                                                             |
+| srcSetCandidates | Array<number>            | [0.25, 0.5, 0.75, 1, 1.5, 2, 3, 4] | :x:                | If `data` does not contain `srcSet`, the candidates for the `srcset` attribute of the image will be auto-generated based on these width multipliers  |
+
+### Events
+
+| prop  | description                                 |
+| ----- | ------------------------------------------- |
+| @load | Emitted when the image has finished loading |
+
+## `<Image />`
 
 ### Props
 
@@ -131,7 +194,15 @@ onMount(async () => {
 | onLoad                | () => void                                       | undefined                          | :x:                | Function triggered when the image has finished loading                                                                                                                                                                                                                                        |
 | usePlaceholder        | Boolean                                          | true                               | :x:                | Whether the component should use a blurred image placeholder                                                                                                                                                                                                                                  |
 
-#### Layout mode
+### Events
+
+| prop  | description                                 |
+| ----- | ------------------------------------------- |
+| @load | Emitted when the image has finished loading |
+
+---
+
+### Layout mode
 
 With the `layout` property, you can configure the behavior of the image as the viewport changes size:
 
@@ -142,29 +213,8 @@ With the `layout` property, you can configure the behavior of the image as the v
   - This is usually paired with the `objectFit` and `objectPosition` properties.
   - Ensure the parent element has `position: relative` in their stylesheet.
 
-#### The `ResponsiveImage` object
+### Intersection Observer
 
-The `data` prop expects an object with the same shape as the one returned by `responsiveImage` GraphQL call. It's up to you to make a GraphQL query that will return the properties you need for a specific use of the `<datocms-image>` component.
+`IntersectionObserver` is the API used to determine if the image is inside the viewport or not. [Browser support is really good](https://caniuse.com/intersectionobserver): with Safari adding support in 12.1, all major browsers now support `IntersectionObserver` natively.
 
-- The minimum required properties for `data` are: `src`, `width` and `height`;
-- `alt` and `title`, while not mandatory, are all highly suggested, so remember to use them!
-- If you don't request `srcSet`, the component will auto-generate an `srcset` based on `src` + the `srcSetCandidates` prop (it can help reducing the GraphQL response size drammatically when many images are returned);
-- We strongly to suggest to always specify [`{ auto: format }`](https://docs.imgix.com/apis/rendering/auto/auto#format) in your `imgixParams`, instead of requesting `webpSrcSet`, so that you can also take advantage of more performant optimizations (AVIF), without increasing GraphQL response size;
-- If you request both the `bgColor` and `base64` property, the latter will take precedence, so just avoid querying both fields at the same time, as it will only make the GraphQL response bigger :wink:;
-- You can avoid requesting `sizes` and directly pass a `sizes` prop to the component to reduce the GraphQL response size;
-
-Here's a complete recap of what `responsiveImage` offers:
-
-| property    | type    | required           | description                                                                                                                                                                                    |
-| ----------- | ------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| src         | string  | :white_check_mark: | The `src` attribute for the image                                                                                                                                                              |
-| width       | integer | :white_check_mark: | The width of the image                                                                                                                                                                         |
-| height      | integer | :white_check_mark: | The height of the image                                                                                                                                                                        |
-| alt         | string  | :x:                | Alternate text (`alt`) for the image (not required, but strongly suggested!)                                                                                                                   |
-| title       | string  | :x:                | Title attribute (`title`) for the image (not required, but strongly suggested!)                                                                                                                |
-| sizes       | string  | :x:                | The HTML5 `sizes` attribute for the image (omit it if you're already passing a `sizes` prop to the Image component)                                                                            |
-| base64      | string  | :x:                | A base64-encoded thumbnail to offer during image loading                                                                                                                                       |
-| bgColor     | string  | :x:                | The background color for the image placeholder (omit it if you're already requesting `base64`)                                                                                                 |
-| srcSet      | string  | :x:                | The HTML5 `srcSet` attribute for the image (can be omitted, the Image component knows how to build it based on `src`)                                                                          |
-| webpSrcSet  | string  | :x:                | The HTML5 `srcSet` attribute for the image in WebP format (deprecated, it's better to use the [`auto=format`](https://docs.imgix.com/apis/rendering/auto/auto#format) Imgix transform instead) |
-| aspectRatio | float   | :x:                | The aspect ratio (width/height) of the image                                                                                                                                                   |
+If `IntersectionObserver` object is not available, the component treats the image as it's always visible in the viewport. Feel free to add a [polyfill](https://www.npmjs.com/package/intersection-observer) so that it will also 100% work on older versions of iOS and IE11.

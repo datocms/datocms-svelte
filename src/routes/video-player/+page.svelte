@@ -33,7 +33,7 @@
 	autoPlay="muted"
 	on:pause={(e) => console.log('Paused!', e)}
 	on:canplay={(e) => console.log('Finally can play', e)}
-	on:click={(e) => console.log("Time:", e)}
+	on:click={(e) => console.log('Time:', e)}
 />
 <hr />
 <button

@@ -207,7 +207,7 @@
 
 	export let data: Video = {};
 	export let style: MuxPlayerProps['style'] = undefined;
-	export let preload: MuxPlayerProps['preload'] = "metadata"; 
+	export let preload: MuxPlayerProps['preload'] = 'metadata';
 	export let disableCookies: MuxPlayerProps['disableCookies'] = true;
 
 	let muxPlayerElementImported = false;
@@ -227,7 +227,7 @@
 			...(computedStyle(style, width, height) || {}),
 			...(computedPlaceholder(blurUpThumb) || {}),
 			disableCookies,
-			preload,
+			preload
 		};
 	}
 

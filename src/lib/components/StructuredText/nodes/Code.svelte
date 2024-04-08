@@ -3,7 +3,7 @@
 
 	export let node: Code;
 
-  $: ({ code, language } = node)
+	$: ({ code, language } = node);
 </script>
 
 <pre class={language}>{code}</pre>
