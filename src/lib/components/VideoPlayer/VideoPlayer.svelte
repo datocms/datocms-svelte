@@ -6,7 +6,7 @@
 		PlaybackTypes,
 		RenditionOrderValue,
 		StreamTypes
-	} from '@mux/playback-core/.';
+	} from '@mux/playback-core';
 
 	import type { Tokens } from '@mux/mux-player';
 
@@ -200,7 +200,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import type MuxPlayerElement from '@mux/mux-player';
-	import mux from 'mux-embed';
 
 	// See: https://stackoverflow.com/a/76291677/1338248
 	interface $$Props extends VideoPlayerProps {}
