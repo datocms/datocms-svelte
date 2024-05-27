@@ -111,7 +111,7 @@
 		left: '-5%',
 		top: '-5%',
 		width: '110%',
-		height: '110%',
+		height: 'auto',
 		'max-width': 'none',
 		'max-height': 'none',
 		...parseStyleAttributes(placeholderStyle)
