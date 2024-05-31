@@ -111,7 +111,7 @@
 		left: '-5%',
 		top: '-5%',
 		width: '110%',
-		height: 'auto',
+		height: data.base64 ? 'auto' : '100%',
 		'max-width': 'none',
 		'max-height': 'none',
 		...parseStyleAttributes(placeholderStyle)
