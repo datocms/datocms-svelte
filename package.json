@@ -1,6 +1,6 @@
 {
 	"name": "@datocms/svelte",
-	"version": "2.0.4",
+	"version": "2.0.5",
 	"description": "A set of components and utilities to work faster with DatoCMS in Svelte",
 	"license": "MIT",
 	"repository": {
@@ -9,7 +9,10 @@
 	},
 	"author": "Silvano Stralla <silvano@datocms.com>",
 	"homepage": "https://github.com/datocms/datocms-svelte",
-	"keywords": ["svelte", "datocms"],
+	"keywords": [
+		"svelte",
+		"datocms"
+	],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "svelte-kit sync && svelte-package -o package",
@@ -163,7 +166,9 @@
 			"default": "./package/index.js"
 		}
 	},
-	"files": ["package"],
+	"files": [
+		"package"
+	],
 	"svelte": "./package/index.js",
 	"typesVersions": {
 		">4.0": {
@@ -221,7 +226,9 @@
 			"components/StructuredText/utils/Lines.svelte": [
 				"./package/components/StructuredText/utils/Lines.svelte.d.ts"
 			],
-			"index.d.ts": ["./package/index.d.ts"]
+			"index.d.ts": [
+				"./package/index.d.ts"
+			]
 		}
 	}
 }
