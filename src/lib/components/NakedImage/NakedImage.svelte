@@ -13,12 +13,17 @@
 	/** The actual response you get from a DatoCMS `responsiveImage` GraphQL query */
 	export let data: ResponsiveImageType;
 
-	/** Additional CSS className for root node */
-	let rootClass: string | null = null;
-	export { rootClass as class };
+	/** Additional CSS className for the root <picture> tag */
+	export let pictureClass: string | null = null;
 
-	/** Additional CSS rules to add to the root node */
-	export let style: string | null = null;
+	/** Additional CSS rules to add to the root <picture> tag */
+	export let pictureStyle: string | null = null;
+
+	/** Additional CSS className for the <img> tag */
+	export let imgClass: string | null = null;
+
+	/** Additional CSS rules to add to the <img> tag */
+	export let imgStyle: string | null = null;
 
 	/** Whether the component should use a blurred image placeholder */
 	export let usePlaceholder = true;
@@ -76,7 +81,7 @@
 	};
 </script>
 
-<picture data-testid="picture">
+<picture data-testid="picture" class={pictureClass} {pictureStyle}>
 	{#if data.webpSrcSet}
 		<source srcset={data.webpSrcSet} sizes={sizes ?? data.sizes ?? null} type="image/webp" />
 	{/if}
@@ -97,11 +102,11 @@
 				fetchpriority: priority ? 'high' : undefined
 			})}
 			loading={priority ? undefined : 'lazy'}
-			class={rootClass}
+			class={imgClass}
 			style={dumpStyleAttributes({
 				...placeholderStyle,
 				...sizingStyle,
-				...parseStyleAttributes(style)
+				...parseStyleAttributes(imgStyle)
 			})}
 			data-testid="img"
 		/>

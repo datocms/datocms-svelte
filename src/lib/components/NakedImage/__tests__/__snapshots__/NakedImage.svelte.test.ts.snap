@@ -103,7 +103,9 @@ exports[`NakedImage > passing className and/or style > renders correctly 1`] = `
 <body>
   <div>
     <picture
+      class="picture-class-name"
       data-testid="picture"
+      picturestyle="background: green;"
     >
        
       <source
@@ -112,7 +114,7 @@ exports[`NakedImage > passing className and/or style > renders correctly 1`] = `
        
       <img
         alt=""
-        class="class-name"
+        class="img-class-name"
         data-testid="img"
         loading="lazy"
         src="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750"
