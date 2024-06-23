@@ -20,8 +20,11 @@
 	let rootClass: string | null = null;
 	export { rootClass as class };
 
-	/** Additional CSS class for the image inside the `<picture />` tag */
+	/** Additional CSS class for the `<picture />` tag */
 	export let pictureClass: string | null = null;
+
+	/** Additional CSS class for the image inside the `<picture />` tag */
+	export let imgClass: string | null = null;
 
 	/** Additional CSS class for the placeholder element */
 	export let placeholderClass: string | null = null;
@@ -38,8 +41,11 @@
 	/** Additional CSS rules to add to the root node */
 	export let style: string | null = null;
 
-	/** Additional CSS rules to add to the image inside the `<picture />` tag */
+	/** Additional CSS rules to add to the `<picture />` tag */
 	export let pictureStyle: string | null = null;
+
+	/** Additional CSS rules to add to the image inside the `<picture />` tag */
+	export let imgStyle: string | null = null;
 
 	/** Additional CSS rules to add to the placeholder element */
 	export let placeholderStyle: string | null = null;
@@ -147,11 +153,11 @@
 	>
 		{#if layout !== 'fill'}
 			<img
-				class={pictureClass}
+				class={imgClass}
 				style={dumpStyleAttributes({
 					display: 'block',
 					width: '100%',
-					...parseStyleAttributes(pictureStyle)
+					...parseStyleAttributes(imgStyle)
 				})}
 				src={`data:image/svg+xml;base64,${universalBtoa(svg)}`}
 				aria-hidden="true"
@@ -184,7 +190,7 @@
 		{/if}
 
 		{#if addImage}
-			<picture data-testid="picture">
+			<picture data-testid="picture" class={pictureClass} style={pictureStyle}>
 				{#if data.webpSrcSet}
 					<source srcset={data.webpSrcSet} sizes={sizes ?? data.sizes ?? null} type="image/webp" />
 				{/if}
@@ -204,14 +210,14 @@
 						{...noTypeCheck({
 							fetchpriority: priority ? 'high' : undefined
 						})}
-						class={pictureClass}
+						class={imgClass}
 						style={dumpStyleAttributes({
 							opacity: showImage ? 1 : 0,
 							transition,
 							...absolutePositioning,
 							'object-fit': objectFit,
 							'object-position': objectPosition,
-							...parseStyleAttributes(pictureStyle)
+							...parseStyleAttributes(imgStyle)
 						})}
 						data-testid="img"
 					/>

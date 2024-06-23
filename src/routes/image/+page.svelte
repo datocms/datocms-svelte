@@ -44,7 +44,7 @@
 	<Image
 		data={completeData}
 		style="border: 2px solid red;"
-		pictureStyle="box-sizing: border-box; border: 2px solid yellow;"
+		imgStyle="box-sizing: border-box; border: 2px solid yellow;"
 		placeholderStyle="filter: invert();"
 		fadeInDuration={10000}
 	/>
