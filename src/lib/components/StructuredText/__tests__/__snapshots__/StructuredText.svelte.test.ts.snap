@@ -708,6 +708,10 @@ exports[`StructuredText > with a dast including a sprinkle of everything > with 
       <!--&lt;Node&gt;-->
       
       
+       
+      <footer>
+        some German fruithead
+      </footer>
     </blockquote>
     <!--&lt;Blockquote&gt;-->
     
