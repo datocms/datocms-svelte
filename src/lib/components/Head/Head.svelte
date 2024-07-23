@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
 	export interface TitleMetaLinkTag {
 		/** the tag for the meta information */
-		tag: 'title' | 'meta' | 'link';
+		tag: string;
 		/** the inner content of the meta tag */
 		content?: string | null | undefined;
 		/** the HTML attributes to attach to the meta tag */
