@@ -93,7 +93,7 @@ onMount(async () => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: "Bearer faeb9172e232a75339242faafb9e56de8c8f13b735f7090964",
+      Authorization: "Bearer AN_API_TOKEN",
     },
     body: JSON.stringify({ query })
   })
