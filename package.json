@@ -65,6 +65,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"datocms-listen": "^0.1.15",
 		"datocms-structured-text-utils": "^4.0.1",
 		"svelte-intersection-observer": "^1.0.0"
 	},

@@ -40,6 +40,10 @@ Components:
 - [`<StructuredText />`](src/lib/components/StructuredText)
 - [`<Head />`](src/lib/components/Head)
 
+Stores:
+
+- [`querySubscription`](src/lib/stores/querySubscription)
+
 ## Installation
 
 ```
