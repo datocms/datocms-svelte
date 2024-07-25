@@ -35,7 +35,7 @@ A set of components to work faster with [DatoCMS](https://www.datocms.com/) in S
 
 Components:
 
-- [`<Image />`](src/lib/components/Image)
+- [`<Image />` and `<NakedImage />`](src/lib/components/Image)
 - [`<VideoPlayer />`](src/lib/components/VideoPlayer)
 - [`<StructuredText />`](src/lib/components/StructuredText)
 - [`<Head />`](src/lib/components/Head)
