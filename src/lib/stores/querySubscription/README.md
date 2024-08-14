@@ -9,7 +9,6 @@ Live updates are great both to get instant previews of your content while editin
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Table of Contents](#table-of-contents)
 - [Reference](#reference)
 - [Initialization options](#initialization-options)
 - [Connection status](#connection-status)
