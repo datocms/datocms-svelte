@@ -7,7 +7,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-  - [Setup](#setup)
 - [Basic usage](#basic-usage)
 - [Customization](#customization)
   - [Custom components for blocks](#custom-components-for-blocks)
@@ -86,8 +85,8 @@ Here is an example using custom components for blocks, inline and item links. Ta
 
 ```svelte
 <script>
-
 import { onMount } from 'svelte';
+import { executeQuery } from '@datocms/cda-client';
 
 import { isBlock, isInlineItem, isItemLink } from 'datocms-structured-text-utils';
 
@@ -104,33 +103,23 @@ const query = `
       content {
         value
         links {
-          __typename
-          ... on TeamMemberRecord {
+          ... on RecordInterface {
             id
+            __typename
+          }
+          ... on TeamMemberRecord {
             firstName
             slug
           }
         }
         blocks {
-          __typename
-          ... on ImageRecord {
+          ... on RecordInterface {
             id
-            image {
-              responsiveImage(
-                imgixParams: { fit: crop, w: 300, h: 300, auto: format }
-              ) {
-                srcSet
-                webpSrcSet
-                sizes
-                src
-                width
-                height
-                aspectRatio
-                alt
-                title
-                base64
-              }
-            }
+            __typename
+          }
+          ... on CtaRecord {
+            title
+            url
           }
         }
       }
@@ -141,18 +130,7 @@ const query = `
 export let data = null;
 
 onMount(async () => {
-  const response = await fetch('https://graphql.datocms.com/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: "Bearer AN_API_TOKEN",
-    },
-    body: JSON.stringify({ query })
-  })
-
-  const json = await response.json()
-
-  data = json.data;
+  data = await executeQuery(query, { token: '<YOUR-API-TOKEN>' });
 });
 
 </script>
