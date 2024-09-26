@@ -279,4 +279,4 @@
 	on:error
 	on:cuepointchange
 	on:cuepointschange
-/>
+></mux-player>
