@@ -185,7 +185,7 @@
 						'background-color': data.bgColor,
 						...basePlaceholderStyle
 					})}
-				/>
+				></div>
 			{/if}
 		{/if}
 
