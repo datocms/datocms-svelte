@@ -1,5 +1,4 @@
 import type { Node } from 'datocms-structured-text-utils';
-import type { SvelteComponent } from 'svelte';
 
 export { default as NakedImage } from './components/NakedImage/NakedImage.svelte';
 export type { ResponsiveImageType } from './components/NakedImage/utils';
@@ -13,6 +12,10 @@ export * from './stores/querySubscription';
 
 export type PredicateComponentTuple = [
 	(n: Node) => boolean,
+	// should be
+	// typeof SvelteComponent<any> | Component<any, any, any>,
+	// but Svelte 4 does not have `Component`
+
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	new (...any: any) => SvelteComponent
+	any,
 ];
