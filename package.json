@@ -35,7 +35,7 @@
 		}
 	},
 	"devDependencies": {
-		"@mux/mux-player": "*",
+		"@mux/mux-player": "^2.5.0",
 		"@mux/playback-core": "^0.22.1",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",

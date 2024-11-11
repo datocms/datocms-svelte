@@ -35,6 +35,7 @@
 		envKey: string;
 		debug: boolean;
 		disableCookies: boolean;
+		disableTracking: boolean;
 		disablePictureInPicture?: boolean;
 		metadata: {
 			[k: string]: any;
@@ -208,6 +209,7 @@
 	export let style: MuxPlayerProps['style'] = undefined;
 	export let preload: MuxPlayerProps['preload'] = 'metadata';
 	export let disableCookies: MuxPlayerProps['disableCookies'] = true;
+	export let disableTracking: MuxPlayerProps['disableTracking'] = true;
 
 	let muxPlayerElementImported = false;
 
@@ -226,6 +228,7 @@
 			...(computedStyle(style, width, height) || {}),
 			...(computedPlaceholder(blurUpThumb) || {}),
 			disableCookies,
+			disableTracking,
 			preload
 		};
 	}
@@ -279,4 +282,4 @@
 	on:error
 	on:cuepointchange
 	on:cuepointschange
-></mux-player>
+/>
