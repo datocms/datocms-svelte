@@ -73,6 +73,26 @@ describe('VideoPlayer', () => {
 				});
 			});
 
+			describe('and `disableTracking` is passed', () => {
+				it('uses it for the <mux-player /> element', () => {
+					const props = { data, disableTracking: true };
+
+					const { container } = render(VideoPlayer, { props });
+
+					expect(container).toMatchSnapshot();
+				});
+
+				describe('with value `false`', () => {
+					it("doesn't use it for the <mux-player /> element", () => {
+						const props = { data, disableTracking: false };
+
+						const { container } = render(VideoPlayer, { props });
+
+						expect(container).toMatchSnapshot();
+					});
+				});
+			});
+
 			describe('and `preload` is passed', () => {
 				it('uses it for the <mux-player /> element', () => {
 					const props = { data, preload: 'auto' };
