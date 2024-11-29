@@ -126,6 +126,7 @@ inner `<mux-player />`.
 | prop | type           | required           | description                                                      | default |
 | ---- | -------------- | ------------------ | ---------------------------------------------------------------- | ------- |
 | data | `Video` object | :white_check_mark: | The actual response you get from a DatoCMS `video` GraphQL query |         |
+| paused | `boolean` | :white_check_mark: | Control to play or pause the video. |         |
 
 `<VideoPlayer />` generate some default attributes:
 
