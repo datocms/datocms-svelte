@@ -123,9 +123,10 @@ by DatoCMS GraphQL API.
 `<VideoPlayer />` uses the `data` prop to generate a set of attributes for the
 inner `<mux-player />`.
 
-| prop | type           | required           | description                                                      | default |
-| ---- | -------------- | ------------------ | ---------------------------------------------------------------- | ------- |
-| data | `Video` object | :white_check_mark: | The actual response you get from a DatoCMS `video` GraphQL query |         |
+| prop   | type           | required           | description                                                      | default |
+| ------ | -------------- | ------------------ | ---------------------------------------------------------------- | ------- |
+| data   | `Video` object | :white_check_mark: | The actual response you get from a DatoCMS `video` GraphQL query |         |
+| paused | `boolean`      |                    | Control to play or pause the video                               |         |
 
 `<VideoPlayer />` generate some default attributes:
 
