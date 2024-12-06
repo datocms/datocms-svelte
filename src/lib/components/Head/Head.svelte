@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	export interface TitleMetaLinkTag {
+	export interface GenericTag {
 		/** the tag for the meta information */
 		tag: string;
 		/** the inner content of the meta tag */
@@ -55,15 +55,15 @@
 </script>
 
 <script lang="ts">
-	export let data: Array<TitleMetaLinkTag | SeoOrFaviconTag> = [];
+	import { serializeTag } from './serializeTag';
+
+	export let data: Array<GenericTag | SeoOrFaviconTag> = [];
+
+	// To work around hydration errors, we render the tags as static escaped strings
+	// See: https://github.com/datocms/datocms-svelte/pull/14
+	const renderedTags = Array.isArray(data) ? data.map(serializeTag).join('') : '';
 </script>
 
 <svelte:head>
-	{#each data as { tag, attributes, content }}
-		{#if content}
-			<svelte:element this={tag} {...attributes}>{content}</svelte:element>
-		{:else}
-			<svelte:element this={tag} {...attributes} />
-		{/if}
-	{/each}
+	{@html renderedTags}
 </svelte:head>
