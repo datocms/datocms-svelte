@@ -10,24 +10,24 @@ export interface GenericHeadTag {
 
 export type SupportedHeadTags = HeadTags | GenericHeadTag[];
 
+export const serializeHeadTag = (metaTag: SupportedHeadTags[number]) => {
+	const { tag, attributes, content } = metaTag;
+
+	const serializedAttributes: string[] =
+		attributes && typeof attributes === 'object'
+			? Object.entries(attributes).flatMap(([key, value]) =>
+					value ? `${escapeHtmlString(key)}="${escapeHtmlString(value)}"` : []
+			  )
+			: [];
+
+	const attributesString: string =
+		serializedAttributes?.length > 0 ? ` ${serializedAttributes.join(' ')}` : '';
+
+	return content
+		? `<${tag}${attributesString}>${content}</${tag}>`
+		: `<${tag}${attributesString}/>`;
+};
+
 export const headTagsToEscapedStrings = (headTags: SupportedHeadTags): string[] => {
-	const tagsAsEscapedStrings = headTags.map((metaTag) => {
-		const { tag, attributes, content } = metaTag;
-
-		const serializedAttributes: string[] =
-			attributes && typeof attributes === 'object'
-				? Object.entries(attributes).flatMap(([key, value]) =>
-						value ? `${escapeHtmlString(key)}="${escapeHtmlString(value)}"` : []
-				  )
-				: [];
-
-		const attributesString: string =
-			serializedAttributes?.length > 0 ? ` ${serializedAttributes.join(' ')}` : '';
-
-		return content
-			? `<${tag}${attributesString}>${content}</${tag}>`
-			: `<${tag}${attributesString}/>`;
-	});
-
-	return tagsAsEscapedStrings;
+	return headTags.map((headTag) => serializeHeadTag(headTag));
 };
