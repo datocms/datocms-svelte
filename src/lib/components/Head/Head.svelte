@@ -7,62 +7,61 @@
 		/** the HTML attributes to attach to the meta tag */
 		attributes?: Record<string, string> | null | undefined;
 	}
+
 	export interface SeoTitleTag {
 		tag: 'title';
 		content: string | null;
 		attributes?: null;
 	}
+
 	export interface RegularMetaAttributes {
 		name: string;
 		content: string;
 	}
+
 	export interface OgMetaAttributes {
 		property: string;
 		content: string;
 	}
+
 	export interface SeoMetaTag {
 		tag: 'meta';
 		content?: null;
 		attributes: RegularMetaAttributes | OgMetaAttributes;
 	}
+
 	export interface FaviconAttributes {
 		sizes: string;
 		type: string;
 		rel: string;
 		href: string;
 	}
+
 	export interface AppleTouchIconAttributes {
 		sizes: string;
 		rel: 'apple-touch-icon';
 		href: string;
 	}
+
 	export interface SeoLinkTag {
 		tag: 'link';
 		content?: null;
 		attributes: FaviconAttributes | AppleTouchIconAttributes;
 	}
+
 	export type SeoTag = SeoTitleTag | SeoMetaTag;
 	export type FaviconTag = SeoMetaTag | SeoLinkTag;
 	export type SeoOrFaviconTag = SeoTag | FaviconTag;
+	export type HeadTags = (TitleMetaLinkTag | SeoOrFaviconTag)[];
 </script>
 
 <script lang="ts">
-	export let data: Array<TitleMetaLinkTag | SeoOrFaviconTag> = [];
-	// Statically output HTML instead of using conditionals inside <svelte:head>
-	const renderedTags = data
-		.map(({ tag, attributes, content }) => {
-			const attrs = attributes
-				? Object.entries(attributes)
-						.map(([key, value]) => `${key}="${value}"`)
-						.join(' ')
-				: '';
-			if (content) {
-				return `<${tag} ${attrs}>${content}</${tag}>`;
-			} else {
-				return `<${tag} ${attrs} />`;
-			}
-		})
-		.join('\n');
+	import { headTagsToEscapedStrings } from '$lib/util/headTagToEscapedStrings';
+
+	export let data: HeadTags = [];
+
+	// To work around hydration errors, we render the tags as static escaped strings
+	const renderedTags: string = data?.length > 0 ? headTagsToEscapedStrings(data).join('\n') : '';
 </script>
 
 <svelte:head>
