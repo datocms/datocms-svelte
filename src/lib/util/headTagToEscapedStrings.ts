@@ -16,14 +16,9 @@ export const headTagsToEscapedStrings = (headTags: SupportedHeadTags): string[] 
 
 		const serializedAttributes: string[] =
 			attributes && typeof attributes === 'object'
-				? Object.entries(attributes) // Object.entries enumerates only the object's own props, not inherited ones
-						.flatMap(([key, value]) =>
-							value
-								? // Escape key & value and concat them into an attribute
-								  `${escapeHtmlString(key)}="${escapeHtmlString(value)}"`
-								: // Or skip empty values by returning blank array to flatMap
-								  []
-						)
+				? Object.entries(attributes).flatMap(([key, value]) =>
+						value ? `${escapeHtmlString(key)}="${escapeHtmlString(value)}"` : []
+				  )
 				: [];
 
 		const attributesString: string =
