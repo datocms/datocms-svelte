@@ -7,6 +7,7 @@ exports[`StructuredText > with a dast including a sprinkle of everything > with 
   <div />
   <div />
   <div />
+  <div />
   <div>
     <h1>
       This is a 
@@ -860,6 +861,15 @@ exports[`StructuredText > with a dast including links and blocks > with default 
       
       
       <!--&lt;Node&gt;-->
+      <em>
+        Jane Doe
+      </em>
+      
+      <!--&lt;InlineBlock&gt;-->
+      
+      
+      
+      <!--&lt;Node&gt;-->
       
       
     </h1>
@@ -897,9 +907,11 @@ exports[`StructuredText > with a dast including links and blocks > with default 
 </body>
 `;
 
-exports[`StructuredText > with a dast including links and blocks > with missing blocks > raises an error 1`] = `[Error: The Structured Text document contains a 'block' node, but cannot find a record with ID 456 inside data.blocks!]`;
+exports[`StructuredText > with a dast including links and blocks > with missing blocks > raises an error 1`] = `[Error: The Structured Text document contains a 'inlineBlock' node, but cannot find a record with ID 789 inside data.blocks!]`;
 
-exports[`StructuredText > with a dast including links and blocks > with missing component for blocks > raises an error 1`] = `[Error: The Structured Text document contains a 'block' node, but no component for rendering is specified!]`;
+exports[`StructuredText > with a dast including links and blocks > with missing component for blocks > raises an error 1`] = `[Error: The Structured Text document contains an 'inlineBlock' node, but no component for rendering is specified!]`;
+
+exports[`StructuredText > with a dast including links and blocks > with missing component for inline blocks > raises an error 1`] = `[Error: The Structured Text document contains an 'inlineBlock' node, but no component for rendering is specified!]`;
 
 exports[`StructuredText > with a dast including links and blocks > with missing component for inline items > raises an error 1`] = `[Error: The Structured Text document contains an 'inlineItem' node, but no component for rendering is specified!]`;
 

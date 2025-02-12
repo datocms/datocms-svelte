@@ -5,6 +5,12 @@ export type QuoteRecord = {
 	author: string;
 };
 
+export type MentionRecord = {
+	id: string;
+	__typename: 'MentionRecord';
+	name: string;
+};
+
 export type DocPageRecord = {
 	id: string;
 	__typename: 'DocPageRecord';
