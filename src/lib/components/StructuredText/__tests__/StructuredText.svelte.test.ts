@@ -4,6 +4,7 @@ import { render } from '@testing-library/svelte';
 
 import {
 	isBlock,
+	isInlineBlock,
 	isHeading,
 	isInlineItem,
 	isItemLink,
@@ -24,6 +25,7 @@ import IncreasedLevelHeading from './__fixtures__/IncreasedLevelHeading.svelte';
 import ItemLink from './__fixtures__/ItemLink.svelte';
 import Block from './__fixtures__/Block.svelte';
 import InlineItem from './__fixtures__/InlineItem.svelte';
+import InlineBlock from './__fixtures__/InlineBlock.svelte';
 
 describe('StructuredText', () => {
 	describe('with no value', () => {
@@ -115,7 +117,8 @@ describe('StructuredText', () => {
 						components: [
 							[isInlineItem, InlineItem],
 							[isItemLink, ItemLink],
-							[isBlock, Block]
+							[isBlock, Block],
+							[isInlineBlock, InlineBlock],
 						]
 					}
 				});
@@ -132,6 +135,7 @@ describe('StructuredText', () => {
 							data: structuredTextWithBlocksAndLinks,
 							components: [
 								[isBlock, Block],
+								[isInlineBlock, InlineBlock],
 								[isInlineItem, InlineItem]
 							]
 						}
@@ -148,6 +152,7 @@ describe('StructuredText', () => {
 							data: structuredTextWithBlocksAndLinks,
 							components: [
 								[isBlock, Block],
+								[isInlineBlock, InlineBlock],
 								[isItemLink, ItemLink]
 							]
 						}
@@ -164,6 +169,7 @@ describe('StructuredText', () => {
 							data: { ...structuredTextWithBlocksAndLinks, links: [] },
 							components: [
 								[isBlock, Block],
+								[isInlineBlock, InlineBlock],
 								[isInlineItem, InlineItem],
 								[isItemLink, ItemLink]
 							]
@@ -189,6 +195,23 @@ describe('StructuredText', () => {
 			});
 		});
 
+		describe('with missing component for inline blocks', () => {
+			it('raises an error', () => {
+				expect(() => {
+					render(StructuredText, {
+						props: {
+							data: structuredTextWithBlocksAndLinks,
+							components: [
+								[isBlock, Block],
+								[isInlineItem, InlineItem],
+								[isItemLink, ItemLink]
+							]
+						}
+					});
+				}).toThrowErrorMatchingSnapshot();
+			});
+		});
+
 		describe('with missing blocks', () => {
 			it('raises an error', () => {
 				expect(() => {
@@ -197,6 +220,7 @@ describe('StructuredText', () => {
 							data: { ...structuredTextWithBlocksAndLinks, blocks: [] },
 							components: [
 								[isBlock, Block],
+								[isInlineBlock, InlineBlock],
 								[isInlineItem, InlineItem],
 								[isItemLink, ItemLink]
 							]

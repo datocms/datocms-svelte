@@ -1,6 +1,7 @@
 <script lang="ts" context="module">
 	import {
 		isBlock,
+		isInlineBlock,
 		isBlockquote,
 		isCode,
 		isHeading,
@@ -63,11 +64,18 @@
 				node
 			);
 		}
+
+		if (isInlineBlock(node)) {
+			throw new RenderError(
+				`The Structured Text document contains an 'inlineBlock' node, but no component for rendering is specified!`,
+				node
+			);
+		}
 	};
 
-	const throwRenderErrorForMissingBlock = (node: STU.Block) => {
+	const throwRenderErrorForMissingBlock = (node: STU.Block | STU.InlineBlock) => {
 		throw new RenderError(
-			`The Structured Text document contains a 'block' node, but cannot find a record with ID ${node.item} inside data.blocks!`,
+			`The Structured Text document contains a '${node.type}' node, but cannot find a record with ID ${node.item} inside data.blocks!`,
 			node
 		);
 	};
@@ -79,7 +87,7 @@
 		);
 	};
 
-	const findBlock = (node: STU.Block, blocks: STU.StructuredText['blocks']) =>
+	const findBlock = (node: STU.Block | STU.InlineBlock, blocks: STU.StructuredText['blocks']) =>
 		(blocks || []).find(({ id }) => id === node.item);
 	const findLink = (node: STU.ItemLink | STU.InlineItem, links: STU.StructuredText['links']) =>
 		(links || []).find(({ id }) => id === node.item);
@@ -96,7 +104,7 @@
 
 	export let components: PredicateComponentTuple[] = [];
 
-	$: block = isBlock(node) && (findBlock(node, blocks) || throwRenderErrorForMissingBlock(node));
+	$: block = (isBlock(node) || isInlineBlock(node)) && (findBlock(node, blocks) || throwRenderErrorForMissingBlock(node));
 	$: link =
 		(isItemLink(node) && (findLink(node, links) || throwRenderErrorForMissingLink(node))) ||
 		(isInlineItem(node) && (findLink(node, links) || throwRenderErrorForMissingLink(node)));
@@ -110,6 +118,8 @@
 
 {#if component}
 	{#if isBlock(node)}
+		<svelte:component this={component} {node} {block} />
+	{:else if isInlineBlock(node)}
 		<svelte:component this={component} {node} {block} />
 	{:else if isInlineItem(node)}
 		<svelte:component this={component} {node} {link} />

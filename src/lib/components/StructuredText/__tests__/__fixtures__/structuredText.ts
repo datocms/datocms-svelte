@@ -1,6 +1,6 @@
 import type { StructuredText } from 'datocms-structured-text-utils';
 
-import type { BlogPostRecord, DocPageRecord, ImageRecord, QuoteRecord } from './types';
+import type { BlogPostRecord, DocPageRecord, ImageRecord, QuoteRecord, MentionRecord } from './types';
 
 export const paragraph: StructuredText = {
 	value: {
@@ -92,7 +92,7 @@ export const paragraphWithLink: StructuredText = {
 	}
 };
 
-export const structuredTextWithBlocksAndLinks: StructuredText<QuoteRecord, DocPageRecord> = {
+export const structuredTextWithBlocksAndLinks: StructuredText<QuoteRecord | MentionRecord, DocPageRecord> = {
 	value: {
 		schema: 'dast',
 		document: {
@@ -120,6 +120,10 @@ export const structuredTextWithBlocksAndLinks: StructuredText<QuoteRecord, DocPa
 							item: '123',
 							meta: [{ id: 'target', value: '_blank' }],
 							children: [{ type: 'span', value: 'here!' }]
+						},
+						{
+							type: "inlineBlock",
+							item: "789"
 						}
 					]
 				},
@@ -136,6 +140,11 @@ export const structuredTextWithBlocksAndLinks: StructuredText<QuoteRecord, DocPa
 			__typename: 'QuoteRecord',
 			quote: 'Foo bar.',
 			author: 'Mark Smith'
+		},
+		{
+			id: "789",
+			__typename: 'MentionRecord',
+			name: "Jane Doe"
 		}
 	],
 	links: [
