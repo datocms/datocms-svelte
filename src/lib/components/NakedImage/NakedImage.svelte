@@ -51,6 +51,14 @@
 	 **/
 	export let srcSetCandidates: number[] = [0.25, 0.5, 0.75, 1, 1.5, 2, 3, 4];
 
+	/**
+	 * Defines which referrer is sent when fetching the image
+	 * Read more: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#referrerpolicy
+	 *
+	 * Defaults to `no-referrer-when-downgrade` to give more useful stats in DatoCMS Project Usages
+	 **/
+	export let referrerPolicy: ReferrerPolicy = 'no-referrer-when-downgrade';
+
 	const dispatch = createEventDispatcher();
 
 	let loaded = false;
@@ -108,6 +116,7 @@
 				...sizingStyle,
 				...parseStyleAttributes(imgStyle)
 			})}
+			referrerpolicy={referrerPolicy}
 			data-testid="img"
 		/>
 	{/if}

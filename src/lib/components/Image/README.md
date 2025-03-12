@@ -19,7 +19,6 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-  - [Setup](#setup)
 - [Usage](#usage)
 - [`<Image />` vs `<NakedImage />`](#image--vs-nakedimage-)
 - [Example](#example)
@@ -164,6 +163,7 @@ Here's a complete recap of what `responsiveImage` offers:
 | sizes            | string                   | undefined                          | :x:                | The HTML5 [`sizes`](https://web.dev/learn/design/responsive-images/#sizes) attribute for the image (will be used `data.sizes` as a fallback)         |
 | usePlaceholder   | Boolean                  | true                               | :x:                | Whether the image should use a blurred image placeholder                                                                                             |
 | srcSetCandidates | Array<number>            | [0.25, 0.5, 0.75, 1, 1.5, 2, 3, 4] | :x:                | If `data` does not contain `srcSet`, the candidates for the `srcset` attribute of the image will be auto-generated based on these width multipliers  |
+| referrerPolicy   | string                   | `no-referrer-when-downgrade`       | :x:                | Defines which referrer is sent when fetching the image. Defaults to `no-referrer-when-downgrade` to give more useful stats in DatoCMS Project Usages |
 
 ### Events
 
@@ -197,6 +197,7 @@ Here's a complete recap of what `responsiveImage` offers:
 | sizes                 | string                                           | undefined                          | :x:                | The HTML5 [`sizes`](https://web.dev/learn/design/responsive-images/#sizes) attribute for the image (will be used `data.sizes` as a fallback)                                                                                                                                                  |
 | onLoad                | () => void                                       | undefined                          | :x:                | Function triggered when the image has finished loading                                                                                                                                                                                                                                        |
 | usePlaceholder        | Boolean                                          | true                               | :x:                | Whether the component should use a blurred image placeholder                                                                                                                                                                                                                                  |
+| referrerPolicy        | string                                           | `no-referrer-when-downgrade`       | :x:                | Defines which referrer is sent when fetching the image. Defaults to `no-referrer-when-downgrade` to give more useful stats in DatoCMS Project Usages                                                                                                                                          |
 
 ### Events
 

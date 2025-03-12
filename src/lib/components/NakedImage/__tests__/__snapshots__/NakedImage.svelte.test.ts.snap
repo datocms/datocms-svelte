@@ -16,6 +16,7 @@ exports[`NakedImage > explicit sizes > renders correctly 1`] = `
         alt=""
         data-testid="img"
         loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
         src="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750"
         style="background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; color: transparent; aspect-ratio: 750 / 421; width: 100%; max-width: 750px; height: auto;"
       />
@@ -41,6 +42,7 @@ exports[`NakedImage > full data > renders correctly 1`] = `
         alt="DatoCMS swag"
         data-testid="img"
         loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
         src="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750"
         style="background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; color: transparent; aspect-ratio: 750 / 421; width: 100%; max-width: 750px; height: auto;"
         title="These are awesome, we know that."
@@ -66,6 +68,7 @@ exports[`NakedImage > minimal data > renders correctly 1`] = `
         alt=""
         data-testid="img"
         loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
         src="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750"
         style="background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; color: transparent; aspect-ratio: 750 / 421; width: 100%; max-width: 750px; height: auto;"
       />
@@ -90,6 +93,7 @@ exports[`NakedImage > minimalDataWithRelativeUrl > renders correctly 1`] = `
         alt=""
         data-testid="img"
         loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
         src="/205/image.png?ar=16%3A9&fit=crop&w=750"
         style="background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; color: transparent; aspect-ratio: 750 / 421; width: 100%; max-width: 750px; height: auto;"
       />
@@ -117,6 +121,7 @@ exports[`NakedImage > passing className and/or style > renders correctly 1`] = `
         class="img-class-name"
         data-testid="img"
         loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
         src="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750"
         style="background-size: cover; color: transparent; aspect-ratio: 750 / 421; width: 100%; max-width: 750px; height: auto; background: red; overflow: visible; padding: 0px 10px;"
       />
@@ -141,6 +146,7 @@ exports[`NakedImage > priority=true > renders correctly 1`] = `
         alt=""
         data-testid="img"
         fetchpriority="high"
+        referrerpolicy="no-referrer-when-downgrade"
         src="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750"
         style="background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAgLFQoLDhgQDg0NDh0eHREYIx8lJCIrHB0dLSs7GikyKSEuKjUlKDk1MjIyHyo4PTc+PDcxPjUBCgsLDg0OHBAQHDsoIig7Ozs7Ozs7OzsvOzs7Ozs7Ozs7Lzs7Ozs7Ozs7OzsvOzs7NTsvLy87NTU1Ly8vLzsvL//AABEIAA0AGAMBIgACEQEDEQH/xAAYAAACAwAAAAAAAAAAAAAAAAAGBwABBP/EACEQAAEEAAYDAAAAAAAAAAAAAAEAAgMEBQYHESEiFWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwL/xAAZEQADAAMAAAAAAAAAAAAAAAAAAQIRITH/2gAMAwEAAhEDEQA/AFxLgDWTsAd1J5TGy7hEYqNAaNgECX7sjLMQAHJTEy1Zcarfia4lJMauAxqBhLY6ZlaOzDurWvUOd3jZPfCiEh4xs//Z); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; color: transparent; aspect-ratio: 750 / 421; width: 100%; max-width: 750px; height: auto;"
       />
@@ -165,6 +171,7 @@ exports[`NakedImage > usePlaceholder=false > renders correctly 1`] = `
         alt=""
         data-testid="img"
         loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
         src="https://www.datocms-assets.com/205/image.png?ar=16%3A9&fit=crop&w=750"
         style="aspect-ratio: 750 / 421; width: 100%; max-width: 750px; height: auto;"
       />
