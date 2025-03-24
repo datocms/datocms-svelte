@@ -907,7 +907,7 @@ exports[`StructuredText > with a dast including links and blocks > with default 
 </body>
 `;
 
-exports[`StructuredText > with a dast including links and blocks > with missing blocks > raises an error 1`] = `[Error: The Structured Text document contains a 'inlineBlock' node, but cannot find a record with ID 789 inside data.blocks!]`;
+exports[`StructuredText > with a dast including links and blocks > with missing blocks > raises an error 1`] = `[Error: The Structured Text document contains a 'block' node, but cannot find a record with ID 456 inside data.blocks!]`;
 
 exports[`StructuredText > with a dast including links and blocks > with missing component for blocks > raises an error 1`] = `[Error: The Structured Text document contains an 'inlineBlock' node, but no component for rendering is specified!]`;
 
@@ -1285,13 +1285,6 @@ exports[`StructuredText > with a very simple pure dast (only the \`value\` of a 
     </h1>
     
     <!--&lt;Heading&gt;-->
-    
-    
-    
-    <!--&lt;Node&gt;-->
-    
-    
-    <!--&lt;Root&gt;-->
     
     
     

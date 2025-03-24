@@ -128,7 +128,7 @@ describe('StructuredText', () => {
 
 	describe('with a dast including links and blocks', () => {
 		describe('with default rules', () => {
-			it.only('renders the document', () => {
+			it('renders the document', () => {
 				const { container } = render(StructuredText, {
 					props: {
 						data: structuredTextWithBlocksAndLinks,

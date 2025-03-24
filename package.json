@@ -19,7 +19,7 @@
 		"prepublishOnly": "npm run build",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"test:unit": "vitest",
+		"test:unit": "vitest --run",
 		"test": "npm run test:unit",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "npm run toc && prettier --plugin-search-dir . --write .",
