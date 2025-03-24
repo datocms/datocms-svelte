@@ -28,9 +28,10 @@
 		: undefined;
 
 	$: blocks = isStructuredText(data) ? data?.blocks : undefined;
+	$: inlineBlocks = isStructuredText(data) ? data?.inlineBlocks : undefined;
 	$: links = isStructuredText(data) ? data?.links : undefined;
 </script>
 
 {#if node}
-	<Node {node} {blocks} {links} {components} />
+	<Node {node} {blocks} {inlineBlocks} {links} {components} />
 {/if}

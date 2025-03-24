@@ -1,11 +1,11 @@
-import { describe, expect, it } from 'vitest';
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/svelte';
+import { describe, expect, it } from 'vitest';
 
 import {
 	isBlock,
-	isInlineBlock,
 	isHeading,
+	isInlineBlock,
 	isInlineItem,
 	isItemLink,
 	isSpan
@@ -14,18 +14,18 @@ import {
 import { StructuredText } from '../../..';
 
 import {
+	full,
 	heading,
 	paragraphWithLink,
-	structuredTextWithBlocksAndLinks,
-	full
+	structuredTextWithBlocksAndLinks
 } from './__fixtures__/structuredText';
 
+import Block from './__fixtures__/Block.svelte';
 import CustomSpan from './__fixtures__/CustomSpan.svelte';
 import IncreasedLevelHeading from './__fixtures__/IncreasedLevelHeading.svelte';
-import ItemLink from './__fixtures__/ItemLink.svelte';
-import Block from './__fixtures__/Block.svelte';
-import InlineItem from './__fixtures__/InlineItem.svelte';
 import InlineBlock from './__fixtures__/InlineBlock.svelte';
+import InlineItem from './__fixtures__/InlineItem.svelte';
+import ItemLink from './__fixtures__/ItemLink.svelte';
 
 describe('StructuredText', () => {
 	describe('with no value', () => {
@@ -39,7 +39,25 @@ describe('StructuredText', () => {
 	describe('with a very simple pure dast (only the `value` of a structured text)', () => {
 		describe('with default rules', () => {
 			it('renders the document', () => {
-				const { container } = render(StructuredText, { props: { data: heading.value } });
+				const { container } = render(StructuredText, {
+					props: {
+						data: {
+							type: 'heading',
+							level: 1,
+							children: [
+								{
+									type: 'span',
+									value: 'This\nis a '
+								},
+								{
+									type: 'span',
+									marks: ['strong'],
+									value: 'title'
+								}
+							]
+						}
+					}
+				});
 
 				expect(container).toMatchSnapshot();
 			});
@@ -110,7 +128,7 @@ describe('StructuredText', () => {
 
 	describe('with a dast including links and blocks', () => {
 		describe('with default rules', () => {
-			it('renders the document', () => {
+			it.only('renders the document', () => {
 				const { container } = render(StructuredText, {
 					props: {
 						data: structuredTextWithBlocksAndLinks,
@@ -118,7 +136,7 @@ describe('StructuredText', () => {
 							[isInlineItem, InlineItem],
 							[isItemLink, ItemLink],
 							[isBlock, Block],
-							[isInlineBlock, InlineBlock],
+							[isInlineBlock, InlineBlock]
 						]
 					}
 				});

@@ -44,38 +44,22 @@
 	];
 
 	const throwRenderErrorForMissingComponent = (node: STU.Node) => {
-		if (isInlineItem(node)) {
-			throw new RenderError(
-				`The Structured Text document contains an 'inlineItem' node, but no component for rendering is specified!`,
-				node
-			);
-		}
-
-		if (isItemLink(node)) {
-			throw new RenderError(
-				`The Structured Text document contains an 'itemLink' node, but no component for rendering is specified!`,
-				node
-			);
-		}
-
-		if (isBlock(node)) {
-			throw new RenderError(
-				`The Structured Text document contains a 'block' node, but no component for rendering is specified!`,
-				node
-			);
-		}
-
-		if (isInlineBlock(node)) {
-			throw new RenderError(
-				`The Structured Text document contains an 'inlineBlock' node, but no component for rendering is specified!`,
-				node
-			);
-		}
+		throw new RenderError(
+			`The Structured Text document contains an '${node.type}' node, but no component for rendering is specified!`,
+			node
+		);
 	};
 
-	const throwRenderErrorForMissingBlock = (node: STU.Block | STU.InlineBlock) => {
+	const throwRenderErrorForMissingBlock = (node: STU.Block) => {
 		throw new RenderError(
 			`The Structured Text document contains a '${node.type}' node, but cannot find a record with ID ${node.item} inside data.blocks!`,
+			node
+		);
+	};
+
+	const throwRenderErrorForMissingInlineBlock = (node: STU.InlineBlock) => {
+		throw new RenderError(
+			`The Structured Text document contains a '${node.type}' node, but cannot find a record with ID ${node.item} inside data.inlineBlocks!`,
 			node
 		);
 	};
@@ -87,8 +71,14 @@
 		);
 	};
 
-	const findBlock = (node: STU.Block | STU.InlineBlock, blocks: STU.StructuredText['blocks']) =>
+	const findBlock = (node: STU.Block, blocks: STU.StructuredText['blocks']) =>
 		(blocks || []).find(({ id }) => id === node.item);
+
+	const findInlineBlock = (
+		node: STU.InlineBlock,
+		inlineBlocks: STU.StructuredText['inlineBlocks']
+	) => (inlineBlocks || []).find(({ id }) => id === node.item);
+
 	const findLink = (node: STU.ItemLink | STU.InlineItem, links: STU.StructuredText['links']) =>
 		(links || []).find(({ id }) => id === node.item);
 </script>
@@ -100,18 +90,24 @@
 
 	export let node: Node;
 	export let blocks: StructuredText['blocks'];
+	export let inlineBlocks: StructuredText['inlineBlocks'];
 	export let links: StructuredText['links'];
 
 	export let components: PredicateComponentTuple[] = [];
 
-	$: block = (isBlock(node) || isInlineBlock(node)) && (findBlock(node, blocks) || throwRenderErrorForMissingBlock(node));
-	$: link =
-		(isItemLink(node) && (findLink(node, links) || throwRenderErrorForMissingLink(node))) ||
-		(isInlineItem(node) && (findLink(node, links) || throwRenderErrorForMissingLink(node)));
-
 	$: predicateComponentTuple =
 		[...components, ...DEFAULT_COMPONENTS].find(([predicate, component]) => predicate(node)) ||
 		throwRenderErrorForMissingComponent(node);
+
+	$: block = isBlock(node) && (findBlock(node, blocks) || throwRenderErrorForMissingBlock(node));
+
+	$: inlineBlock =
+		isInlineBlock(node) &&
+		(findInlineBlock(node, inlineBlocks) || throwRenderErrorForMissingInlineBlock(node));
+
+	$: link =
+		(isItemLink(node) && (findLink(node, links) || throwRenderErrorForMissingLink(node))) ||
+		(isInlineItem(node) && (findLink(node, links) || throwRenderErrorForMissingLink(node)));
 
 	$: component = (predicateComponentTuple ?? [])[1];
 </script>
@@ -120,14 +116,14 @@
 	{#if isBlock(node)}
 		<svelte:component this={component} {node} {block} />
 	{:else if isInlineBlock(node)}
-		<svelte:component this={component} {node} {block} />
+		<svelte:component this={component} {node} block={inlineBlock} />
 	{:else if isInlineItem(node)}
 		<svelte:component this={component} {node} {link} />
 	{:else if isItemLink(node)}
 		<svelte:component this={component} {node} {link}>
 			{#if hasChildren(node)}
 				{#each node.children as child}
-					<svelte:self node={child} {blocks} {links} {components} />
+					<svelte:self node={child} {blocks} {inlineBlocks} {links} {components} />
 				{/each}
 			{/if}
 		</svelte:component>
@@ -135,7 +131,7 @@
 		<svelte:component this={component} {node}>
 			{#if hasChildren(node)}
 				{#each node.children as child}
-					<svelte:self node={child} {blocks} {links} {components} />
+					<svelte:self node={child} {blocks} {inlineBlocks} {links} {components} />
 				{/each}
 			{/if}
 		</svelte:component>
