@@ -1,4 +1,10 @@
-import type { Node } from 'datocms-structured-text-utils';
+import type {
+	Node,
+	CdaStructuredTextValue,
+	CdaStructuredTextRecord,
+	TypesafeCdaStructuredTextValue,
+	Document as StructuredTextDocument,
+} from 'datocms-structured-text-utils';
 
 export { default as NakedImage } from './components/NakedImage/NakedImage.svelte';
 export type { ResponsiveImageType } from './components/NakedImage/utils';
@@ -9,6 +15,13 @@ export { default as StructuredText } from './components/StructuredText/Structure
 export { default as VideoPlayer } from './components/VideoPlayer/VideoPlayer.svelte';
 
 export * from './stores/querySubscription';
+
+export type {
+	StructuredTextDocument,
+	CdaStructuredTextValue,
+	TypesafeCdaStructuredTextValue,
+	CdaStructuredTextRecord,
+};
 
 export type PredicateComponentTuple = [
 	(n: Node) => boolean,
