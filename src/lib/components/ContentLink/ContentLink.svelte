@@ -59,6 +59,11 @@
 	export let root: ParentNode | undefined = undefined;
 
 	let controller: Controller | null = null;
+	// Store the callback to avoid recreating the controller when it changes
+	let onNavigateToCallback = onNavigateTo;
+
+	// Keep the callback up to date when prop changes
+	$: onNavigateToCallback = onNavigateTo;
 
 	onMount(() => {
 		if (!enabled) {
@@ -70,7 +75,10 @@
 			// Handle navigation requests from the Web Previews plugin
 			// Inside Visual mode, users can navigate to different URLs (like a browser bar)
 			// and the plugin will request the preview to navigate accordingly
-			onNavigateTo,
+			// The callback is accessed via variable, so changes don't trigger recreation
+			onNavigateTo: onNavigateToCallback
+				? (path: string) => onNavigateToCallback?.(path)
+				: undefined,
 			// Optionally limit scanning to a specific root
 			root
 		});
