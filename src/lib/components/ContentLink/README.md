@@ -1,4 +1,4 @@
-# `<ContentLink/>` component for Visual Editing with click-to-edit overlays
+# ContentLink component for Visual Editing
 
 `<ContentLink />` is a Svelte component that enables **Visual Editing** for your DatoCMS content. It provides click-to-edit overlays that allow editors to click on any content element on your website to instantly open the DatoCMS editor and modify that specific field.
 
@@ -25,8 +25,6 @@ This drastically improves the editing experience, especially for non-technical u
 - **Framework-agnostic**: Works with SvelteKit or any routing solution
 - **StructuredText integration**: Special support for complex structured content fields
 - **[Web Previews plugin](https://www.datocms.com/marketplace/plugins/i/datocms-plugin-web-previews) integration**: Seamless integration with DatoCMS's editing interface
-
-### Table of contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
