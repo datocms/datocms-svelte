@@ -3,12 +3,13 @@ import type {
 	CdaStructuredTextValue,
 	CdaStructuredTextRecord,
 	TypesafeCdaStructuredTextValue,
-	Document as StructuredTextDocument,
+	Document as StructuredTextDocument
 } from 'datocms-structured-text-utils';
 
 export { default as NakedImage } from './components/NakedImage/NakedImage.svelte';
 export type { ResponsiveImageType } from './components/NakedImage/utils';
 
+export { default as ContentLink } from './components/ContentLink/ContentLink.svelte';
 export { default as Head } from './components/Head/Head.svelte';
 export { default as Image } from './components/Image/Image.svelte';
 export { default as StructuredText } from './components/StructuredText/StructuredText.svelte';
@@ -16,11 +17,15 @@ export { default as VideoPlayer } from './components/VideoPlayer/VideoPlayer.sve
 
 export * from './stores/querySubscription';
 
+// Re-export types and utilities from @datocms/content-link for convenience
+export type { Controller } from '@datocms/content-link';
+export { decodeStega, stripStega } from '@datocms/content-link';
+
 export type {
 	StructuredTextDocument,
 	CdaStructuredTextValue,
 	TypesafeCdaStructuredTextValue,
-	CdaStructuredTextRecord,
+	CdaStructuredTextRecord
 };
 
 export type PredicateComponentTuple = [

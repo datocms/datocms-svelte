@@ -65,12 +65,18 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@datocms/content-link": "^0.3.6",
 		"datocms-listen": "^0.1.15",
 		"datocms-structured-text-utils": "^5.1.6",
 		"svelte-intersection-observer": "^1.0.0"
 	},
 	"exports": {
 		"./package.json": "./package.json",
+		"./components/ContentLink/ContentLink.svelte": {
+			"types": "./package/components/ContentLink/ContentLink.svelte.d.ts",
+			"svelte": "./package/components/ContentLink/ContentLink.svelte",
+			"default": "./package/components/ContentLink/ContentLink.svelte"
+		},
 		"./components/Head/Head.svelte": {
 			"types": "./package/components/Head/Head.svelte.d.ts",
 			"svelte": "./package/components/Head/Head.svelte",
@@ -173,6 +179,9 @@
 	"svelte": "./package/index.js",
 	"typesVersions": {
 		">4.0": {
+			"components/ContentLink/ContentLink.svelte": [
+				"./package/components/ContentLink/ContentLink.svelte.d.ts"
+			],
 			"components/Head/Head.svelte": [
 				"./package/components/Head/Head.svelte.d.ts"
 			],

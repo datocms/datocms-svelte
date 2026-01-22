@@ -37,6 +37,7 @@ A set of components to work faster with [DatoCMS](https://www.datocms.com/) in S
 
 Components:
 
+- [`<ContentLink />` for Visual Editing with click-to-edit overlays](src/lib/components/ContentLink)
 - [`<Image />` and `<NakedImage />`](src/lib/components/Image)
 - [`<VideoPlayer />`](src/lib/components/VideoPlayer)
 - [`<StructuredText />`](src/lib/components/StructuredText)
