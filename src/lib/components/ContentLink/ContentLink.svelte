@@ -25,12 +25,6 @@
 	 */
 
 	/**
-	 * Whether the controller is enabled (default: true)
-	 * Set to false to disable all ContentLink functionality
-	 */
-	export let enabled: boolean = true;
-
-	/**
 	 * Callback invoked when the Web Previews plugin requests navigation to a different URL.
 	 * This is used for client-side routing integration.
 	 *
@@ -66,11 +60,7 @@
 	$: onNavigateToCallback = onNavigateTo;
 
 	onMount(() => {
-		if (!enabled) {
-			return;
-		}
-
-		// Initialize the content-link controller
+		// Initialize the content-link controller with stripStega: true for clean DOM
 		controller = createController({
 			// Handle navigation requests from the Web Previews plugin
 			// Inside Visual mode, users can navigate to different URLs (like a browser bar)
@@ -80,10 +70,12 @@
 				? (path: string) => onNavigateToCallback?.(path)
 				: undefined,
 			// Optionally limit scanning to a specific root
-			root
+			root,
+			// Always strip stega encoding in the component for clean DOM
+			stripStega: true
 		});
 
-		// Optionally enable click-to-edit overlays on mount
+		// Enable click-to-edit overlays on mount if requested
 		// By default, click-to-edit overlays are not enabled. Instead, editors can:
 		// - Press and hold Alt/Option key to temporarily enable click-to-edit mode
 		// - Release the key to disable it again

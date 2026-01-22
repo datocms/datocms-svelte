@@ -65,7 +65,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@datocms/content-link": "^0.3.6",
+		"@datocms/content-link": "^0.3.7",
 		"datocms-listen": "^0.1.15",
 		"datocms-structured-text-utils": "^5.1.6",
 		"svelte-intersection-observer": "^1.0.0"

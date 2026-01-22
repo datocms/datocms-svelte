@@ -168,7 +168,6 @@ The `scrollToNearestTarget` parameter scrolls to the nearest editable element, u
 
 | Prop                | Type                                      | Default | Description                                                                                                                                            |
 | ------------------- | ----------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `enabled`           | `boolean`                                 | `true`  | Whether the controller is enabled                                                                                                                      |
 | `onNavigateTo`      | `(path: string) => void`                  | -       | Callback when [Web Previews plugin](https://www.datocms.com/marketplace/plugins/i/datocms-plugin-web-previews) requests navigation to a different page |
 | `currentPath`       | `string`                                  | -       | Current pathname to sync with [Web Previews plugin](https://www.datocms.com/marketplace/plugins/i/datocms-plugin-web-previews)                         |
 | `enableClickToEdit` | `true \| { scrollToNearestTarget: true }` | -       | Enable click-to-edit overlays on mount. Pass `true` or an object with options. If undefined, click-to-edit is disabled                                |
