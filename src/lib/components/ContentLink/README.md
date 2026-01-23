@@ -40,7 +40,9 @@ This drastically improves the editing experience, especially for non-technical u
 - [StructuredText integration](#structuredtext-integration)
   - [Edit groups with `data-datocms-content-link-group`](#edit-groups-with-data-datocms-content-link-group)
   - [Edit boundaries with `data-datocms-content-link-boundary`](#edit-boundaries-with-data-datocms-content-link-boundary)
-- [Manual overlays with `data-datocms-content-link-url`](#manual-overlays-with-data-datocms-content-link-url)
+- [Manual overlays](#manual-overlays)
+  - [Using `data-datocms-content-link-url`](#using-data-datocms-content-link-url)
+  - [Using `data-datocms-content-link-source`](#using-data-datocms-content-link-source)
 - [Low-level utilities](#low-level-utilities)
   - [`decodeStega`](#decodestega)
   - [`stripStega`](#stripstega)
@@ -232,11 +234,13 @@ In this example:
 - Clicking on the main structured text content opens the structured text field editor
 - Clicking on an embedded block opens that specific block's record editor
 
-## Manual overlays with `data-datocms-content-link-url`
+## Manual overlays
 
-For non-text fields like booleans, numbers, dates, and JSON, the DatoCMS API cannot embed stega-encoded metadata. In these cases, you can manually specify the edit URL using the `data-datocms-content-link-url` attribute.
+In some cases, you may want to manually create click-to-edit overlays for content that doesn't have stega encoding.
 
-The recommended approach is to use the `_editingUrl` field available on all records:
+### Using `data-datocms-content-link-url`
+
+You can add the `data-datocms-content-link-url` attribute with a DatoCMS editing URL:
 
 ```graphql
 query {
@@ -249,8 +253,6 @@ query {
 }
 ```
 
-Then add the attribute to your element:
-
 ```svelte
 <span data-datocms-content-link-url={product._editingUrl}>
   ${product.price}
@@ -261,7 +263,20 @@ Then add the attribute to your element:
 </span>
 ```
 
-This ensures the URL format is always correct and adapts automatically to any future changes.
+### Using `data-datocms-content-link-source`
+
+For elements without visible stega-encoded content, use the [`data-datocms-content-link-source`](https://github.com/datocms/content-link?tab=readme-ov-file#stamping-elements-via-data-datocms-content-link-source) attribute to attach stega metadata directly:
+
+```svelte
+<!-- product.asset.video.alt contains stega-encoded info -->
+<video
+  src={product.asset.video.url}
+  data-datocms-content-link-source={product.asset.video.alt}
+  controls
+/>
+```
+
+This is useful for structural elements like `<video>`, `<audio>`, or `<iframe>` where stega encoding in visible text would be problematic.
 
 ## Low-level utilities
 
