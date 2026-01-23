@@ -90,6 +90,8 @@
 	export type Video = {
 		/** Title attribute (`title`) for the video */
 		title?: Maybe<string>;
+		/** Alt attribute used for content link integration (passed as data-datocms-content-link-source) */
+		alt?: Maybe<string>;
 		/** The height of the video */
 		height?: Maybe<number>;
 		/** The width of the video */
@@ -217,8 +219,14 @@
 
 	let computedProps: VideoPlayerProps;
 
+	// Extract alt for DatoCMS Content Link integration
+	// See: https://github.com/datocms/content-link
+	let alt: Maybe<string>;
+
 	$: {
-		const { muxPlaybackId, playbackId, title, width, height, blurUpThumb } = data || {};
+		const { muxPlaybackId, playbackId, title, width, height, blurUpThumb, alt: dataAlt } = data || {};
+
+		alt = dataAlt;
 
 		// Composing props like this and then spreading them on <mux-player />
 		// avoid setting attributes as "undefined".
@@ -255,6 +263,7 @@
 <mux-player
 	bind:this={muxPlayerElement}
 	stream-type="on-demand"
+	data-datocms-content-link-source={alt}
 	{...toHTMLAttrs(computedProps)}
 	{...toHTMLAttrs($$restProps)}
 	on:abort
