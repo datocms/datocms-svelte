@@ -47,6 +47,11 @@
 	export let enableClickToEdit: true | { scrollToNearestTarget: true } | undefined = undefined;
 
 	/**
+	 * Whether to strip stega encoding from text nodes after stamping.
+	 */
+	export let stripStega: boolean | undefined = undefined;
+
+	/**
 	 * Ref to limit scanning to this root instead of document.
 	 * Useful for limiting the scope of content link detection to a specific container.
 	 */
@@ -60,7 +65,7 @@
 	$: onNavigateToCallback = onNavigateTo;
 
 	onMount(() => {
-		// Initialize the content-link controller with stripStega: true for clean DOM
+		// Initialize the content-link controller
 		controller = createController({
 			// Handle navigation requests from the Web Previews plugin
 			// Inside Visual mode, users can navigate to different URLs (like a browser bar)
@@ -71,8 +76,8 @@
 				: undefined,
 			// Optionally limit scanning to a specific root
 			root,
-			// Always strip stega encoding in the component for clean DOM
-			stripStega: true
+			// Control stega encoding stripping behavior
+			...(stripStega !== undefined ? { stripStega } : {})
 		});
 
 		// Enable click-to-edit overlays on mount if requested
