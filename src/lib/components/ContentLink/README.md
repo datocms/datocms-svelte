@@ -285,7 +285,7 @@ if (decoded) {
 
 ### `stripStega`
 
-Removes stega encoding from content by converting to JSON, removing all stega segments using the global VERCEL_STEGA_REGEX, and parsing back to the original type. Works with any data type:
+Removes stega encoding from any data type:
 
 ```typescript
 import { stripStega } from '@datocms/svelte';
