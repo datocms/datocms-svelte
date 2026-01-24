@@ -85,9 +85,7 @@
 		// - Press and hold Alt/Option key to temporarily enable click-to-edit mode
 		// - Release the key to disable it again
 		if (enableClickToEdit !== undefined) {
-			controller.enableClickToEdit(
-				enableClickToEdit === true ? undefined : enableClickToEdit
-			);
+			controller.enableClickToEdit(enableClickToEdit === true ? undefined : enableClickToEdit);
 		}
 	});
 

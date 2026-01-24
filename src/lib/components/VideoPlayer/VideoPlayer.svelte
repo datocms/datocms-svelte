@@ -226,7 +226,15 @@
 	let contentLinkSource: Possibly<string>;
 
 	$: {
-		const { muxPlaybackId, playbackId, title, width, height, blurUpThumb, alt: dataAlt } = data || {};
+		const {
+			muxPlaybackId,
+			playbackId,
+			title,
+			width,
+			height,
+			blurUpThumb,
+			alt: dataAlt
+		} = data || {};
 
 		alt = dataAlt;
 		contentLinkSource = alt && decodeStega(alt) ? alt : undefined;
