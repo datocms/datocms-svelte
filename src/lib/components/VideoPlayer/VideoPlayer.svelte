@@ -203,6 +203,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import type MuxPlayerElement from '@mux/mux-player';
+	import { decodeStega } from '@datocms/content-link';
 
 	// See: https://stackoverflow.com/a/76291677/1338248
 	interface $$Props extends VideoPlayerProps {}
@@ -221,12 +222,14 @@
 
 	// Extract alt for DatoCMS Content Link integration
 	// See: https://github.com/datocms/content-link
-	let alt: Maybe<string>;
+	let alt: Possibly<string>;
+	let contentLinkSource: Possibly<string>;
 
 	$: {
 		const { muxPlaybackId, playbackId, title, width, height, blurUpThumb, alt: dataAlt } = data || {};
 
 		alt = dataAlt;
+		contentLinkSource = alt && decodeStega(alt) ? alt : undefined;
 
 		// Composing props like this and then spreading them on <mux-player />
 		// avoid setting attributes as "undefined".
@@ -263,7 +266,7 @@
 <mux-player
 	bind:this={muxPlayerElement}
 	stream-type="on-demand"
-	data-datocms-content-link-source={alt}
+	data-datocms-content-link-source={contentLinkSource}
 	{...toHTMLAttrs(computedProps)}
 	{...toHTMLAttrs($$restProps)}
 	on:abort
