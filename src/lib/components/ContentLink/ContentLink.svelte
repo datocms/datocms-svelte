@@ -42,9 +42,9 @@
 
 	/**
 	 * Enable click-to-edit on mount. Pass true for default behavior or an object with scrollToNearestTarget.
-	 * If undefined, click-to-edit is disabled and editors can use Alt/Option key for temporary activation.
+	 * If undefined or false, click-to-edit is disabled and editors can use Alt/Option key for temporary activation.
 	 */
-	export let enableClickToEdit: true | { scrollToNearestTarget: true } | undefined = undefined;
+	export let enableClickToEdit: boolean | { scrollToNearestTarget: true } | undefined = undefined;
 
 	/**
 	 * Whether to strip stega encoding from text nodes after stamping.
@@ -84,7 +84,7 @@
 		// By default, click-to-edit overlays are not enabled. Instead, editors can:
 		// - Press and hold Alt/Option key to temporarily enable click-to-edit mode
 		// - Release the key to disable it again
-		if (enableClickToEdit !== undefined) {
+		if (enableClickToEdit) {
 			controller.enableClickToEdit(enableClickToEdit === true ? undefined : enableClickToEdit);
 		}
 	});
