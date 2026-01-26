@@ -37,6 +37,7 @@ This drastically improves the editing experience, especially for non-technical u
 - [Enabling click-to-edit](#enabling-click-to-edit)
 - [Flash-all highlighting](#flash-all-highlighting)
 - [Props](#props)
+  - [ClickToEditOptions](#clicktoeditoptions)
 - [StructuredText integration](#structuredtext-integration)
   - [Edit groups with `data-datocms-content-link-group`](#edit-groups-with-data-datocms-content-link-group)
   - [Edit boundaries with `data-datocms-content-link-boundary`](#edit-boundaries-with-data-datocms-content-link-boundary)
