@@ -9,7 +9,10 @@ import type {
 export { default as NakedImage } from './components/NakedImage/NakedImage.svelte';
 export type { ResponsiveImageType } from './components/NakedImage/utils';
 
-export { default as ContentLink } from './components/ContentLink/ContentLink.svelte';
+export {
+	default as ContentLink,
+	type ClickToEditOptions
+} from './components/ContentLink/ContentLink.svelte';
 export { default as Head } from './components/Head/Head.svelte';
 export { default as Image } from './components/Image/Image.svelte';
 export { default as StructuredText } from './components/StructuredText/StructuredText.svelte';

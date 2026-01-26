@@ -145,11 +145,15 @@ If you prefer to enable click-to-edit programmatically on mount, set the `enable
 <ContentLink enableClickToEdit={true} />
 ```
 
-Or with scroll-to-nearest option:
+Or with options:
 
 ```svelte
 <ContentLink enableClickToEdit={{ scrollToNearestTarget: true }} />
+<ContentLink enableClickToEdit={{ hoverOnly: true }} />
+<ContentLink enableClickToEdit={{ hoverOnly: true, scrollToNearestTarget: true }} />
 ```
+
+The `hoverOnly` option is useful to avoid showing overlays on touch devices where they may interfere with normal scrolling and tapping behavior. When set to `true` on a touch-only device, click-to-edit will not be automatically enabled, but users can still toggle it manually using the Alt/Option key.
 
 ## Flash-all highlighting
 
@@ -172,9 +176,18 @@ The `scrollToNearestTarget` parameter scrolls to the nearest editable element, u
 | ------------------- | ----------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `onNavigateTo`      | `(path: string) => void`                  | -       | Callback when [Web Previews plugin](https://www.datocms.com/marketplace/plugins/i/datocms-plugin-web-previews) requests navigation to a different page |
 | `currentPath`       | `string`                                  | -       | Current pathname to sync with [Web Previews plugin](https://www.datocms.com/marketplace/plugins/i/datocms-plugin-web-previews)                         |
-| `enableClickToEdit` | `true \| { scrollToNearestTarget: true }` | -       | Enable click-to-edit overlays on mount. Pass `true` or an object with options. If undefined, click-to-edit is disabled                                |
+| `enableClickToEdit` | `boolean \| ClickToEditOptions` | -       | Enable click-to-edit overlays on mount. Pass `true` or an object with options. If undefined or false, click-to-edit is disabled                                |
 | `stripStega`        | `boolean`                                 | -       | Whether to strip stega encoding from text nodes after stamping                                                                                         |
 | `root`              | `ParentNode`                              | -       | Root element to limit scanning to instead of the entire document                                                                                       |
+
+### ClickToEditOptions
+
+When passing an object to `enableClickToEdit`, the following options are available:
+
+| Option                  | Type      | Default | Description                                                                                                                                                                                                     |
+| ----------------------- | --------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `scrollToNearestTarget` | `boolean` | `false` | Automatically scroll to the nearest editable element if none is currently visible in the viewport when click-to-edit mode is enabled. Also triggers the flash-all highlighting effect.                         |
+| `hoverOnly`             | `boolean` | `false` | Only enable click-to-edit on devices that support hover (non-touch devices). Uses `window.matchMedia('(hover: hover)')` to detect hover capability. Useful to avoid overlays interfering with touch scrolling. |
 
 ## StructuredText integration
 

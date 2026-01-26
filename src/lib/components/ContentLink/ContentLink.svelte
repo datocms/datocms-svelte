@@ -41,10 +41,49 @@
 	export let currentPath: string | undefined = undefined;
 
 	/**
-	 * Enable click-to-edit on mount. Pass true for default behavior or an object with scrollToNearestTarget.
-	 * If undefined or false, click-to-edit is disabled and editors can use Alt/Option key for temporary activation.
+	 * Options to configure click-to-edit behavior.
 	 */
-	export let enableClickToEdit: boolean | { scrollToNearestTarget: true } | undefined = undefined;
+	export interface ClickToEditOptions {
+		/**
+		 * Whether to automatically scroll to the nearest editable element if none
+		 * is currently visible in the viewport when click-to-edit mode is enabled.
+		 *
+		 * @default false
+		 */
+		scrollToNearestTarget?: boolean;
+
+		/**
+		 * Only enable click-to-edit on devices that support hover (i.e., non-touch devices).
+		 * Uses `window.matchMedia('(hover: hover)')` to detect hover capability.
+		 *
+		 * This is useful to avoid showing overlays on touch devices where they may
+		 * interfere with normal scrolling and tapping behavior.
+		 *
+		 * When set to `true` on a touch-only device, click-to-edit will not be
+		 * automatically enabled, but users can still toggle it manually using
+		 * the Alt/Option key.
+		 *
+		 * @default false
+		 */
+		hoverOnly?: boolean;
+	}
+
+	/**
+	 * Whether to enable click-to-edit overlays on mount, or options to configure them.
+	 *
+	 * - `true`: Enable click-to-edit mode immediately
+	 * - `{ scrollToNearestTarget: true }`: Enable and scroll to nearest editable if none visible
+	 * - `{ hoverOnly: true }`: Only enable on devices with hover capability (non-touch)
+	 * - `false`/`undefined`: Don't enable automatically (use Alt/Option key to toggle)
+	 *
+	 * @example
+	 * ```svelte
+	 * <ContentLink enableClickToEdit={true} />
+	 * <ContentLink enableClickToEdit={{ scrollToNearestTarget: true }} />
+	 * <ContentLink enableClickToEdit={{ hoverOnly: true, scrollToNearestTarget: true }} />
+	 * ```
+	 */
+	export let enableClickToEdit: boolean | ClickToEditOptions | undefined = undefined;
 
 	/**
 	 * Whether to strip stega encoding from text nodes after stamping.
