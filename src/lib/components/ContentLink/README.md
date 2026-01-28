@@ -51,6 +51,7 @@ This drastically improves the editing experience, especially for non-technical u
   - [Click-to-edit overlays not appearing](#click-to-edit-overlays-not-appearing)
   - [Navigation not syncing with Web Previews plugin](#navigation-not-syncing-with-web-previews-plugin)
   - [StructuredText blocks not clickable](#structuredtext-blocks-not-clickable)
+  - [Layout issues caused by stega encoding](#layout-issues-caused-by-stega-encoding)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -399,3 +400,21 @@ These utilities are useful when you need to:
    ```
 
 2. Add `data-datocms-content-link-boundary` to custom blocks to prevent them from bubbling to the parent field
+
+### Layout issues caused by stega encoding
+
+**Problem**: The invisible zero-width characters can cause unexpected letter-spacing or text breaking out of containers.
+
+**Solutions**:
+1. Use the `stripStega` prop to remove stega encoding after processing:
+   ```svelte
+   <ContentLink stripStega={true} />
+   ```
+
+2. Use CSS to reset letter-spacing on elements with stega-encoded content:
+   ```css
+   [data-datocms-contains-stega] {
+     letter-spacing: 0 !important;
+   }
+   ```
+   This attribute is automatically added to elements with stega-encoded content when `stripStega: false` (the default)
