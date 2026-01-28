@@ -126,19 +126,19 @@
 		// By default, click-to-edit overlays are not enabled. Instead, editors can:
 		// - Press and hold Alt/Option key to temporarily enable click-to-edit mode
 		// - Release the key to disable it again
-		if (enableClickToEdit && typeof window !== 'undefined' && window.self === window.top) {
-			const shouldEnable =
-				enableClickToEdit === true ||
+		if (
+			enableClickToEdit &&
+			typeof window !== 'undefined' &&
+			window.self === window.top &&
+			(enableClickToEdit === true ||
 				!enableClickToEdit.hoverOnly ||
-				window.matchMedia('(hover: hover)').matches;
-
-			if (shouldEnable) {
-				controller.enableClickToEdit(
-					enableClickToEdit === true
-						? undefined
-						: { scrollToNearestTarget: enableClickToEdit.scrollToNearestTarget ?? false }
-				);
-			}
+				window.matchMedia('(hover: hover)').matches)
+		) {
+			controller.enableClickToEdit(
+				enableClickToEdit === true
+					? undefined
+					: { scrollToNearestTarget: enableClickToEdit.scrollToNearestTarget ?? false }
+			);
 		}
 	});
 
