@@ -1,3 +1,33 @@
+<script lang="ts" context="module">
+	/**
+	 * Options to configure click-to-edit behavior.
+	 */
+	export interface ClickToEditOptions {
+		/**
+		 * Whether to automatically scroll to the nearest editable element if none
+		 * is currently visible in the viewport when click-to-edit mode is enabled.
+		 *
+		 * @default false
+		 */
+		scrollToNearestTarget?: boolean;
+
+		/**
+		 * Only enable click-to-edit on devices that support hover (i.e., non-touch devices).
+		 * Uses `window.matchMedia('(hover: hover)')` to detect hover capability.
+		 *
+		 * This is useful to avoid showing overlays on touch devices where they may
+		 * interfere with normal scrolling and tapping behavior.
+		 *
+		 * When set to `true` on a touch-only device, click-to-edit will not be
+		 * automatically enabled, but users can still toggle it manually using
+		 * the Alt/Option key.
+		 *
+		 * @default false
+		 */
+		hoverOnly?: boolean;
+	}
+</script>
+
 <script lang="ts">
 	import { createController, type Controller } from '@datocms/content-link';
 	import { onDestroy, onMount } from 'svelte';
@@ -39,34 +69,6 @@
 	 * Example with SvelteKit: currentPath={$page.url.pathname}
 	 */
 	export let currentPath: string | undefined = undefined;
-
-	/**
-	 * Options to configure click-to-edit behavior.
-	 */
-	export interface ClickToEditOptions {
-		/**
-		 * Whether to automatically scroll to the nearest editable element if none
-		 * is currently visible in the viewport when click-to-edit mode is enabled.
-		 *
-		 * @default false
-		 */
-		scrollToNearestTarget?: boolean;
-
-		/**
-		 * Only enable click-to-edit on devices that support hover (i.e., non-touch devices).
-		 * Uses `window.matchMedia('(hover: hover)')` to detect hover capability.
-		 *
-		 * This is useful to avoid showing overlays on touch devices where they may
-		 * interfere with normal scrolling and tapping behavior.
-		 *
-		 * When set to `true` on a touch-only device, click-to-edit will not be
-		 * automatically enabled, but users can still toggle it manually using
-		 * the Alt/Option key.
-		 *
-		 * @default false
-		 */
-		hoverOnly?: boolean;
-	}
 
 	/**
 	 * Whether to enable click-to-edit overlays on mount, or options to configure them.
@@ -119,12 +121,24 @@
 			...(stripStega !== undefined ? { stripStega } : {})
 		});
 
-		// Enable click-to-edit overlays on mount if requested
+		// Enable click-to-edit overlays on mount if requested, but never inside an iframe
+		// (when rendered inside DatoCMS Visual Editing mode, the plugin handles overlays)
 		// By default, click-to-edit overlays are not enabled. Instead, editors can:
 		// - Press and hold Alt/Option key to temporarily enable click-to-edit mode
 		// - Release the key to disable it again
-		if (enableClickToEdit) {
-			controller.enableClickToEdit(enableClickToEdit === true ? undefined : enableClickToEdit);
+		if (enableClickToEdit && typeof window !== 'undefined' && window.self === window.top) {
+			const shouldEnable =
+				enableClickToEdit === true ||
+				!enableClickToEdit.hoverOnly ||
+				window.matchMedia('(hover: hover)').matches;
+
+			if (shouldEnable) {
+				controller.enableClickToEdit(
+					enableClickToEdit === true
+						? undefined
+						: { scrollToNearestTarget: enableClickToEdit.scrollToNearestTarget ?? false }
+				);
+			}
 		}
 	});
 

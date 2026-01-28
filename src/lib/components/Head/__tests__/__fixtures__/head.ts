@@ -1,6 +1,6 @@
-import type { TitleMetaLinkTag } from '../../Head.svelte';
+import type { SeoOrFaviconTag } from '../../Head.svelte';
 
-export const metaTags: TitleMetaLinkTag[] = [
+export const metaTags: SeoOrFaviconTag[] = [
 	{
 		content: 'Remix CMS - The easiest way to manage content with Remix',
 		attributes: null,

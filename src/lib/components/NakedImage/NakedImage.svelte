@@ -89,7 +89,7 @@
 	};
 </script>
 
-<picture data-testid="picture" class={pictureClass} {pictureStyle}>
+<picture data-testid="picture" class={pictureClass} style={pictureStyle}>
 	{#if data.webpSrcSet}
 		<source srcset={data.webpSrcSet} sizes={sizes ?? data.sizes ?? null} type="image/webp" />
 	{/if}

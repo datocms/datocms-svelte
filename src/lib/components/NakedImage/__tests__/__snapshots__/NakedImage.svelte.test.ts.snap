@@ -109,7 +109,7 @@ exports[`NakedImage > passing className and/or style > renders correctly 1`] = `
     <picture
       class="picture-class-name"
       data-testid="picture"
-      picturestyle="background: green;"
+      style="background: green;"
     >
        
       <source

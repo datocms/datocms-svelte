@@ -40,14 +40,14 @@
 
 	<hr />
 
-	<NakedImage data={completeData} style="border: 2px solid red;" />
+	<NakedImage data={completeData} imgStyle="border: 2px solid red;" />
 
 	<hr />
 
 	<div style="position: relative; max-width: 500px; aspect-ratio: 1 / 1;">
 		<NakedImage
 			data={completeData}
-			style="
+			imgStyle="
 				z-index: -1;
 				position: absolute;
 				inset: 0;
