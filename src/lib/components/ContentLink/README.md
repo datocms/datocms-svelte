@@ -188,6 +188,7 @@ The `scrollToNearestTarget` parameter scrolls to the nearest editable element, u
 | `enableClickToEdit` | `boolean \| ClickToEditOptions` | -       | Enable click-to-edit overlays on mount. Pass `true` or an object with options. If undefined or false, click-to-edit is disabled                        |
 | `stripStega`        | `boolean`                       | -       | Whether to strip stega encoding from text nodes after stamping                                                                                         |
 | `root`              | `ParentNode`                    | -       | Root element to limit scanning to instead of the entire document                                                                                       |
+| `hue`               | `number`                        | `17`    | Hue (0–359) of the overlay accent color. Default is the DatoCMS hue (`17`). Use this to match your brand or project colors                             |
 
 ### ClickToEditOptions
 

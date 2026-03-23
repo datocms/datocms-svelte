@@ -98,6 +98,13 @@
 	 */
 	export let root: ParentNode | undefined = undefined;
 
+	/**
+	 * Hue (0–359) of the overlay accent color.
+	 *
+	 * @default 17 (orange)
+	 */
+	export let hue: number | undefined = undefined;
+
 	let controller: Controller | null = null;
 	// Store the callback to avoid recreating the controller when it changes
 	let onNavigateToCallback = onNavigateTo;
@@ -118,7 +125,9 @@
 			// Optionally limit scanning to a specific root
 			root,
 			// Control stega encoding stripping behavior
-			...(stripStega !== undefined ? { stripStega } : {})
+			...(stripStega !== undefined ? { stripStega } : {}),
+			// Optionally customize the overlay accent color
+			...(hue !== undefined ? { hue } : {})
 		});
 
 		// Enable click-to-edit overlays on mount if requested, but never inside an iframe
