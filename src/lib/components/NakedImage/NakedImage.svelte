@@ -77,6 +77,16 @@
 			? { 'background-color': data.bgColor ?? undefined, color: 'transparent' }
 			: undefined;
 
+	// When no explicit `sizes` is given, default lazy images to `sizes="auto"`
+	// so the browser picks the optimal `srcset` candidate from the rendered
+	// width. Per the HTML spec, `auto` only engages when the `<img>` itself
+	// "allows auto-sizes" (loading="lazy" AND a `sizes` starting with `auto`),
+	// and a `<source>`'s `auto` only takes effect when its sibling `<img>` does
+	// too — so `resolvedSizes` is applied to both the sources and the `<img>`.
+	// Skipped for `priority` (eager) images; the `, 100vw` fallback preserves
+	// prior behavior on browsers without `sizes="auto"` support.
+	$: resolvedSizes = sizes ?? data.sizes ?? (priority ? null : 'auto, 100vw');
+
 	$: ({ width } = data);
 	$: height = data.height ?? Math.round(data.aspectRatio ? width / data.aspectRatio : 0);
 
@@ -91,17 +101,18 @@
 
 <picture data-testid="picture" class={pictureClass} style={pictureStyle}>
 	{#if data.webpSrcSet}
-		<source srcset={data.webpSrcSet} sizes={sizes ?? data.sizes ?? null} type="image/webp" />
+		<source srcset={data.webpSrcSet} sizes={resolvedSizes} type="image/webp" />
 	{/if}
 	<source
 		srcset={data.srcSet ?? buildSrcSet(data.src, data.width, srcSetCandidates) ?? null}
-		sizes={sizes ?? data.sizes ?? null}
+		sizes={resolvedSizes}
 	/>
 	{#if data.src}
 		<img
 			src={data.src}
 			alt={data.alt ?? ''}
 			title={data.title ?? null}
+			sizes={resolvedSizes}
 			on:load={() => {
 				dispatch('load');
 				loaded = true;
