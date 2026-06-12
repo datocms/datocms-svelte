@@ -111,6 +111,16 @@
 	$: addImage = imageAddStrategy({ priority, inView, loaded });
 	$: showImage = imageShowStrategy({ priority, inView, loaded });
 
+	// When no explicit `sizes` is given, default lazy images to `sizes="auto"` so
+	// the browser picks the optimal `srcset` candidate from the rendered width.
+	// This component injects the real <img> only once it scrolls into view, at
+	// which point its box is already laid out — so `auto` resolves correctly. Per
+	// the HTML spec, `auto` needs the <img> to be lazy AND carry a `sizes`
+	// starting with `auto`, and a <source>'s `auto` only engages when its sibling
+	// <img> does too — hence `resolvedSizes` + `loading="lazy"` on the <img>.
+	// Skipped for `priority` (eager) images; `, 100vw` is the legacy fallback.
+	$: resolvedSizes = sizes ?? data.sizes ?? (priority ? null : 'auto, 100vw');
+
 	$: transition = fadeInDuration > 0 ? `opacity ${fadeInDuration}ms` : undefined;
 
 	let basePlaceholderStyle: CSS.PropertiesHyphen;
@@ -200,17 +210,19 @@
 		{#if addImage}
 			<picture data-testid="picture" class={pictureClass} style={pictureStyle}>
 				{#if data.webpSrcSet}
-					<source srcset={data.webpSrcSet} sizes={sizes ?? data.sizes ?? null} type="image/webp" />
+					<source srcset={data.webpSrcSet} sizes={resolvedSizes} type="image/webp" />
 				{/if}
 				<source
 					srcset={data.srcSet ?? buildSrcSet(data.src, data.width, srcSetCandidates) ?? null}
-					sizes={sizes ?? data.sizes ?? null}
+					sizes={resolvedSizes}
 				/>
 				{#if data.src}
 					<img
 						src={data.src}
 						alt={data.alt ?? ''}
 						title={data.title ?? null}
+						sizes={resolvedSizes}
+						loading={priority ? undefined : 'lazy'}
 						on:load={() => {
 							dispatch('load');
 							loaded = true;
