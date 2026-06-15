@@ -102,6 +102,8 @@
 		playbackId?: Maybe<string>;
 		/** A data: URI containing a blurhash for the video  */
 		blurUpThumb?: Maybe<string>;
+		/** A URL for the video thumbnail, used as the poster image */
+		thumbnailUrl?: Maybe<string>;
 	};
 
 	type VideoPlayerProps = Partial<MuxPlayerProps> & {
@@ -138,6 +140,10 @@
 
 	const computedPlaceholder = (blurUpThumb: Possibly<string>) => {
 		return blurUpThumb ? { placeholder: blurUpThumb } : undefined;
+	};
+
+	const computedPoster = (thumbnailUrl: Possibly<string>) => {
+		return thumbnailUrl ? { poster: thumbnailUrl } : undefined;
 	};
 
 	type KeyTypes = string | number | symbol;
@@ -233,6 +239,7 @@
 			width,
 			height,
 			blurUpThumb,
+			thumbnailUrl,
 			alt: dataAlt
 		} = data || {};
 
@@ -246,6 +253,7 @@
 			...(computedPlaybackId(muxPlaybackId, playbackId) || {}),
 			...(computedStyle(style, width, height) || {}),
 			...(computedPlaceholder(blurUpThumb) || {}),
+			...(computedPoster(thumbnailUrl) || {}),
 			disableCookies,
 			disableTracking,
 			preload
