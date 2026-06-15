@@ -19,7 +19,7 @@ Live updates are great both to get instant previews of your content while editin
 
 ## Reference
 
-Import `querySubscription` from `datocms-svelte` and use it inside your components like this:
+Import `querySubscription` from `@datocms/svelte` and use it inside your components like this:
 
 ```js
 import { querySubscription } from '@datocms/svelte';
@@ -38,7 +38,7 @@ const subscription = querySubscription(options: Options);
 | includeDrafts      | boolean                                                                                    | :x:                | If true, draft records will be returned                                                          |                                      |
 | excludeInvalid     | boolean                                                                                    | :x:                | If true, invalid records will be filtered out                                                    |                                      |
 | environment        | string                                                                                     | :x:                | The name of the DatoCMS environment where to perform the query (defaults to primary environment) |                                      |
-| contentLink        | `'vercel-1'` or `undefined`                                                                | :x:                | If true, embed metadata that enable Content Link                                                 |                                      |
+| contentLink        | `'v1'` or `undefined`                                                                      | :x:                | If set, embed metadata that enable Content Link                                                  |                                      |
 | baseEditingUrl     | string                                                                                     | :x:                | The base URL of the DatoCMS project                                                              |                                      |
 | cacheTags          | boolean                                                                                    | :x:                | If true, receive the Cache Tags associated with the query                                        |                                      |
 | initialData        | Object                                                                                     | :x:                | The initial data to use on the first render                                                      |                                      |
@@ -67,28 +67,28 @@ The `status` property represents the state of the server-sent events connection.
 
 ```svelte
 <script>
-import { querySubscription } from 'react-datocms';
+  import { querySubscription } from '@datocms/svelte';
 
-const subscription = useQuerySubscription({
-  enabled: true,
-  query: `
-    query AppQuery($first: IntType) {
-      allBlogPosts {
-        slug
-        title
-      }
-    }`,
-  variables: { first: 10 },
-  token: 'YOUR_API_TOKEN',
-});
+  const subscription = querySubscription({
+    enabled: true,
+    query: `
+      query AppQuery($first: IntType) {
+        allBlogPosts(first: $first) {
+          slug
+          title
+        }
+      }`,
+    variables: { first: 10 },
+    token: 'YOUR_API_TOKEN',
+  });
 
-$: ({ data, error, status } = $subscription)
+  $: ({ data, error, status } = $subscription);
 
-const statusMessage = {
-  connecting: 'Connecting to DatoCMS...',
-  connected: 'Connected to DatoCMS, receiving live updates!',
-  closed: 'Connection closed',
-};
+  const statusMessage = {
+    connecting: 'Connecting to DatoCMS...',
+    connected: 'Connected to DatoCMS, receiving live updates!',
+    closed: 'Connection closed',
+  };
 </script>
 
 <p>Connection status: {statusMessage[status]}</p>
@@ -105,6 +105,13 @@ const statusMessage = {
   <ul>
     {#each data.allBlogPosts as blogPost (blogPost.slug)}
       <li>{blogPost.title}</li>
+    {/each}
   </ul>
 {/if}
 ```
+
+For a complete, production-style setup, see the [DatoCMS SvelteKit Starter Kit](https://github.com/datocms/sveltekit-starter-kit), which wires `querySubscription` into a draft-mode / [Visual Editing](https://www.datocms.com/docs/visual-editing) flow:
+
+- **[`src/lib/datocms/queries.ts`](https://github.com/datocms/sveltekit-starter-kit/blob/main/src/lib/datocms/queries.ts)** — the `generateRealtimeSubscription()` helper returns the `QuerySubscriptionOptions` object this store consumes: it fetches `initialData` with `executeQuery`, switches between the published and draft CDA tokens, and only sets `enabled: true` (with `contentLink: 'v1'`) when Draft Mode is active.
+- **[`src/routes/page/[slug]/+page.server.ts`](https://github.com/datocms/sveltekit-starter-kit/blob/main/src/routes/page/%5Bslug%5D/+page.server.ts)** — the `load` function composes the typed GraphQL query and returns `generateRealtimeSubscription(event, query, { slug })` as `data.subscription`.
+- **[`src/routes/page/[slug]/+page.svelte`](https://github.com/datocms/sveltekit-starter-kit/blob/main/src/routes/page/%5Bslug%5D/+page.svelte)** — the component calls `querySubscription(data.subscription)` and renders from `$subscription.data` (the site-wide [`+layout.svelte`](https://github.com/datocms/sveltekit-starter-kit/blob/main/src/routes/+layout.svelte) uses the same pattern).
