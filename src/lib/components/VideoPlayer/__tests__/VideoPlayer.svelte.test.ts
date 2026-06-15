@@ -166,6 +166,31 @@ describe('VideoPlayer', () => {
 			});
 		});
 
+		describe('contains `thumbnailUrl`', () => {
+			const data = {
+				muxPlaybackId: 'ip028MAXF026dU900bKiyNDttjonw7A1dFY',
+				thumbnailUrl: 'https://example.com/thumb.jpg'
+			};
+
+			it('uses it for the `poster` of the <mux-player /> element', () => {
+				const props = { data };
+
+				const { container } = render(VideoPlayer, { props });
+
+				expect(container).toMatchSnapshot();
+			});
+
+			describe('and a `poster` is also passed', () => {
+				it('uses the passed `poster` value instead', () => {
+					const props = { data, poster: 'https://example.com/custom-poster.jpg' };
+
+					const { container } = render(VideoPlayer, { props });
+
+					expect(container).toMatchSnapshot();
+				});
+			});
+		});
+
 		describe('lacks of `width` and `height` values', () => {
 			const data = {
 				muxPlaybackId: 'ip028MAXF026dU900bKiyNDttjonw7A1dFY',

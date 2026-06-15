@@ -30,6 +30,38 @@ exports[`VideoPlayer > when data object > contains \`playbackId\` > uses it for 
 </body>
 `;
 
+exports[`VideoPlayer > when data object > contains \`thumbnailUrl\` > and a \`poster\` is also passed > uses the passed \`poster\` value instead 1`] = `
+<body>
+  <div>
+    <mux-player
+      disable-cookies="true"
+      disable-tracking="true"
+      playback-id="ip028MAXF026dU900bKiyNDttjonw7A1dFY"
+      poster="https://example.com/custom-poster.jpg"
+      preload="metadata"
+      stream-type="on-demand"
+    />
+    <!--&lt;VideoPlayer&gt;-->
+  </div>
+</body>
+`;
+
+exports[`VideoPlayer > when data object > contains \`thumbnailUrl\` > uses it for the \`poster\` of the <mux-player /> element 1`] = `
+<body>
+  <div>
+    <mux-player
+      disable-cookies="true"
+      disable-tracking="true"
+      playback-id="ip028MAXF026dU900bKiyNDttjonw7A1dFY"
+      poster="https://example.com/thumb.jpg"
+      preload="metadata"
+      stream-type="on-demand"
+    />
+    <!--&lt;VideoPlayer&gt;-->
+  </div>
+</body>
+`;
+
 exports[`VideoPlayer > when data object > is complete > and \`autoplay\` is passed > uses it for the <mux-player /> element 1`] = `
 <body>
   <div>
