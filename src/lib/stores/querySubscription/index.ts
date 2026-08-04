@@ -49,7 +49,7 @@ export function querySubscription<QueryResult = unknown, QueryVariables = unknow
 	const { subscribe, update } = writable<Subscription<QueryResult>>({
 		error: null,
 		data: initialData || null,
-		status: enabled ? 'connecting' : 'closed'
+		status: enabled === false ? 'closed' : 'connecting'
 	});
 
 	onMount(() => {
