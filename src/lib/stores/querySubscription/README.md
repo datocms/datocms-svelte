@@ -11,6 +11,7 @@ Live updates are great both to get instant previews of your content while editin
 
 - [Reference](#reference)
 - [Initialization options](#initialization-options)
+- [Disabling the subscription](#disabling-the-subscription)
 - [Connection status](#connection-status)
 - [Error object](#error-object)
 - [Example](#example)
@@ -31,14 +32,14 @@ const subscription = querySubscription(options: Options);
 
 | prop               | type                                                                                       | required           | description                                                                                      | default                              |
 | ------------------ | ------------------------------------------------------------------------------------------ | ------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------ |
-| enabled            | boolean                                                                                    | :x:                | Whether the subscription has to be performed or not                                              | true                                 |
+| enabled            | boolean                                                                                    | :x:                | Whether the subscription has to be performed or not (see [Disabling the subscription](#disabling-the-subscription)) | true                                 |
 | query              | string \| [`TypedDocumentNode`](https://github.com/dotansimha/graphql-typed-document-node) | :white_check_mark: | The GraphQL query to subscribe                                                                   |                                      |
 | token              | string                                                                                     | :white_check_mark: | DatoCMS API token to use                                                                         |                                      |
 | variables          | Object                                                                                     | :x:                | GraphQL variables for the query                                                                  |                                      |
 | includeDrafts      | boolean                                                                                    | :x:                | If true, draft records will be returned                                                          |                                      |
 | excludeInvalid     | boolean                                                                                    | :x:                | If true, invalid records will be filtered out                                                    |                                      |
 | environment        | string                                                                                     | :x:                | The name of the DatoCMS environment where to perform the query (defaults to primary environment) |                                      |
-| contentLink        | `'v1'` or `undefined`                                                                      | :x:                | If set, embed metadata that enable Content Link                                                  |                                      |
+| contentLink        | `'v1'`                                                                                     | :x:                | If set, embed metadata that enable [Content Link](https://www.datocms.com/docs/content-delivery-api/api-endpoints#content-link) |                                      |
 | baseEditingUrl     | string                                                                                     | :x:                | The base URL of the DatoCMS project                                                              |                                      |
 | cacheTags          | boolean                                                                                    | :x:                | If true, receive the Cache Tags associated with the query                                        |                                      |
 | initialData        | Object                                                                                     | :x:                | The initial data to use on the first render                                                      |                                      |
@@ -47,13 +48,32 @@ const subscription = querySubscription(options: Options);
 | eventSourceClass   | an [EventSource-like](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) class  | :x:                | The EventSource class to use to open up the SSE connection                                       | window.EventSource                   |
 | baseUrl            | string                                                                                     | :x:                | The base URL to use to perform the query                                                         | `https://graphql-listen.datocms.com` |
 
+## Disabling the subscription
+
+Real-time updates are usually only wanted in a specific context — say, when Draft Mode is active — while regular visitors should just get the content that was fetched on the server. Instead of conditionally calling the store (which you cannot do: `querySubscription` calls `onMount`, so it must be invoked unconditionally during component initialization), pass `enabled: false`:
+
+```js
+const subscription = querySubscription({
+  enabled: false,
+  initialData: data.page // returned by your `load` function
+});
+```
+
+When `enabled` is `false`:
+
+- no connection is ever opened, and no API token is needed;
+- the store emits `initialData` as its `data`, and `closed` as its `status`;
+- every other option becomes optional. TypeScript enforces this: `QuerySubscriptionOptions` is a union of `EnabledQuerySubscriptionOptions` (where `query` and `token` are required) and `DisabledQuerySubscriptionOptions` (where they are not), so a disabled subscription type-checks with `initialData` alone.
+
+This is what lets a single component render both the static and the live version of a page, toggling one boolean.
+
 ## Connection status
 
 The `status` property represents the state of the server-sent events connection. It can be one of the following:
 
 - `connecting`: the subscription channel is trying to connect
 - `connected`: the channel is open, we're receiving live updates
-- `closed`: the channel has been permanently closed due to a fatal error (ie. an invalid query)
+- `closed`: the channel is not open. Either it has been permanently closed due to a fatal error (ie. an invalid query), or the subscription was never started because `enabled` is `false`
 
 ## Error object
 
