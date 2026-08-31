@@ -15,8 +15,12 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        # `.npmrc` sets engine-strict, and `@changesets/cli` requires Node 22
+        # or later — so `npm ci` cannot succeed on anything older here, and a
+        # matrix job on 18 or 20 would be claiming a compatibility nobody can
+        # actually install into. Both are also past end-of-life.
+        # See the supported release schedule at https://nodejs.org/en/about/releases/
+        node-version: [22.x, 24.x]
 
     steps:
       - uses: actions/checkout@v3
