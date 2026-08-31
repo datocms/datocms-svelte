@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/datocms/datocms-svelte.git"
+		"url": "git+https://github.com/datocms/datocms-svelte.git"
 	},
 	"author": "Silvano Stralla <silvano@datocms.com>",
 	"homepage": "https://github.com/datocms/datocms-svelte",
@@ -55,6 +55,7 @@
 		"jsdom": "^24.0.0",
 		"jsdom-testing-mocks": "^1.11.0",
 		"np": "^10.0.0",
+		"pkg-pr-new": "^0.0.88",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
 		"svelte": "^4.0.0",
