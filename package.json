@@ -39,7 +39,7 @@
 	},
 	"devDependencies": {
 		"@changesets/cli": "^3.0.1",
-		"@datocms/release-toolchain": "github:datocms/release-toolchain#v1.0.0",
+		"@datocms/release-toolchain": "github:datocms/release-toolchain#v1.1.0",
 		"@mux/mux-player": "^3.11.4",
 		"@mux/playback-core": "^0.33.1",
 		"@sveltejs/adapter-auto": "^3.0.0",
